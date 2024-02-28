@@ -103,7 +103,7 @@ const FAQs = () => {
       <p className="text-base">Thinking about Therapy or booking an appointment? Here is what you wanna know</p>
      </div>
      <div>
-       <h1 className="text-2xl ml-[25%] my-4 text-start font-semibold">Booking an appointmeant</h1>
+       <h1 className="text-2xl ml-[25%] my-4 text-start font-semibold">Booking an appointment</h1>
      <div className="flex flex-col items-center h-[20%]">
       <Section
         title={"What is Therapy and how does it works ?"}
