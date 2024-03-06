@@ -1,0 +1,73 @@
+/*Feedback*/
+
+.Feedback_header{
+  margin-left: 10vw;
+  margin-right: 10vw;
+  width: 60%;
+}
+
+.contact_form--input{
+  border-color: darkcyan;
+  border-width: thin;
+  background: transparent;
+  width: 65%;
+  border-radius: 2px;
+}
+
+.feedback_card{
+  background-color:rgb(235, 247, 255);
+  border-radius: 5px;
+  min-width: 250px;
+  max-width: 310px;
+  padding: 10px;
+  display: grid;
+  gap: 7px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.gap{
+  gap: 24px;
+}
+
+body{
+  font-family: "Quicksand", sans-serif;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
