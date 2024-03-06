@@ -17,36 +17,26 @@ const Section = ({ title, description, isVisible, toggleVisibility }) => {
   );
 };
 
-const Section2 = ({ title, description, isVisible2, toggleVisibility2 }) => {
-  return (
-    <div className="w-[50%] bg-[#0090b0] text-white rounded-xl m-2 p-3">
-      <div className="flex justify-between cursor-pointer" onClick={toggleVisibility2}>
-      <h3 className="font-bold text-lg">{title}</h3>
-      <button >
-        {isVisible2 ? <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x animate-spin-slow" width="30" height="30" viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
-        : <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-right" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>}
-      </button>
-      </div>
-      <div>
-      {isVisible2 && <p className="text-start">{description}</p>}
-      </div>
-    </div>
-  );
-};
-
 const FAQs = () => {
                   
   const [sectionConfig, setSectionConfig] = useState({
     showAbout: false,
     showTeam: false,
     showCareers: false,
+    showCareers1: false,
+    showCareers2: false,
+    showCareers3: false,
+    showCareers4: false,
+    showCareers5: false,
+    showCareers6: false,
+    showCareers7: false,
+    showCareers8: false,
+    showCareers9: false,
+    showCareers10: false,
+    showCareers11: false,
+    showCareers12: false,
   });
 
-  const [sectionConfig2, setSectionConfig2] = useState({
-    showAbout2: false,
-    showTeam2: false,
-    showCareers2: false,
-  });
   const toggleVisibility = (sectionName) => {
     setSectionConfig((prevConfig) => {
       // Check if the section being clicked is already open
@@ -56,6 +46,18 @@ const FAQs = () => {
           showAbout: false,
           showTeam: false,
           showCareers: false,
+          showCareers1: false,
+          showCareers2: false,
+          showCareers3: false,
+          showCareers4: false,
+          showCareers5: false,
+          showCareers6: false,
+          showCareers7: false,
+          showCareers8: false,
+          showCareers9: false,
+          showCareers10: false,
+          showCareers11: false,
+          showCareers12: false,
         };
       } else {
         // If it's not open, close all sections and then open the clicked one
@@ -63,26 +65,18 @@ const FAQs = () => {
           showAbout: sectionName === 'showAbout',
           showTeam: sectionName === 'showTeam',
           showCareers: sectionName === 'showCareers',
-        };
-      }
-    });
-  };
-  const toggleVisibility2 = (sectionName) => {
-    setSectionConfig2((prevConfig) => {
-      // Check if the section being clicked is already open
-      if (prevConfig[sectionName]) {
-        // If it's open, close all sections
-        return {
-          showAbout2: false,
-          showTeam2: false,
-          showCareers2: false,
-        };
-      } else {
-        // If it's not open, close all sections and then open the clicked one
-        return {
-          showAbout2: sectionName === 'showAbout2',
-          showTeam2: sectionName === 'showTeam2',
+          showCareers1: sectionName === 'showCareers1',
           showCareers2: sectionName === 'showCareers2',
+          showCareers3: sectionName === 'showCareers3',
+          showCareers4: sectionName === 'showCareers4',
+          showCareers5: sectionName === 'showCareers5',
+          showCareers6: sectionName === 'showCareers6',
+          showCareers7: sectionName === 'showCareers7',
+          showCareers8: sectionName === 'showCareers8',
+          showCareers9: sectionName === 'showCareers9',
+          showCareers10: sectionName === 'showCareers10',
+          showCareers11: sectionName === 'showCareers11',
+          showCareers12: sectionName === 'showCareers12',
         };
       }
     });
@@ -92,71 +86,131 @@ const FAQs = () => {
   return (
     <>
      <div className="flex justify-center mt-10 mb-4">
-     <div className="border rounded-lg w-[50%] border-[#64c4da] flex items-center gap-4 p-3 ">
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#70706f" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
-        <input  className="border-none focus:outline-none" type="text" placeholder="Search for help" />
-      </div>
      </div>
      <div className="ml-[10%] flex flex-col gap-3 text-start">
       <h1 className="text-2xl font-semibold">How can we help</h1>
       <p className="text-base font-semibold">FAQ</p>
-      <p className="text-base">Thinking about Therapy or booking an appointment? Here is what you wanna know</p>
      </div>
      <div>
-       <h1 className="text-2xl ml-[25%] my-4 text-start font-semibold">Booking an appointment</h1>
+       {/* <h1 className="text-2xl ml-[25%] my-4 text-start font-semibold">Booking an appointment</h1> */}
      <div className="flex flex-col items-center h-[20%]">
       <Section
-        title={"What is Therapy and how does it works ?"}
+        title={"What is AroundWithin and how can it help me with my mental health?"}
         description={
-          "Therapy can be an incredibly powerful tool for self-exploration, growth and collaboration with a trusted professional who is 100% invested in your well-being and committed to meeting your goals. How therapy is structured can vary, for example therapy can be short-term, long-term or as needed. Therapy can be done individually, with a romantic partner(s), as a family, between business partners, or even in a group setting."
+          "AroundWithin is an organization committed to enhancing mental health through diverse avenues by Offering group therapies, support groups, and individual counseling. Through these comprehensive approaches, AroundWithin endeavours to nurture resilience, foster growth, and uplift spirits in the realm of mental health. To know more click About Us."
         }
         isVisible={sectionConfig.showAbout}
         toggleVisibility={() => toggleVisibility("showAbout")}
       />
       <Section
-        title={"How do we book an Assignment ?"}
+        title={"Is AroundWithin a substitute for psychiatric treatment/medication?"}
         description={
-          "Therapy can be an incredibly powerful tool for self-exploration, growth and collaboration with a trusted professional who is 100% invested in your well-being and committed to meeting your goals. How therapy is structured can vary, for example therapy can be short-term, long-term or as needed. Therapy can be done individually, with a romantic partner(s), as a family, between business partners, or even in a group setting."
+          "AroundWithin is an online platform for professional therapy/counseling. Please note that your therapist won’t be able to make any official diagnosis, fulfil any court order, or prescribe medicines. "
         }
         isVisible={sectionConfig.showTeam}
         toggleVisibility={() => toggleVisibility("showTeam")}
       />
       <Section
-        title={"What is Therapy and how does it works ?"}
+        title={"How do I sign up for AroundWithin?"}
         description={
-          "Therapy can be an incredibly powerful tool for self-exploration, growth and collaboration with a trusted professional who is 100% invested in your well-being and committed to meeting your goals. How therapy is structured can vary, for example therapy can be short-term, long-term or as needed. Therapy can be done individually, with a romantic partner(s), as a family, between business partners, or even in a group setting."
+          "To sign up please click here."
         }
         isVisible={sectionConfig.showCareers}
         toggleVisibility={() => toggleVisibility("showCareers")}
       />
-     </div>
-     </div>
-     <div>
-       <h1 className="text-2xl ml-[25%] my-4 text-start font-semibold">Insurance and Fees</h1>
-     <div className="flex flex-col items-center h-[20%]">
-      <Section2
-        title={"What is Therapy and how does it works ?"}
+      <Section
+        title={"Is my personal information and data secure on AroundWithin?"}
         description={
-          "Therapy can be an incredibly powerful tool for self-exploration, growth and collaboration with a trusted professional who is 100% invested in your well-being and committed to meeting your goals. How therapy is structured can vary, for example therapy can be short-term, long-term or as needed. Therapy can be done individually, with a romantic partner(s), as a family, between business partners, or even in a group setting."
+          "The information that you share is protected by data privacy laws, for more information visit our Privacy Policy."
         }
-        isVisible2={sectionConfig2.showAbout2}
-        toggleVisibility2={() => toggleVisibility2("showAbout2")}
+        isVisible={sectionConfig.showCareers1}
+        toggleVisibility={() => toggleVisibility("showCareers1")}
       />
-      <Section2
-        title={"How do we book an Assignment ?"}
+      <Section
+        title={"What types of mental health support does AroundWithin offer?"}
         description={
-          "Therapy can be an incredibly powerful tool for self-exploration, growth and collaboration with a trusted professional who is 100% invested in your well-being and committed to meeting your goals. How therapy is structured can vary, for example therapy can be short-term, long-term or as needed. Therapy can be done individually, with a romantic partner(s), as a family, between business partners, or even in a group setting."
+          "We offer support for all kinds of mental health concerns. To know more please click here. You can write to us info@aroundwithin.com. Or you can set up an appointment with one of our therapists directly to gain more insights."
         }
-        isVisible2={sectionConfig2.showTeam2}
-        toggleVisibility2={() => toggleVisibility2("showTeam2")}
+        isVisible={sectionConfig.showCareers2}
+        toggleVisibility={() => toggleVisibility("showCareers2")}
       />
-      <Section2
-        title={"What is Therapy and how does it works ?"}
+      <Section
+        title={"Are the professionals on AroundWithin qualified? How are they verified?"}
         description={
-          "Therapy can be an incredibly powerful tool for self-exploration, growth and collaboration with a trusted professional who is 100% invested in your well-being and committed to meeting your goals. How therapy is structured can vary, for example therapy can be short-term, long-term or as needed. Therapy can be done individually, with a romantic partner(s), as a family, between business partners, or even in a group setting."
+          "The professionals at AroundWithin are hand-picked based on their credentials and good standing in society. During our rigorous process of selection, we do a thorough background check and we ensure that the providers have master's degrees in Psychology and relevant fields.   Providers who are picked will have to provide proper documentation and proof of identity. We then cross-check their credential information with previous organizations they have worked with and a few references. "
         }
-        isVisible2={sectionConfig2.showCareers2}
-        toggleVisibility2={() => toggleVisibility2("showCareers2")}
+        isVisible={sectionConfig.showCareers3}
+        toggleVisibility={() => toggleVisibility("showCareers3")}
+      /><Section
+      title={"How much does AroundWithin cost? Are there free services available?"}
+      description={
+        "AroundWithin is all about affordable mental health. Our charges depend on the type of services that you avail. For information on this please click here. We are a fee-for-service organization; hence we do not take pro bono cases."
+      }
+      isVisible={sectionConfig.showCareers4}
+      toggleVisibility={() => toggleVisibility("showCareers4")}
+    /><Section
+    title={"Can I use AroundWithin if I'm experiencing a crisis?"}
+    description={
+      "No, we are not a crisis helpline. Reach out to the government helplines."
+    }
+    isVisible={sectionConfig.showCareers5}
+    toggleVisibility={() => toggleVisibility("showCareers5")}
+  />
+  <Section
+        title={"How does the matching process work if I'm looking for a mental health professional?"}
+        description={
+          "We leave that choice to you. Check your preferences and choose the therapists accordingly. You can browse our professionals by clicking here."
+        }
+        isVisible={sectionConfig.showCareers6}
+        toggleVisibility={() => toggleVisibility("showCareers6")}
+      />
+      <Section
+        title={"What types of communication methods are available on AroundWithin?"}
+        description={
+          "We provide telephonic and video communication. We will be coming up with messaging services soon!"
+        }
+        isVisible={sectionConfig.showCareers7}
+        toggleVisibility={() => toggleVisibility("showCareers7")}
+      />
+      <Section
+        title={"What if I'm not satisfied with the support, I receive on AroundWithin?"}
+        description={
+          "AroundWithin appreciates your timely feedback. You can express your concern directly to the support team or your therapist so that they will make the required adjustments. If you are still not satisfied, you always have the option to choose another counselor/therapist."
+        }
+        isVisible={sectionConfig.showCareers8}
+        toggleVisibility={() => toggleVisibility("showCareers8")}
+      />
+      <Section
+        title={"How do I cancel or modify my subscription to AroundWithin?"}
+        description={
+          "Please go through our cancellation policy."
+        }
+        isVisible={sectionConfig.showCareers9}
+        toggleVisibility={() => toggleVisibility("showCareers9")}
+      />
+      <Section
+        title={"Can I use AroundWithin anonymously?"}
+        description={
+          "When you sign up, we provide you with the option of having a preferred name that will be used to identify you in the system. However, when you start the therapy process, we will ask you for your contact information for emergencies, such as if a therapist believes that you or someone else might be in danger. All of this data is protected by the confidentiality requirements of the therapists' ethical and legal guidelines."
+        }
+        isVisible={sectionConfig.showCareers10}
+        toggleVisibility={() => toggleVisibility("showCareers10")}
+      />
+      <Section
+        title={"Is AroundWithin available internationally?"}
+        description={
+          "AroundWithin is available only in India and for citizens residing in India."
+        }
+        isVisible={sectionConfig.showCareers11}
+        toggleVisibility={() => toggleVisibility("showCareers11")}
+      />
+      <Section
+        title={"Are there any age restrictions for using AroundWithin?"}
+        description={
+          "People above the age of 18 can sign up with AroundWithin. Children and Adolescents should be accompanied by their parent or guardian. "
+        }
+        isVisible={sectionConfig.showCareers12}
+        toggleVisibility={() => toggleVisibility("showCareers12")}
       />
      </div>
      </div>
