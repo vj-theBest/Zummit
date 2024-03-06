@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export const Card = () => {
+ const Card = () => {
   const Data = [
     {
       imageFile: "./images/flower-img.png",
@@ -120,3 +120,5 @@ export const Card = () => {
     </div>
   );
 };
+
+export default Card

@@ -1,16 +1,19 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 const Hero = () => {
   
-    const TherapyOption = ({ title, imageUrl, altText }) => (
+    const TherapyOption = ({ title, imageUrl, altText ,linkTo}) => (
         <div className="max-md:ml-0 max-md:w-full">
           <div className="flex flex-col  items-center p-10  w-full text-black whitespace-nowrap bg-white rounded-lg hover:bg-lightyellow max-md:mt-6 ">
             <div className="justify-center text-2xl max-md:px-5">{title}</div>
-            <img 
-              loading="lazy" 
-              src={require(`${imageUrl}`)}
-              alt={altText} 
-              className="hero-img transition ease-in-out duration-700 hover:scale-125   w-52" />
-              
+            <Link to={linkTo} className="hero-img-link">
+          <img 
+            loading="lazy" 
+            src={require(`${imageUrl}`)}
+            alt={altText} 
+            className="hero-img transition ease-in-out duration-700 hover:scale-125 w-52" 
+          />
+        </Link>
             
           </div>
         </div>
@@ -18,21 +21,24 @@ const Hero = () => {
       
       const therapyOptions = [
         {
-          title: "Individual Therapy",
-          imageUrl: "./images/Individual-Therapy-img.png",
-          altText: "An icon representing individual therapy"
+           title: "Individual Therapy",
+           imageUrl: "./images/Individual-Therapy-img.png",
+           altText: "An icon representing individual therapy",
+           linkTo: "/individual-therapy" 
         },
         {
-          title: "Group Therapy",
-          imageUrl: "./images/Group-Therapy-img.png",
-          altText: "An icon representing group therapy"
+           title: "Group Therapy",
+           imageUrl: "./images/Group-Therapy-img.png",
+           altText: "An icon representing group therapy",
+           linkTo: "/group-therapy" 
         },
         {
-          title: "Support Group",
-          imageUrl: "./images/Support_Group-img.png",
-          altText: "An icon representing support group"
+           title: "Support Group",
+           imageUrl: "./images/Support_Group-img.png",
+           altText: "An icon representing support group",
+           linkTo: "/support-group" 
         }
-      ];
+       ];
 
   return (
     <div>
@@ -52,6 +58,7 @@ const Hero = () => {
                 title={option.title} 
                 imageUrl={option.imageUrl} 
                 altText={option.altText}
+                linkTo={option.linkTo}
               />
             ))}
           </div>

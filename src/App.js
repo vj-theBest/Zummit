@@ -8,6 +8,9 @@ import Services from './components/Services';
 import Therapists from './components/Therapists';
 import Resources from './components/Resources';
 import FAQ from './components/FAQ';
+import IndividualThearapy from './components/IndividualThearapy';
+import GroupThreapy from './components/GroupThreapy';
+import SupportThreapy from './components/SupportThreapy';
 
 function App() {
  return (
@@ -20,6 +23,9 @@ function App() {
         <Route path="/therapists" element={<Therapists />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/FAQs" element={<FAQ />} />
+        <Route path="/individual-therapy" element={<IndividualThearapy />} />
+        <Route path="/group-therapy" element={<GroupThreapy/>} />
+        <Route path="/support-group" element={<SupportThreapy />} />
         
       </Routes>
       <Footer />

@@ -1,20 +1,23 @@
 import React from 'react'
-import Navbar from './Navbar'
-import Hero from './Hero'
+
+import Hero from './Hero';
+import Card from './Card';
+import Carosel from './Carosel'; 
+
 
 
 const Home = () => {
   return (
     <div>
 
-      {/* <Navbar/> */}
+     
       <Hero/>
       
-      {/* <Card/>
+      <Card/>
       <Carosel/>
-      <FeedbackSection/>
-      <ContactSection/>
-      <Footer/> */}
+      {/* <FeedbackSection/>
+      <ContactSection/> */}
+    
 
     </div>
   )
