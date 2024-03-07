@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 const Hero = () => {
   
     const TherapyOption = ({ title, imageUrl, altText ,linkTo}) => (
-        <div className="max-md:ml-0 max-md:w-full">
+        <div className="max-md:ml-0 max-md:w-full group">
           <div className="flex flex-col  items-center p-10  w-full text-black whitespace-nowrap bg-white rounded-lg hover:bg-lightyellow max-md:mt-6 ">
-            <div className="justify-center text-2xl max-md:px-5">{title}</div>
+            <div className="justify-center text-2xl max-md:px-5 group-hover:before:scale-x-100 group-hover:before:origin-left relative before:w-full before:h-1 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-black before:absolute before:left-0 before:top-8 ">{title}</div>
+
             <Link to={linkTo} className="hero-img-link">
           <img 
             loading="lazy" 

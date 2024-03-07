@@ -46,7 +46,3 @@ body{
     transform: rotate(360deg);
   }
 }
-
-.svg-rotate{
-  transform: rotate(90deg);
-}
