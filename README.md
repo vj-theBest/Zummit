@@ -67,4 +67,4 @@ git push
 
 **13.** Click on `Create Pull Request`.
 
-**14.** Voila :exclamation: You have made a PR to the DSA-Bootcamps :boom: . Wait for your submission to be accepted and your PR to be merged.
+**14.** Voila :exclamation: You have made a PR to the Zummit :boom: . Wait for your submission to be accepted and your PR to be merged.
