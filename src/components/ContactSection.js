@@ -15,7 +15,7 @@ const ContactSection = () => {
               <input
                 type="text"
                 id="name"
-                className="contact_form--input"
+                className="bg-transparent w-[65%] rounded-sm border-[darkcyan] border-[thin]"
               />
             </div>
             <div className="flex justify-between mb-4 ">
@@ -23,7 +23,7 @@ const ContactSection = () => {
               <input
                 type="email"
                 id="email"
-                className="contact_form--input"
+                className="bg-transparent w-[65%] rounded-sm border-[darkcyan] border-[thin]"
               />
             </div>
             <div className="flex justify-between mb-4 ">
@@ -31,11 +31,11 @@ const ContactSection = () => {
               <input
                 type="text"
                 id="message"
-                className="contact_form--input h-28"
+                className="bg-transparent w-[65%] rounded-sm border-[darkcyan] border-[thin] h-28"
               />
             </div>
             <div className="flex justify-end">
-              <input type="submit" className="mt-3 w-1/3 bg-teal-950 rounded p-1  text-yellow" />
+              <input type="submit" className="mt-3 w-1/3 bg-teal-950 rounded px-1 text-yellow-400 text-white" />
             </div>
           </form>
         </div>
