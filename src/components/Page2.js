@@ -5,7 +5,7 @@ function Page2() {
     <div className='flex p-12 pb-16'>
       <div className='w-1/2 relative'>
         <div className='flex flex-col'>
-            <div className='ps-10 font-semibold text-xl'>WHO WE ARE</div>
+            {/* <div className='ps-10 font-semibold text-xl'>WHO WE ARE</div> */}
             <div className='flex'><img className='object-cover mt-8 me-40 w-[50vw] h-[35vh]' src={require('./images/img.jpg')}></img></div>
         </div> </div>
         <div className='w-1/2'>
