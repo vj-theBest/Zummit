@@ -2,7 +2,7 @@ import React from 'react'
 
 const Health = () => {
   return (
-    <div className='bg-skyblue flex flex-col px-20 py-10 gap-5 justify-center items-center '>
+    <div className='bg-skyblue flex flex-col  py-10 gap-5 justify-center items-center '>
         <h1 className='text-3xl '>Resourses for Better health from Aroundwithin team</h1>
         <p className='text-gray-500'>"Deep breathing is our nervous system's love language."- Dr.Laurem Fogel Mersy</p>
         <div className='flex justify-center  gap-5'>

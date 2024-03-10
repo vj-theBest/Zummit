@@ -3,7 +3,7 @@ import React from "react";
 const ContactSection = () => {
   return (
     <div className="flex bg-cyan-200 py-20">
-      <div className="flex-1 text-center text-xl self-center tracking-wide pb-12 text-cyan-900 font-normal">Connect with us</div>
+      <div className="flex-1 text-center text-4xl self-center tracking-wide pb-12 text-cyan-900 font-normal">Connect with us</div>
       
       <div className="w-full flex-1 grid">
       <h2 className="font-bold tracking-wide text-center mb-4">
