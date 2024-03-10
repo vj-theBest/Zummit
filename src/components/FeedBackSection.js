@@ -2,9 +2,9 @@ import React from 'react'
 
 const FeedbackSection = () => {
   return (
-    <div>
+    <div className='bg-lightyellow p-4'>
         <div className="w-3/5 mx-[10vw]">
-            <h2 className="font-normal text-2xl mt-3 mb-6">Clients Feedback</h2>
+            <h2 className="font-normal text-2xl  mb-6">Clients Feedback</h2>
             <p className="text-lg">These quotes represent a few of many positive reviews that we have recieved for therapists. 
                 If you would like to review your therapists, please send your review to
             </p>

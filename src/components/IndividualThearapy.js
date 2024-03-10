@@ -4,7 +4,7 @@ const IndividualThearapy = () => {
   return (
   <>
     <div className="banner-IndividualTherapy">
-        <img src = {require("./images/Individual_therapy_page.png")} alt="A Lady talking to her Therapist" className="object-contain w-full"/>
+        <img src = {require("./images/Individual Therapy.png")} alt="A Lady talking to her Therapist" className="object-contain w-full"/>
     </div>
     <div className="body-IndividualTherapy h-[482px] w-[1123px] m-auto">
         <div className="text-IndividualTherapy h-[219px] gap-8">

@@ -3,23 +3,32 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   const TherapyOption = ({ title, imageUrl, altText, linkTo }) => (
     <div className="max-md:ml-0 max-md:w-full group">
-      <div className="flex flex-col  items-center p-10  w-full text-black whitespace-nowrap bg-white rounded-lg hover:bg-lightyellow max-md:mt-6 ">
-        <div className="justify-center text-2xl max-md:px-5 group-hover:before:scale-x-100 group-hover:before:origin-left relative before:w-full before:h-1 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-black before:absolute before:left-0 before:top-8 ">
+      <div className="flex flex-col px-12 py-5 items-center text-black whitespace-nowrap bg-white rounded-lg hover:bg-lightyellow max-md:mt-6 ">
+        <h1 className="text-2xl group-hover:before:scale-x-100 group-hover:before:origin-left relative before:w-full before:h-1 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-black before:absolute before:left-0 before:top-8 ">
           {title}
-        </div>
-
+        </h1>
         <Link to={linkTo} className="hero-img-link">
           <img
             loading="lazy"
             src={require(`${imageUrl}`)}
             alt={altText}
-            className="hero-img transition ease-in-out duration-700 hover:scale-125 w-52"
+            className="hero-img transition ease-in-out duration-700 group-hover:scale-[1.3] w-48"
           />
         </Link>
         <div className="invisible group-hover:visible group-hover:flex w-full justify-end ">
-          <div className="border-solid border-2 border-gray-800 rounded-full h-5 w-5 text-center flex justify-center items-center font-bold">
-            +
-          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="25"
+            fill="black"
+            class="bi bi-arrow-right-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"
+            />
+          </svg>
         </div>
       </div>
     </div>
@@ -28,7 +37,7 @@ const Hero = () => {
   const therapyOptions = [
     {
       title: "Individual Therapy",
-      imageUrl: "./images/Individual-Therapy-img.png",
+      imageUrl: "./images/Individual Therapy.png",
       altText: "An icon representing individual therapy",
       linkTo: "/individual-therapy",
     },
@@ -48,27 +57,27 @@ const Hero = () => {
 
   return (
     <div>
-      <main className="flex justify-center items-center px-16 py-12 bg-skyblue max-md:px-5">
-        <div className="flex flex-col items-center mt-8 w-full max-w-[1128px] max-md:max-w-full">
-          <header className="text-5xl font-extralight  text-neutral-900 max-md:max-w-full max-md:text-4xl text-center">
-            Find Your Path to Mental Wellness with AroundWithin
-          </header>
-          <section className="mt-8 text-3xl font-extralight leading-10 text-center text-zinc-800 max-md-w-full">
-            Join a community of individuals committed to mental well-being and
-            gain access to valuable resources and support
-          </section>
-          <div className="mt-12 max-md:mt-10 max-md:max-w-full">
-            <div className="flex justify-center gap-10 max-md:flex-col max-md:gap-0 max-md:">
-              {therapyOptions.map((option) => (
-                <TherapyOption
-                  key={option.title}
-                  title={option.title}
-                  imageUrl={option.imageUrl}
-                  altText={option.altText}
-                  linkTo={option.linkTo}
-                />
-              ))}
-            </div>
+      <main className="flex justify-center px-40 py-10 bg-skyblue">
+        <div className="flex flex-col  gap-5">
+          <div className="flex flex-col items-center">
+            <h1 className="text-[38px] text-neutral-900 max-md:max-w-full max-md:text-4xl">
+              Find Your Path to Mental Wellness with AroundWithin
+            </h1>
+            <p className="text-[24px] text-center font-extralight leading-10 text-zinc-800 max-md-w-full">
+              Join a community of individuals committed to mental well-being and
+              gain access to valuable resources and support
+            </p>
+          </div>
+          <div className="flex gap-8 max-md:flex-col max-md:gap-0 max-md:">
+            {therapyOptions.map((option) => (
+              <TherapyOption
+                key={option.title}
+                title={option.title}
+                imageUrl={option.imageUrl}
+                altText={option.altText}
+                linkTo={option.linkTo}
+              />
+            ))}
           </div>
         </div>
       </main>
