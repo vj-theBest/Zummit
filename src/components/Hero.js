@@ -50,7 +50,7 @@ const Hero = () => {
     <div>
       <main className="flex justify-center items-center px-16 py-12 bg-skyblue max-md:px-5">
         <div className="flex flex-col items-center mt-8 w-full max-w-[1128px] max-md:max-w-full">
-          <header className="text-5xl font-extralight  text-neutral-900 max-md:max-w-full max-md:text-4xl">
+          <header className="text-5xl font-extralight  text-neutral-900 max-md:max-w-full max-md:text-4xl text-center">
             Find Your Path to Mental Wellness with AroundWithin
           </header>
           <section className="mt-8 text-3xl font-extralight leading-10 text-center text-zinc-800 max-md-w-full">

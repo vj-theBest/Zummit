@@ -4,11 +4,13 @@ const ContactSection = () => {
   return (
     <div className="flex bg-cyan-200 py-20">
       <div className="flex-1 text-center text-xl self-center tracking-wide pb-12 text-cyan-900 font-normal">Connect with us</div>
+      
       <div className="w-full flex-1 grid">
-        <div className="w-9/12 max-w-96 justify-self-center">
-          <h2 className="font-bold tracking-wide text-start mb-4">
+      <h2 className="font-bold tracking-wide text-center mb-4">
             Contact Us
           </h2>
+        <div className="w-9/12 max-w-96 justify-self-center">
+         
           <form action="#" className="text-cyan-900">
             <div className="flex justify-between mb-4">
               <label htmlFor="name">Name</label>

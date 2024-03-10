@@ -15,7 +15,7 @@ import Page4 from './Page4';
 export default function Carosel() {
   return (
     <div className='bg-skyblue p-10'>
-    <div className='font-extralight ml-20 text-3xl text-cyan-700'>About us</div>
+    {/* <div className='font-extralight ml-20 text-3xl text-cyan-700'>About us</div> */}
       <Swiper
         
         pagination={{
