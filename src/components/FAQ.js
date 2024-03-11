@@ -124,9 +124,9 @@ const FAQs = () => {
   return (
     <>
       <div className="flex justify-center mt-10 mb-4"></div>
-      <div className="ml-[10%] flex flex-col gap-3 text-start">
+      <div className="flex flex-col gap-3 text-start">
         {/* <h1 className="text-2xl font-semibold">How can we help</h1> */}
-        <p className="text-3xl m-5 font-semibold text-center">FAQ</p>
+        <p className="text-3xl  font-semibold text-center">FAQ</p>
       </div>
       <div>
         {/* <h1 className="text-2xl ml-[25%] my-4 text-start font-semibold">Booking an appointment</h1> */}
