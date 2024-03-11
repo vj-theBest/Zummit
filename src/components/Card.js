@@ -101,7 +101,7 @@ import "slick-carousel/slick/slick-theme.css";
         </Slider>
       </div>
       <div className="bg-skin py-10">
-    <p className="text-3xl font-medium text-center">Reach out us</p>
+    <p className="text-3xl font-medium">Reach out to us for</p>
     <div className="slider-container pt-16  text-2xl font-light text-center">
     <Slider {...settings2}>
       <div>
