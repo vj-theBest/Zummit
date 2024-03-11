@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Zummit Internship Collabration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Around Within is a Web Platform which is a initiative to be developed,learn and grow to interns hosted by Zummit Infolabs Pvt.Ltd  .Here you are going to Learn/develop a different Components from scratch in the span of 4 months.
 
-## Available Scripts
+1. All session will be live on Google Meet.
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Contribution Guidelines🏗
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**1.**  Fork [this](https://github.com/chandan24042001s/Zummit) repository.
 
-### `npm test`
+**2.**  Clone your forked copy of the project.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+git clone https://github.com/chandan24042001s/Zummit.git
+```
 
-### `npm run build`
+**3.** Navigate to the project directory :file_folder: .
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+cd Zummit
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**4.** Add a reference(remote) to the original repository.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+git remote add upstream https://github.com/chandan24042001s/Zummit.git
+```
 
-### `npm run eject`
+**5.** Check the remotes for this repository.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+git remote -v
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**6.** Always take a pull from the upstream repository to your master branch to keep it at par with the main project(updated repository).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+git pull upstream main
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**7.** Perfom your desired changes to the code base.
+Make Changes in your named folder only.
 
-## Learn More
+**8.** Track your changes:heavy_check_mark: .
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+git add . 
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**9.** Commit your changes .
 
-### Code Splitting
+```
+git commit -m "Topic Done"
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**10.** Push the committed changes in your feature branch to your remote repo.
 
-### Analyzing the Bundle Size
+```
+git push 
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**11.** To create a pull request, click on `compare and pull requests`.
 
-### Making a Progressive Web App
+**12.** Add appropriate title and description to your pull request explaining your changes and efforts done.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**13.** Click on `Create Pull Request`.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**14.** Voila :exclamation: You have made a PR to the Zummit :boom: . Wait for your submission to be accepted and your PR to be merged.

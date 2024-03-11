@@ -65,13 +65,22 @@ import "slick-carousel/slick/slick-theme.css";
     autoplaySpeed: 4000,
     cssEase: "ease-in-out"
   };
+  const settings2 = {
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 4000,
+    autoplaySpeed: 4000,
+    cssEase: "ease-in-out"
+  };
 
   return (
     <div className="bg-skin px-28 py-10">
-        <p className="text-3xl">
+        <p className="text-3xl text-center my-4">
           Upcoming Groups
         </p>
-      <div className=" ">
+      <div className="p-8">
         <Slider {...settings}>
           {Data.map((item) => (
             <div>
@@ -83,7 +92,7 @@ import "slick-carousel/slick/slick-theme.css";
                 <p className="leading-[20px] text-[#272529]">
                   {item.description}
                 </p>
-              <div className="bg-[#F7F131] rounded-lg pl-2 pr-[8px,] py-[4px,] w-[129px] h-[28px] float-right translate-x-[-1rem] translate-y-[-26rem]">
+              <div className="bg-[#F7F131] rounded-lg pl-2 pr-[8px,] py-[4px,] w-[129px] h-[28px] float-right translate-x-[-1rem] translate-y-[-25rem]">
                 <p>Starts: {item.startsFrom}</p>
               </div>
               </div>
@@ -92,9 +101,9 @@ import "slick-carousel/slick/slick-theme.css";
         </Slider>
       </div>
       <div className="bg-skin py-10">
-    <p className="text-3xl font-extralight">Reach out us</p>
+    <p className="text-3xl font-extralight text-center">Reach out us</p>
     <div className="slider-container pt-16  text-2xl font-light text-center">
-    <Slider {...settings}>
+    <Slider {...settings2}>
       <div>
         <h3>Abuse</h3>
       </div>

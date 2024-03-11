@@ -46,3 +46,25 @@ body{
     transform: rotate(360deg);
   }
 }
+
+/*FAQ Page*/
+.svg-rotate{
+  rotate: 90deg;;
+}
+/* OUR THERAPISTS PAGE */
+p.therapist-page__name{
+  font-family: 'Quicksand';
+font-style: normal;
+font-weight: 500;
+color: #FFFFFF;
+}
+p.therapist-page__desc{
+  font-family: 'Quicksand';
+font-style: normal;
+font-weight: 500;
+color: #FFFFFF;
+}
+p.therapist-page__desc>span{
+  color: #F7F131;
+}
+

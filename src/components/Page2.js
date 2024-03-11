@@ -1,22 +1,29 @@
-import React from 'react'
+import React from "react";
 
 function Page2() {
   return (
-    <div className='flex p-12 pb-16'>
-      <div className='w-1/2 relative'>
-        <div className='flex flex-col'>
-            <div className='ps-10 font-semibold text-xl'>WHO WE ARE</div>
-            <div className='flex'><img className='object-cover mt-8 me-40 w-[50vw] h-[35vh]' src={require('./images/img.jpg')}></img></div>
-        </div> </div>
-        <div className='w-1/2'>
-            <div className='mt-6 font-extralight text-cyan-800 text-2xl'>Our Story</div>
-            <div className='m-16 ms-0 text-xl font-extralight'>An online therapy for mental health resource to empower,educate 
-                and transform with both group & individual therapy's</div>
-                <div className='float-end me-20 text-md pb-7 text-cyan-800 font-bold'><a href='#' >Know more</a></div>
+    <div className="flex">
+      <div className="flex justify-center items-center ">
+        <div className="w-[50%]">
+          <img
+            className="object-cover mt-8 pr-10  w-[50vw] h-[45vh]"
+            src={require("./images/img.jpg")}
+          ></img>
         </div>
+        <div className="w-[45%] flex flex-col justify-center gap-8">
+          <h1 className="text-2xl text-cyan-800 font-semibold">Our Story</h1>
+          <p className="text-xl">
+            An online therapy for mental health resource to empower,educate
+            andtransform with both group & individual therapy's
+          </p>
+          <a className="text-end text-xl font-bold text-cyan-800" href="#">
+            Know more
+          </a>
+        </div>
+        =
       </div>
-   
-  )
+    </div>
+  );
 }
 
-export default Page2
+export default Page2;
