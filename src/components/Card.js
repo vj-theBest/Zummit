@@ -77,7 +77,7 @@ import "slick-carousel/slick/slick-theme.css";
 
   return (
     <div className="bg-skin px-28 py-10">
-        <p className="text-3xl text-center my-4">
+        <p className="text-3xl font-medium text-center my-4">
           Upcoming Groups
         </p>
       <div className="p-8">
@@ -101,7 +101,7 @@ import "slick-carousel/slick/slick-theme.css";
         </Slider>
       </div>
       <div className="bg-skin py-10">
-    <p className="text-3xl font-extralight text-center">Reach out us</p>
+    <p className="text-3xl font-medium text-center">Reach out us</p>
     <div className="slider-container pt-16  text-2xl font-light text-center">
     <Slider {...settings2}>
       <div>
