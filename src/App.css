@@ -76,3 +76,17 @@ body{
   transform: rotate(90deg);
 }
 
+
+.user{
+  height: 400px;
+  width: 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid yellow;
+  position: absolute;
+}
+.client{
+  height: 20rem;
+}

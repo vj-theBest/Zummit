@@ -11,7 +11,8 @@ import FAQ from './components/FAQ';
 import IndividualThearapy from './components/IndividualThearapy';
 import GroupThreapy from './components/GroupThreapy';
 import SupportThreapy from './components/SupportThreapy';
-import GroupTherapyDetail from './components/GroupTherapyDetail';
+import './App.css'
+import ContactSection from './components/ContactSection';
 
 function App() {
  return (
@@ -27,8 +28,9 @@ function App() {
         <Route path="/individual-therapy" element={<IndividualThearapy />} />
         <Route path="/group-therapy" element={<GroupThreapy/>} />
         <Route path="/support-group" element={<SupportThreapy />} />
-        <Route path="/group-therapy/:id" element={<GroupTherapyDetail />} />
+        
       </Routes>
+      <ContactSection/>
       <Footer />
     </Router>
  );
