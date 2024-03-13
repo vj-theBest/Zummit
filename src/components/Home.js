@@ -3,7 +3,7 @@ import React from "react";
 import Hero from "./Hero";
 import Card from "./Card";
 import Carosel from "./Carosel";
-import ContactSection from "./ContactSection";
+// import ContactSection from "./ContactSection";
 import FeedbackSection from "./FeedBackSection";
 import Meet from "./Meet";
 import Health from "./Health";
@@ -17,7 +17,7 @@ const Home = () => {
       <Meet/>
       <Health/>
       <FeedbackSection />
-      <ContactSection />
+      {/* <ContactSection /> */}
     </div>
   );
 };

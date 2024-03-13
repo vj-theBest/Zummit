@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Section = ({ title, description, isVisible, toggleVisibility }) => {
   return (
     <>
-      <div className="w-[50%]  text-white rounded-xl m-2">
+      <div className="w-[50%] text-white  rounded-xl m-2">
         <div
           className="flex bg-[#0090b0] p-2 rounded-lg justify-between cursor-pointer"
           onClick={toggleVisibility}
@@ -14,9 +14,9 @@ const Section = ({ title, description, isVisible, toggleVisibility }) => {
               <>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="icon icon-tabler icon-tabler-chevron-right svg-rotate"
-                  width="30"
-                  height="30"
+                  class="icon icon-tabler icon-tabler-chevron-down"
+                  width="28"
+                  height="28"
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="#ffffff"
@@ -25,15 +25,15 @@ const Section = ({ title, description, isVisible, toggleVisibility }) => {
                   stroke-linejoin="round"
                 >
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                  <path d="M9 6l6 6l-6 6" />
+                  <path d="M6 9l6 6l6 -6" />
                 </svg>
               </>
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="icon icon-tabler icon-tabler-chevron-right"
-                width="30"
-                height="30"
+                class="icon icon-tabler icon-tabler-chevron-up"
+                width="28"
+                height="28"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="#ffffff"
@@ -42,13 +42,13 @@ const Section = ({ title, description, isVisible, toggleVisibility }) => {
                 stroke-linejoin="round"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M9 6l6 6l-6 6" />
+                <path d="M6 15l6 -6l6 6" />
               </svg>
             )}
           </button>
         </div>
         {isVisible && (
-          <div className=" rounded-xl bg-[#b3f0ff] mt-2 p-2 text-black">
+          <div className=" rounded-xl border mt-2 p-2 text-black">
             <p className="text-start">{description}</p>
           </div>
         )}
@@ -122,11 +122,11 @@ const FAQs = () => {
   };
 
   return (
-    <>
+    <div className="mb-16">
       <div className="flex justify-center mt-10 mb-4"></div>
       <div className="flex flex-col gap-3 text-start">
         {/* <h1 className="text-2xl font-semibold">How can we help</h1> */}
-        <p className="text-3xl  font-semibold text-center">FAQ</p>
+        <p className="text-3xl font-semibold mb-10 text-center">FAQ</p>
       </div>
       <div>
         {/* <h1 className="text-2xl ml-[25%] my-4 text-start font-semibold">Booking an appointment</h1> */}
@@ -267,7 +267,7 @@ const FAQs = () => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

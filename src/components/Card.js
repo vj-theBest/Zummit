@@ -4,6 +4,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
  const Card = () => {
+  // const [focusedIndex, setFocusedIndex] = useState(0);
+
+  const Data2 = [
+    "Abuse",
+    "Anxiety",
+    "Anger Management",
+    "Burn Out",
+    "ADHD",
+    "Bipolar Disorder"
+  ];
   const Data = [
     {
       imageFile: "./images/flower-img.png",
@@ -72,7 +82,7 @@ import "slick-carousel/slick/slick-theme.css";
     autoplay: true,
     speed: 4000,
     autoplaySpeed: 4000,
-    cssEase: "ease-in-out"
+    cssEase: "ease-in-out",
   };
 
   return (
@@ -101,7 +111,7 @@ import "slick-carousel/slick/slick-theme.css";
         </Slider>
       </div>
       <div className="bg-skin py-10">
-    <p className="text-3xl font-medium">Reach out to us for</p>
+    <p className="text-3xl font-medium text-center">Reach out us</p>
     <div className="slider-container pt-16  text-2xl font-light text-center">
     <Slider {...settings2}>
       <div>

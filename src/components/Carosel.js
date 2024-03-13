@@ -16,7 +16,6 @@ export default function Carosel() {
   return (
     <div className="bg-skin py-10">
       <div className="bg-skyblue py-10 px-32">
-        {/* <div className='font-extralight ml-20 text-3xl text-cyan-700'>About us</div> */}
         <Swiper
           pagination={{
             clickable: true,

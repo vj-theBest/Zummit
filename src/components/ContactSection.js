@@ -6,18 +6,18 @@ const ContactSection = () => {
       <div className="flex-1 text-center text-4xl self-center tracking-wide pb-12 text-cyan-900 font-normal">Connect with us</div>
       
       <div className="w-full flex-1 grid">
-      <h2 className="font-bold tracking-wide text-center mb-4">
+     
+        <div className="w-9/12 max-w-96 justify-self-center">
+        <h2 className="font-bold text-xl tracking-wide  mb-4">
             Contact Us
           </h2>
-        <div className="w-9/12 max-w-96 justify-self-center">
-         
           <form action="#" className="text-cyan-900">
             <div className="flex justify-between mb-4">
               <label htmlFor="name">Name</label>
               <input
                 type="text"
                 id="name"
-                className="bg-transparent w-[65%] rounded-sm border-[darkcyan] border-[thin]"
+                className="bg-transparent w-[65%]  rounded-sm border-[darkcyan] border-[thin]"
               />
             </div>
             <div className="flex justify-between mb-4 ">
@@ -25,7 +25,7 @@ const ContactSection = () => {
               <input
                 type="email"
                 id="email"
-                className="bg-transparent w-[65%] rounded-sm border-[darkcyan] border-[thin]"
+                className="bg-transparent w-[65%]  rounded-sm border-[darkcyan] border-[thin]"
               />
             </div>
             <div className="flex justify-between mb-4 ">
@@ -33,7 +33,7 @@ const ContactSection = () => {
               <input
                 type="text"
                 id="message"
-                className="bg-transparent w-[65%] rounded-sm border-[darkcyan] border-[thin] h-28"
+                className="bg-transparent  w-[65%] rounded-sm border-[darkcyan] border-[thin] h-28"
               />
             </div>
             <div className="flex justify-end">

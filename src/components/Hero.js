@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   const TherapyOption = ({ title, imageUrl, altText, linkTo }) => (
     <div className="max-md:ml-0 max-md:w-full group">
-      <div className="flex flex-col px-12 py-5 items-center text-black whitespace-nowrap bg-white rounded-lg hover:bg-lightyellow max-md:mt-6 ">
+      <div className="flex flex-col px-8 py-5  items-center text-black whitespace-nowrap bg-white rounded-lg hover:bg-lightyellow max-md:mt-6 ">
         <h1 className="text-2xl group-hover:before:scale-x-100 group-hover:before:origin-left relative before:w-full before:h-1 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-black before:absolute before:left-0 before:top-8 ">
           {title}
         </h1>
@@ -15,7 +15,7 @@ const Hero = () => {
             className="hero-img transition ease-in-out duration-700 group-hover:scale-[1.3] w-48"
           />
         </Link>
-        <div className="invisible group-hover:visible group-hover:flex w-full justify-end ">
+        <div className="invisible ml-16 group-hover:visible group-hover:flex w-full justify-end ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="25"
@@ -57,9 +57,9 @@ const Hero = () => {
 
   return (
     <div>
-      <main className="flex justify-center px-40 py-10 bg-skyblue">
+      <main className="flex justify-center items-center px-40 py-10 bg-skyblue">
         <div className="flex flex-col  gap-5">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col justify-center items-center">
             <h1 className="text-[38px] text-neutral-900 max-md:max-w-full max-md:text-4xl">
               Find Your Path to Mental Wellness with AroundWithin
             </h1>
@@ -68,7 +68,7 @@ const Hero = () => {
               gain access to valuable resources and support
             </p>
           </div>
-          <div className="flex gap-8 max-md:flex-col max-md:gap-0 justify-center">
+          <div className="flex gap-8 max-md:flex-col justify-center max-md:gap-0 max-md:">
             {therapyOptions.map((option) => (
               <TherapyOption
                 key={option.title}

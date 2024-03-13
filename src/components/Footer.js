@@ -15,24 +15,23 @@ const Footer = () => {
                 />
               </div>
               <div className="flex gap-8">
-              <div className="flex flex-col ml-5 w-[30%] max-md:ml-0 max-md:w-full">
-                <div className="flex flex-col grow text-lg font-medium text-red-50 whitespace-nowrap max-md:mt-10">
-                  <div className="text-xl font-bold">About Us</div>
-                  <div className="mt-3.5">FAQ</div>
-                  <div className="mt-2.5">Terms of use</div>
-                  <div className="mt-2.5">Team</div>
-                  <div className="mt-2.5">Privacy policy</div>
+                <div className="flex flex-col ml-5 w-[30%] max-md:ml-0 max-md:w-full">
+                  <div className="flex flex-col grow text-lg font-medium text-red-50 whitespace-nowrap max-md:mt-10">
+                    <div className="text-xl font-bold">About Us</div>
+                    <div className="mt-3.5">FAQ</div>
+                    <div className="mt-2.5">Terms of use</div>
+                    <div className="mt-2.5">Team</div>
+                    <div className="mt-2.5">Privacy policy</div>
+                  </div>
+                </div>
+                <div className="flex flex-col ml-5 w-[30%] max-md:ml-0 max-md:w-full">
+                  <div className="flex flex-col text-lg font-medium text-red-50 max-md:mt-10">
+                    <div className="text-xl font-bold">Contact us</div>
+                    <div className="mt-3.5">Around@gmail.com</div>
+                    <div className="mt-2.5">+225548411213</div>
+                  </div>
                 </div>
               </div>
-              <div className="flex flex-col ml-5 w-[30%] max-md:ml-0 max-md:w-full">
-                <div className="flex flex-col text-lg font-medium text-red-50 max-md:mt-10">
-                  <div className="text-xl font-bold">Contact us</div>
-                  <div className="mt-3.5">Around@gmail.com</div>
-                  <div className="mt-2.5">+225548411213</div>
-                </div>
-              </div>
-              </div>
-              
             </div>
           </div>
         </div>
@@ -55,8 +54,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="mt-5 w-full bg-yellow-300 min-h-[1px] max-md:max-w-full" />
-    </div>
-
+         
+    </div>
   );
 };
 
