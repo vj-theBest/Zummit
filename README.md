@@ -1,6 +1,6 @@
 # Zummit Internship Collabration
 
-Around Within is a Web Platform which is a initiative to be developed,learn and grow to interns hosted by Zummit Infolabs Pvt.Ltd  .Here you are going to Learn/develop a different Components from scratch in the span of 4 months.
+Around Within is a Web Platform which is a initiative to be developed,learn and grow to interns hosted by Zummit Infolabs Pvt.Ltd  .Here you are going to Learn/develop a different Concepts from scratch in the span of 4 months.
 
 1. All session will be live on Google Meet.
 
