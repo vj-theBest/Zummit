@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   const TherapyOption = ({ title, imageUrl, altText, linkTo }) => (
     <div className="max-md:ml-0 max-md:w-full group">
-      <div className="flex flex-col w-[100%] h-[50vh] px-8 py-4  items-center text-black whitespace-nowrap bg-white rounded-lg hover:bg-lightyellow max-md:mt-6 ">
+      <div className="flex flex-col w-[100%] h-[17rem] px-8 py-4  items-center text-black whitespace-nowrap bg-white rounded-lg hover:bg-lightyellow max-md:mt-6 ">
         <h1 className="text-2xl group-hover:before:scale-x-100 group-hover:before:origin-left relative before:w-full before:h-1 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-black before:absolute before:left-0 before:top-8 ">
           {title}
         </h1>
