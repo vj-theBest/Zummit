@@ -57,6 +57,7 @@ const Meet = () => {
                     backgroundImage: `url(${Client1})`,
                     backgroundSize: "contain",
                     borderRadius: "2rem",
+                    backgroundRepeat:"no-repeat"
                   }}
                 ></div>
               </div>
@@ -78,6 +79,7 @@ const Meet = () => {
                     backgroundImage: `url(${Client2})`,
                     backgroundSize: "contain",
                     borderRadius: "2rem",
+                    backgroundRepeat:"no-repeat"
                   }}
                 ></div>
               </div>
@@ -99,6 +101,7 @@ const Meet = () => {
                     backgroundImage: `url(${Client3})`,
                     backgroundSize: "contain",
                     borderRadius: "2rem",
+                    backgroundRepeat:"no-repeat"
                   }}
                 ></div>
               </div>
@@ -120,6 +123,7 @@ const Meet = () => {
                     backgroundImage: `url(${Client4})`,
                     backgroundSize: "contain",
                     borderRadius: "2rem",
+                    backgroundRepeat:"no-repeat"
                   }}
                 ></div>
               </div>
