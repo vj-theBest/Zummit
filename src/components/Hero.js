@@ -68,7 +68,7 @@ const Hero = () => {
               gain access to valuable resources and support
             </p>
           </div>
-          <div className="flex gap-8 max-md:flex-col max-md:gap-0 max-md:">
+          <div className="flex gap-8 max-md:flex-col max-md:gap-0 justify-center">
             {therapyOptions.map((option) => (
               <TherapyOption
                 key={option.title}
