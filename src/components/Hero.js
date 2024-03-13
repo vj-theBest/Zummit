@@ -15,7 +15,7 @@ const Hero = () => {
             className="hero-img transition ease-in-out duration-700 group-hover:scale-[1.3] w-48"
           />
         </Link>
-        <div className="invisible ml-16 group-hover:visible group-hover:flex w-full justify-end ">
+        <div className="invisible ml-14 group-hover:visible group-hover:flex w-full justify-end ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="25"
