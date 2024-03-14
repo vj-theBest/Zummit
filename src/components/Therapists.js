@@ -1,5 +1,4 @@
 import React from "react";
-import ContactSection from "./ContactSection";
 
 const Therapists = () => {
   const therapists_info = [
@@ -153,7 +152,6 @@ const Therapists = () => {
           </div>
         </div>
       </div>
-      <ContactSection />
     </React.Fragment>
   );
 };
