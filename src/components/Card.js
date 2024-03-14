@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
- const Card = () => {
+const Card = () => {
   // const [focusedIndex, setFocusedIndex] = useState(0);
 
   const Data2 = [
@@ -72,7 +72,7 @@ import "slick-carousel/slick/slick-theme.css";
     slidesToScroll: 1,
     autoplay: true,
     speed: 4000,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3000,
     cssEase: "ease-in-out"
   };
   const settings2 = {
@@ -87,55 +87,57 @@ import "slick-carousel/slick/slick-theme.css";
 
   return (
     <div className="bg-skin px-28 py-10">
-        <p className="text-3xl font-medium text-start my-4">
-          Upcoming Groups
-        </p>
+      <p className="text-3xl font-medium text-start my-4">
+        Upcoming Groups
+      </p>
       <div className="py-[32px]">
         <Slider {...settings}>
           {Data.map((item) => (
             <div>
-              <div className=" w-[90%]  rounded-lg hover:shadow-lg">
-                <img src={require(`${item.imageFile}`)} alt="" />
-                <p className="text-xl text-center font-semibold leading-[25px] text-[#121014] pb-2">
+              <div className="w-[348px] h-[485px] p-[10px] rounded-lg hover:shadow-lg">
+                <div className="relative">
+                  <div className="bg-[#F7F131] absolute rounded-lg pl-2 pr-[8px,] py-[4px,] w-[129px] h-[28px] top-[5px] right-[5px]">
+                    <p>Starts: {item.startsFrom}</p>
+                  </div>
+                  <img src={require(`${item.imageFile}`)} alt="" className="w-full" />
+                </div>
+                <p className="text-xl w-full text-center font-semibold text-[#121014] pb-2">
                   {item.heading}
                 </p>
                 <p className="leading-[20px] text-[#272529]">
                   {item.description}
                 </p>
-              <div className="bg-[#F7F131] rounded-lg pl-2 pr-[8px,] py-[4px,] w-[129px] h-[28px] float-right translate-x-[-1rem] translate-y-[-25rem]">
-                <p>Starts: {item.startsFrom}</p>
-              </div>
               </div>
             </div>
           ))}
         </Slider>
       </div>
       <div className="bg-skin py-10">
-    <p className="text-3xl font-medium text-start">Reach Out To Us For</p>
-    <div className="slider-container pt-16  text-2xl font-light text-center">
-    <Slider {...settings2}>
-      <div>
-        <h3>Abuse</h3>
-      </div>
-      <div>
-        <h3>Anxiety</h3>
-      </div>
-      <div>
-        <h3>Anger Management</h3>
-      </div>
-      <div>
-        <h3>Burn Out</h3>
-      </div>
-      <div>
-        <h3>ADHD</h3>
-      </div>
-      <div>
-        <h3>Bipolar Disorder</h3>
-      </div>
-    </Slider>
-  </div>
+        <p className="text-3xl font-medium text-start">Reach Out To Us For</p>
+        <div className="slider-container pt-16  text-2xl font-light text-center">
+          <Slider {...settings2}>
+            <div>
+              <h3>Abuse</h3>
+            </div>
+            <div>
+              <h3>Anxiety</h3>
+            </div>
+            <div>
+              <h3>Anger Management</h3>
+            </div>
+            <div>
+              <h3>Burn Out</h3>
+            </div>
+            <div>
+              <h3>ADHD</h3>
+            </div>
+            <div>
+              <h3>Bipolar Disorder</h3>
+            </div>
+          </Slider>
+        </div>
 
-  </div>
+      </div>
     </div>
   );
 };
