@@ -39,19 +39,19 @@ const Hero = () => {
       title: "Individual Therapy",
       imageUrl: "./images/Individual Therapy.png",
       altText: "An icon representing individual therapy",
-      linkTo: "/individual-therapy",
+      linkTo: "/services/individual-therapy",
     },
     {
       title: "Group Therapy",
       imageUrl: "./images/Group-Therapy-img.png",
       altText: "An icon representing group therapy",
-      linkTo: "/group-therapy",
+      linkTo: "/services/group-therapy",
     },
     {
       title: "Support Group",
       imageUrl: "./images/Support_Group-img.png",
       altText: "An icon representing support group",
-      linkTo: "/support-group",
+      linkTo: "/services/support-group",
     },
   ];
 
