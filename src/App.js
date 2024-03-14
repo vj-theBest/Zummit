@@ -8,32 +8,37 @@ import Services from './components/Services';
 import Therapists from './components/Therapists';
 import Resources from './components/Resources';
 import FAQ from './components/FAQ';
-import IndividualThearapy from './components/IndividualThearapy';
-import GroupThreapy from './components/GroupThreapy';
-import SupportThreapy from './components/SupportThreapy';
+import IndividualTherapy from './components/IndividualThearapy';
+import GroupTherapy from './components/GroupThreapy';
+import SupportTherapy from './components/SupportThreapy';
 import './App.css'
 import ContactSection from './components/ContactSection';
+import GroupTherapyDetail from './components/GroupTherapyDetail';
 
 function App() {
- return (
+  return (
     <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/services">
+          <Route index element={<Services />} />
+          <Route path="individual-therapy" element={<IndividualTherapy />} />
+          <Route path="group-therapy">
+            <Route index element={<GroupTherapy />} />
+            <Route path=":id" element={<GroupTherapyDetail />} />
+          </Route>
+          <Route path="support-group" element={<SupportTherapy />} />
+        </Route>
         <Route path="/therapists" element={<Therapists />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/FAQs" element={<FAQ />} />
-        <Route path="/individual-therapy" element={<IndividualThearapy />} />
-        <Route path="/group-therapy" element={<GroupThreapy/>} />
-        <Route path="/support-group" element={<SupportThreapy />} />
-        
       </Routes>
-      <ContactSection/>
+      <ContactSection />
       <Footer />
     </Router>
- );
+  );
 }
 
 export default App;
