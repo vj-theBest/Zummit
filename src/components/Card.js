@@ -81,22 +81,22 @@ import "slick-carousel/slick/slick-theme.css";
     slidesToScroll: 1,
     autoplay: true,
     speed: 4000,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 1000,
     cssEase: "ease-in-out",
   };
 
   return (
     <div className="bg-skin px-28 py-10">
-        <p className="text-3xl font-medium text-center my-4">
+        <p className="text-3xl font-medium text-start my-4">
           Upcoming Groups
         </p>
-      <div className="p-8">
+      <div className="py-[32px]">
         <Slider {...settings}>
           {Data.map((item) => (
             <div>
-              <div className=" w-[90%] p-4  rounded-lg hover:shadow-lg">
+              <div className=" w-[90%]  rounded-lg hover:shadow-lg">
                 <img src={require(`${item.imageFile}`)} alt="" />
-                <p className="text-xl text-center leading-[25px] text-[#121014] pb-2">
+                <p className="text-xl text-center font-semibold leading-[25px] text-[#121014] pb-2">
                   {item.heading}
                 </p>
                 <p className="leading-[20px] text-[#272529]">
@@ -111,7 +111,7 @@ import "slick-carousel/slick/slick-theme.css";
         </Slider>
       </div>
       <div className="bg-skin py-10">
-    <p className="text-3xl font-medium text-center">Reach out us</p>
+    <p className="text-3xl font-medium text-start">Reach Out To Us For</p>
     <div className="slider-container pt-16  text-2xl font-light text-center">
     <Slider {...settings2}>
       <div>
