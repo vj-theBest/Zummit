@@ -7,16 +7,33 @@ import Client4 from "./images/Client-4.webp";
 const Meet = () => {
   const images = [Client1, Client2, Client3, Client4];  
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentImageIndex1, setCurrentImageIndex1] = useState(0);
+  const [currentImageIndex2, setCurrentImageIndex2] = useState(1);
+  const [currentImageIndex3, setCurrentImageIndex3] = useState(2);
+  const [currentImageIndex4, setCurrentImageIndex4] = useState(3);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 1000); // Change image every 1000ms (1 second)
+    const interval1 = setInterval(() => {
+      setCurrentImageIndex1((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3500);
+    const interval2 = setInterval(() => {
+      setCurrentImageIndex2((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3500);
+    const interval3 = setInterval(() => {
+      setCurrentImageIndex3((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3500);
+    const interval4 = setInterval(() => {
+      setCurrentImageIndex4((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3500);
 
-    // Cleanup function to clear the interval when the component unmounts
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval1);
+      clearInterval(interval2);
+      clearInterval(interval3);
+      clearInterval(interval4);
+    };
  }, [images.length]);
+
   
   return (
     <>
@@ -52,12 +69,11 @@ const Meet = () => {
               </div>
               <div className="relative h-[100%] rounded-lg w-[25vw] overflow-hidden">
                 <div
-                  className="absolute bottom-0 -left-5 h-[47vh] w-[80%]"
+                  className="absolute bottom-0 -left-10 h-[47vh] w-[80%]"
                   style={{
-                    backgroundImage: `url(${Client1})`,
+                    backgroundImage: `url(${images[currentImageIndex1 % images.length]})`,
                     backgroundSize: "contain",
                     borderRadius: "2rem",
-                    backgroundRepeat:"no-repeat"
                   }}
                 ></div>
               </div>
@@ -74,9 +90,9 @@ const Meet = () => {
               </div>
               <div className="relative h-[100%] rounded-lg w-[25vw] overflow-hidden">
                 <div
-                  className="absolute bottom-0 -left-20 h-[55vh] w-[83%]"
+                  className="absolute bottom-0 -left-10 h-[50vh] w-[83%]"
                   style={{
-                    backgroundImage: `url(${Client2})`,
+                    backgroundImage: `url(${images[currentImageIndex2 % images.length]})`,
                     backgroundSize: "contain",
                     borderRadius: "2rem",
                     backgroundRepeat:"no-repeat"
@@ -96,12 +112,11 @@ const Meet = () => {
               </div>
               <div className="relative h-[100%] rounded-lg w-[25vw] overflow-hidden">
                 <div
-                  className="absolute bottom-0 -left-16 h-[70vh] w-[92%]"
+                  className="absolute bottom-0 -left-14 h-[55vh] w-[92%]"
                   style={{
-                    backgroundImage: `url(${Client3})`,
+                    backgroundImage: `url(${images[currentImageIndex3 % images.length]})`,
                     backgroundSize: "contain",
                     borderRadius: "2rem",
-                    backgroundRepeat:"no-repeat"
                   }}
                 ></div>
               </div>
@@ -118,12 +133,11 @@ const Meet = () => {
               </div>
               <div className="relative h-[100%] rounded-lg w-[25vw] overflow-hidden">
                 <div
-                  className="absolute bottom-0 -left-10 h-[50vh] w-[80%]"
+                  className="absolute bottom-0 -left-10 h-[50vh] w-[83%]"
                   style={{
-                    backgroundImage: `url(${Client4})`,
+                    backgroundImage: `url(${images[currentImageIndex4 % images.length]})`,
                     backgroundSize: "contain",
                     borderRadius: "2rem",
-                    backgroundRepeat:"no-repeat"
                   }}
                 ></div>
               </div>

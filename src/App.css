@@ -90,3 +90,15 @@ body{
 .client{
   height: 20rem;
 }
+
+.slide {
+  color: gray;
+  transition: transform 0.3s ease-in-out;
+  font-weight: 100;
+ }
+ 
+ .slide.active {
+  color: black;
+  transform: scale(1.1);
+  font-weight: 700;
+ }

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Card = () => {
-  // const [focusedIndex, setFocusedIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+ 
 
   const Data2 = [
     "Abuse",
@@ -80,14 +81,20 @@ const Card = () => {
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 4000,
-    autoplaySpeed: 1000,
+    speed: 1400,
+    autoplaySpeed: 1400,
     cssEase: "ease-in-out",
+    centerMode: true,
+    centerPadding: "60px",
+    beforeChange: (current, next) => setCurrentSlide(next),
+    afterChange: (current) => setCurrentSlide(current),
+    swipe: false,
+    pauseOnHover: false,
   };
 
   return (
     <div className="bg-skin px-28 py-10">
-      <p className="text-3xl font-medium text-start my-4">
+      <p className="text-4xl font-medium text-center my-4">
         Upcoming Groups
       </p>
       <div className="py-[32px]">
@@ -112,31 +119,24 @@ const Card = () => {
           ))}
         </Slider>
       </div>
-      <div className="bg-skin py-10">
-        <p className="text-3xl font-medium text-start">Reach Out To Us For</p>
-        <div className="slider-container pt-16  text-2xl font-light text-center">
+      <div className="py-10">
+        <p className="text-4xl font-medium text-center">Reach out us</p>
+        <div className="slider-container pt-16 text-3xl font-medium text-center">
           <Slider {...settings2}>
-            <div>
-              <h3>Abuse</h3>
-            </div>
-            <div>
-              <h3>Anxiety</h3>
-            </div>
-            <div>
-              <h3>Anger Management</h3>
-            </div>
-            <div>
-              <h3>Burn Out</h3>
-            </div>
-            <div>
-              <h3>ADHD</h3>
-            </div>
-            <div>
-              <h3>Bipolar Disorder</h3>
-            </div>
+            {Data2.map((item, index) => (
+              <div
+                key={index}
+                className={`slide ${index === currentSlide ? "active" : ""}`}
+              >
+                <h3
+                  className={`${index === currentSlide ? "slickCurrent" : ""}`}
+                >
+                  {item}
+                </h3>
+              </div>
+            ))}
           </Slider>
         </div>
-
       </div>
     </div>
   );
