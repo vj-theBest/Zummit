@@ -30,7 +30,7 @@ const About = () => {
           </div>
           <div className="p-0 m-0 w-[306px] flex align-bottom">
             <img
-              src={require(`./images/temporary_design_aboutus.png`)}
+              src={require(`./images/aroundwithin-speed.gif`)}
               alt=""
               className="object-contain w-full rounded-md"
             />

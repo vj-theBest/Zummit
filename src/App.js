@@ -26,8 +26,8 @@ function App() {
           <Route index element={<Services />} />
           <Route path="individual-therapy" element={<IndividualTherapy />} />
           <Route path="group-therapy">
-            <Route path="" element={<GroupTherapyDetail />} />
-            {/* <Route index element={<GroupTherapy />} /> */}
+            <Route path=":id" element={<GroupTherapyDetail />} />
+            <Route index element={<GroupTherapy />} />
           </Route>
           <Route path="support-group" element={<SupportTherapy />} />
         </Route>
