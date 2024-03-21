@@ -67,4 +67,35 @@ color: #FFFFFF;
 p.therapist-page__desc>span{
   color: #F7F131;
 }
+/* ABOUT US PAGE */
+p.aboutus-title{
+  font-family: 'Quicksand';
+font-style: normal;
+font-weight: 500;
+color: #F7F131;
+font-size: 36px;
+}
 
+p.aboutus-text{
+  font-family: 'Quicksand';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 28px;
+text-align: justify;
+}
+
+p.aboutus-team{
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 500;
+  color: black;
+  font-size: 36px;
+  line-height: 45px;
+}
+
+.dashed-border {
+  background-color: #FDFEE6;
+background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='22' ry='22' stroke='%230190B1FF' stroke-width='4' stroke-dasharray='30%2c 30' stroke-dashoffset='10' stroke-linecap='square'/%3e%3c/svg%3e");
+border-radius: 22px;
+}
