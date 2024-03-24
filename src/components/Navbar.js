@@ -34,9 +34,11 @@ function Navbar() {
               <h1>{link.name}</h1>
             </Link>
           ))}
-          <button className="justify-center self-stretch px-4 py-2 text-lg text-black bg-yellow rounded-lg transition ease-in-out duration-500 hover:scale-105" tabIndex="0">
+        <Link to={'/login'}>
+        <button className="justify-center self-stretch px-4 py-2 text-lg text-black bg-yellow rounded-lg transition ease-in-out duration-500 hover:scale-105" tabIndex="0">
             Login/Signup
           </button>
+        </Link>
         </div>
       </nav>
     </header>

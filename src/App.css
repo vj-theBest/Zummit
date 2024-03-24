@@ -102,3 +102,16 @@ body{
   transform: scale(1.1);
   font-weight: 700;
  }
+
+
+ /* CSS for active state */
+.active {
+  color: black;
+  font-weight: 500;
+  font-size: large;
+ }
+ 
+ /* CSS for inactive state */
+ .inactive {
+  color: gray;
+ }

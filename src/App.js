@@ -14,6 +14,7 @@ import SupportTherapy from "./components/SupportThreapy";
 import "./App.css";
 import ContactSection from "./components/ContactSection";
 import GroupTherapyDetail from "./components/GroupTherapyDetail";
+import Register__Login from "./components/Register__Login";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/therapists" element={<Therapists />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/FAQs" element={<FAQ />} />
+        <Route path="/login" element={<Register__Login/>} />
       </Routes>
       <ContactSection />
       <Footer />
