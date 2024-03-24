@@ -15,6 +15,7 @@ import "./App.css";
 import ContactSection from "./components/ContactSection";
 import GroupTherapyDetail from "./components/GroupTherapyDetail";
 import Register__Login from "./components/Register__Login";
+import BookingPage from "./components/BookingPage";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/FAQs" element={<FAQ />} />
         <Route path="/login" element={<Register__Login/>} />
+        <Route path="/booking" element={<BookingPage/>} />
       </Routes>
       <ContactSection />
       <Footer />

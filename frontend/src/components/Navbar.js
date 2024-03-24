@@ -1,5 +1,7 @@
 import * as React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { removeUser } from "../utils/userSlice";
 
 function NavigationLink({ children, href = "#" }) {
     return (
@@ -17,6 +19,14 @@ function Navbar() {
     { name: "Resources", to: "/resources" },
     { name: "FAQ", to: "/FAQs" },
  ];
+ const user=useSelector(store=>store.user);
+ const dispatch=useDispatch();
+ const logout=()=>{
+  
+  //data hatane ka ninja technique
+  localStorage.removeItem('token');
+  dispatch(removeUser());
+ }
 
   return (
     <header className="flex flex-col justify-center px-16 py-6 text-xl  font-light text-white whitespace-nowrap bg-cyan-600 max-md:px-5">
@@ -34,11 +44,14 @@ function Navbar() {
               <h1>{link.name}</h1>
             </Link>
           ))}
-        <Link to={'/login'}>
+      {user.User==null &&  <Link to={'/login'}>
         <button className="justify-center self-stretch px-4 py-2 text-lg text-black bg-yellow rounded-lg transition ease-in-out duration-500 hover:scale-105" tabIndex="0">
             Login/Signup
           </button>
-        </Link>
+        </Link>}
+      {user.User!=null &&  <button onClick={logout} className="justify-center self-stretch px-4 py-2 text-lg text-black bg-yellow rounded-lg transition ease-in-out duration-500 hover:scale-105" tabIndex="0">
+            Logout
+          </button>}
         </div>
       </nav>
     </header>
