@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 
 const registerUser = async (userData) => {
   try {
-     const response = await fetch('http://localhost:5000/api/users/register', {
+     const response = await fetch('https://zummit-chandan.onrender.com/api/users/register', {
        method: 'POST',
        headers: {
          'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ const registerUser = async (userData) => {
  
  const loginUser = async (loginData) => {
   try {
-     const response = await fetch('http://localhost:5000/api/users/login', {
+     const response = await fetch('https://zummit-chandan.onrender.com/api/users/login', {
        method: 'POST',
        headers: {
          'Content-Type': 'application/json',
