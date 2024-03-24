@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended:false}))
 app.use(
     cors({
         origin:["http://localhost:5000/","https://zummit-chandan.vercel.app"],
-        methods:["POST", "GET", "PUT", "DELETE"],
+        "Access-Control-Allow-Origin": "https://zummit-chandan.vercel.app",
         credentials:true,
     })
 )

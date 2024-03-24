@@ -22,6 +22,7 @@ const Register__Login = () => {
          method: 'POST',
          headers: {
            'Content-Type': 'application/json',
+           "Access-Control-Allow-Origin": "https://zummit-chandan.onrender.com",
          },
          body: JSON.stringify(userData),
        });
@@ -58,7 +59,7 @@ const Register__Login = () => {
          method: 'POST',
          headers: {
            'Content-Type': 'application/json',
-           
+           "Access-Control-Allow-Origin": "https://zummit-chandan.onrender.com",
          },
          body: JSON.stringify(loginData),
        });
