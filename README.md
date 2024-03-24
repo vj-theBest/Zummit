@@ -21,6 +21,14 @@ git clone https://github.com/chandan24042001s/Zummit.git
 ```
 cd Zummit
 ```
+want to make change in frontend, then,
+```
+cd frontend
+```
+want to make change in backend,then ,
+```
+cd backend
+```
 
 **4.** Add a reference(remote) to the original repository.
 
