@@ -41,11 +41,12 @@ const Register__Login = () => {
            }
 
        dispatch(addUser(data))
+     navigate("/booking")
        console.log(data);
 
       //reload kee baad bhi data remain constant
       localStorage.setItem('token', data.token);
-      navigate("/booking")
+     
        
     } catch (error) {
        console.error('Error:', error);
@@ -80,11 +81,12 @@ const Register__Login = () => {
            }
 
        dispatch(addUser(data))
+     navigate("/booking")
        console.log(data);
       
        //reload kee baad bhi data remain constant
       localStorage.setItem('token', data.token);
-      navigate("/booking")
+      
       
 
     } catch (error) {
