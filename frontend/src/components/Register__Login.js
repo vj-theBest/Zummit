@@ -15,6 +15,7 @@ const Register__Login = () => {
   const [password, setPassword] = useState('');
   const navigate=useNavigate();
 
+  //register ka API Call Handler
   const registerUser = async (userData) => {
    
     try {
@@ -52,6 +53,7 @@ const Register__Login = () => {
     }
    };
    
+   //Login ka API Call Handler
    const loginUser = async (loginData) => {
    
     try {
@@ -108,14 +110,17 @@ const Register__Login = () => {
   const handleClick = () => {
     setSignUp(!signUp);
   };
+
   const handleClient = () => {
     setRole("Client");
     console.log("Client");
   };
+
   const handleTherapist = () => {
     setRole("Therapist");
     console.log("Thearipist");
   };
+
   const handleNameChange = (e) => {
     setName(e.target.value);
  };
@@ -128,6 +133,7 @@ const Register__Login = () => {
     setPassword(e.target.value);
  };
 
+ 
  const handleSubmit = (e) => {
   e.preventDefault();
   const userData = {
