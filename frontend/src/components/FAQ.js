@@ -139,7 +139,7 @@ const FAQs = () => {
               <>
                 AroundWithin is an organization committed to enhancing mental health through diverse avenues by Offering group therapies, support groups, and individual counseling. Through these comprehensive approaches, AroundWithin endeavours to nurture resilience, foster growth, and uplift spirits in 
                 the realm of mental health. To know more click 
-                <Link to="/about">  About Us.</Link>
+                <Link to="/about" style={{color:"blue"}}>  About Us.</Link>
               </>
             }
             
@@ -158,7 +158,7 @@ const FAQs = () => {
           />
           <Section
             title={"How do I sign up for AroundWithin?"}
-            description={<>"To sign up please <Link to="/login">click here."</Link> </>}
+            description={<>"To sign up please <Link to="/login" style={{color:"blue"}} >click here."</Link> </>}
             isVisible={sectionConfig.showCareers}
             toggleVisibility={() => toggleVisibility("showCareers")}
           />
@@ -168,7 +168,7 @@ const FAQs = () => {
             }
             description={
               <>
-              "The information that you share is protected by data privacy laws, for more information visit our Privacy Policy. "
+              The information that you share is protected by data privacy laws, for more information visit our Privacy Policy. 
               {/* <Link to="/login">Privacy Policy."</Link> */}
               </>
             }
@@ -181,7 +181,7 @@ const FAQs = () => {
             }
             description={
               <>
-              "We offer support for all kinds of mental health concerns. To know more please <Link to="/services">click here."</Link> You can write to us info@aroundwithin.com. Or you can set up an appointment with one of our therapists directly to gain more insights."
+              We offer support for all kinds of mental health concerns. To know more please <Link to="/services" style={{color:"blue"}}>click here.</Link> You can write to us info@aroundwithin.com. Or you can set up an appointment with one of our therapists directly to gain more insights.
               </>
             }
             isVisible={sectionConfig.showCareers2}
@@ -203,7 +203,7 @@ const FAQs = () => {
             }
             description={
               <>
-              "AroundWithin is all about affordable mental health. Our charges depend on the type of services that you avail. For information on this please <Link to="/services">click here."</Link>. We are a fee-for-service organization; hence we do not take pro bono cases."
+              AroundWithin is all about affordable mental health. Our charges depend on the type of services that you avail. For information on this please <Link to="/services" style={{color:"blue"}}>click here."</Link>. We are a fee-for-service organization; hence we do not take pro bono cases.
               </>
             }
             isVisible={sectionConfig.showCareers4}
@@ -223,7 +223,7 @@ const FAQs = () => {
             }
             description={
               <>
-              "We leave that choice to you. Check your preferences and choose the therapists accordingly. You can browse our professionals by <Link to="/therapists">clicking here."</Link>
+              We leave that choice to you. Check your preferences and choose the therapists accordingly. You can browse our professionals by <Link to="/therapists" style={{color:"blue"}}>clicking here.</Link>
               </>
             }
             isVisible={sectionConfig.showCareers6}
