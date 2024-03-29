@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 const Section = ({ title, description, isVisible, toggleVisibility }) => {
   return (
     <>
@@ -135,8 +135,13 @@ const FAQs = () => {
               "What is AroundWithin and how can it help me with my mental health?"
             }
             description={
-              "AroundWithin is an organization committed to enhancing mental health through diverse avenues by Offering group therapies, support groups, and individual counseling. Through these comprehensive approaches, AroundWithin endeavours to nurture resilience, foster growth, and uplift spirits in the realm of mental health. To know more click About Us."
+              <>
+                AroundWithin is an organization committed to enhancing mental health through diverse avenues by Offering group therapies, support groups, and individual counseling. Through these comprehensive approaches, AroundWithin endeavours to nurture resilience, foster growth, and uplift spirits in 
+                the realm of mental health. To know more click 
+                <Link to="/about" style={{color:"blue"}}>  About Us.</Link>
+              </>
             }
+            
             isVisible={sectionConfig.showAbout}
             toggleVisibility={() => toggleVisibility("showAbout")}
           />
@@ -152,8 +157,12 @@ const FAQs = () => {
           />
           <Section
             title={"How do I sign up for AroundWithin?"}
+<<<<<<< HEAD
             description={"To sign up please click here"} 
             
+=======
+            description={<>"To sign up please <Link to="/login" style={{color:"blue"}} >click here."</Link> </>}
+>>>>>>> 6d1e062781f52c000274c590c285c2fc8389b593
             isVisible={sectionConfig.showCareers}
             toggleVisibility={() => toggleVisibility("showCareers")}
             
@@ -163,7 +172,10 @@ const FAQs = () => {
               "Is my personal information and data secure on AroundWithin?"
             }
             description={
-              "The information that you share is protected by data privacy laws, for more information visit our Privacy Policy."
+              <>
+              The information that you share is protected by data privacy laws, for more information visit our Privacy Policy. 
+              {/* <Link to="/login">Privacy Policy."</Link> */}
+              </>
             }
             isVisible={sectionConfig.showCareers1}
             toggleVisibility={() => toggleVisibility("showCareers1")}
@@ -173,7 +185,9 @@ const FAQs = () => {
               "What types of mental health support does AroundWithin offer?"
             }
             description={
-              "We offer support for all kinds of mental health concerns. To know more please click here. You can write to us info@aroundwithin.com. Or you can set up an appointment with one of our therapists directly to gain more insights."
+              <>
+              We offer support for all kinds of mental health concerns. To know more please <Link to="/services" style={{color:"blue"}}>click here.</Link> You can write to us info@aroundwithin.com. Or you can set up an appointment with one of our therapists directly to gain more insights.
+              </>
             }
             isVisible={sectionConfig.showCareers2}
             toggleVisibility={() => toggleVisibility("showCareers2")}
@@ -193,7 +207,9 @@ const FAQs = () => {
               "How much does AroundWithin cost? Are there free services available?"
             }
             description={
-              "AroundWithin is all about affordable mental health. Our charges depend on the type of services that you avail. For information on this please click here. We are a fee-for-service organization; hence we do not take pro bono cases."
+              <>
+              AroundWithin is all about affordable mental health. Our charges depend on the type of services that you avail. For information on this please <Link to="/services" style={{color:"blue"}}>click here."</Link>. We are a fee-for-service organization; hence we do not take pro bono cases.
+              </>
             }
             isVisible={sectionConfig.showCareers4}
             toggleVisibility={() => toggleVisibility("showCareers4")}
@@ -211,7 +227,9 @@ const FAQs = () => {
               "How does the matching process work if I'm looking for a mental health professional?"
             }
             description={
-              "We leave that choice to you. Check your preferences and choose the therapists accordingly. You can browse our professionals by clicking here."
+              <>
+              We leave that choice to you. Check your preferences and choose the therapists accordingly. You can browse our professionals by <Link to="/therapists" style={{color:"blue"}}>clicking here.</Link>
+              </>
             }
             isVisible={sectionConfig.showCareers6}
             toggleVisibility={() => toggleVisibility("showCareers6")}
