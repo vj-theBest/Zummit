@@ -120,6 +120,7 @@ const FAQs = () => {
       }
     });
   };
+
   return (
     <div className="mb-16">
       <div className="flex justify-center mt-10 mb-4"></div>
@@ -157,15 +158,9 @@ const FAQs = () => {
           />
           <Section
             title={"How do I sign up for AroundWithin?"}
-<<<<<<< HEAD
-            description={"To sign up please click here"} 
-            
-=======
             description={<>"To sign up please <Link to="/login" style={{color:"blue"}} >click here."</Link> </>}
->>>>>>> 6d1e062781f52c000274c590c285c2fc8389b593
             isVisible={sectionConfig.showCareers}
             toggleVisibility={() => toggleVisibility("showCareers")}
-            
           />
           <Section
             title={
@@ -287,7 +282,6 @@ const FAQs = () => {
         </div>
       </div>
     </div>
-    
   );
 };
 

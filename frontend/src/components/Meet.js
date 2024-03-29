@@ -3,12 +3,8 @@ import Client1 from "./images/Client-1.png";
 import Client2 from "./images/Client-2.png";
 import Client3 from "./images/Client-3.png";
 import Client4 from "./images/Client-4.webp";
-<<<<<<< HEAD
-import {BrowserRouter , Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-=======
-import {Link } from "react-router-dom";
->>>>>>> 6d1e062781f52c000274c590c285c2fc8389b593
 const Meet = () => {
   const images = [Client1, Client2, Client3, Client4];  
   const [currentImageIndex1, setCurrentImageIndex1] = useState(0);
@@ -55,7 +51,6 @@ const Meet = () => {
             therapist, but with the ability to communicate when and how you
             want.
           </p>
-<<<<<<< HEAD
           
           <Link to = "/Therapists" target="_top">
           <button className="bg-cyan-500 text-black text-xl font-medium rounded-md w-[35%] px-2 py-1">
@@ -63,13 +58,6 @@ const Meet = () => {
         </button>
         </Link>
   
-=======
-              <Link to = "/Therapists" target="_top">
-          <button className="bg-cyan-500 text-black text-xl font-medium rounded-md w-[35%] px-2 py-1">
-            Know more
-          </button>
-              </Link>
->>>>>>> 6d1e062781f52c000274c590c285c2fc8389b593
         </div>
         {/* Right side container */}
         <div className="w-[60%] flex gap-3 overflow-hidden justify-center items-center text-black text-xl font-semibold">
