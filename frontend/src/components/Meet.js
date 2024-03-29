@@ -3,15 +3,14 @@ import Client1 from "./images/Client-1.png";
 import Client2 from "./images/Client-2.png";
 import Client3 from "./images/Client-3.png";
 import Client4 from "./images/Client-4.webp";
+import {BrowserRouter , Link } from "react-router-dom";
 
 const Meet = () => {
   const images = [Client1, Client2, Client3, Client4];  
-
   const [currentImageIndex1, setCurrentImageIndex1] = useState(0);
   const [currentImageIndex2, setCurrentImageIndex2] = useState(1);
   const [currentImageIndex3, setCurrentImageIndex3] = useState(2);
   const [currentImageIndex4, setCurrentImageIndex4] = useState(3);
-
   useEffect(() => {
     const interval1 = setInterval(() => {
       setCurrentImageIndex1((prevIndex) => (prevIndex + 1) % images.length);
@@ -52,9 +51,13 @@ const Meet = () => {
             therapist, but with the ability to communicate when and how you
             want.
           </p>
+          
+          <Link to = "/Therapists" target="_top">
           <button className="bg-cyan-500 text-black text-xl font-medium rounded-md w-[35%] px-2 py-1">
             Know more
-          </button>
+        </button>
+        </Link>
+  
         </div>
         {/* Right side container */}
         <div className="w-[60%] flex gap-3 overflow-hidden justify-center items-center text-black text-xl font-semibold">
