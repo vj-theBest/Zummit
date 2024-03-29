@@ -3,7 +3,7 @@ import Client1 from "./images/Client-1.png";
 import Client2 from "./images/Client-2.png";
 import Client3 from "./images/Client-3.png";
 import Client4 from "./images/Client-4.webp";
-
+import {Link } from "react-router-dom";
 const Meet = () => {
   const images = [Client1, Client2, Client3, Client4];  
 
@@ -52,9 +52,11 @@ const Meet = () => {
             therapist, but with the ability to communicate when and how you
             want.
           </p>
+              <Link to = "/Therapists" target="_top">
           <button className="bg-cyan-500 text-black text-xl font-medium rounded-md w-[35%] px-2 py-1">
             Know more
           </button>
+              </Link>
         </div>
         {/* Right side container */}
         <div className="w-[60%] flex gap-3 overflow-hidden justify-center items-center text-black text-xl font-semibold">
