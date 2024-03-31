@@ -67,6 +67,19 @@ const Card = () => {
     },
   ];
 
+// Custom arrow components
+const NextArrow = ({ onClick }) => (
+ <div className="nextArrow" onClick={onClick}>
+    <i class="fa-solid fa-angle-right"></i>
+ </div>
+);
+
+const PrevArrow = ({ onClick }) => (
+ <div className="prevArrow " onClick={onClick}>
+    <i class="fa-solid fa-angle-left"></i>
+ </div>
+);
+
   const settings = {
     infinite: true,
     slidesToShow: 3,
@@ -75,8 +88,8 @@ const Card = () => {
     speed: 4000,
     autoplaySpeed: 3000,
     cssEase: "ease-in-out",
-    arrows:false
-
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
   const settings2 = {
     infinite: true,
@@ -123,15 +136,15 @@ const Card = () => {
       </div>
       <div className="py-10">
         <p className="text-4xl font-medium mb-4">Reach Out To Us For</p>
-        <div className="slider-container pt-16 text-3xl font-medium text-center">
+        <div className="slider-container pt-16 text-3xl font-medium text-center gap-4">
           <Slider {...settings2}>
             {Data2.map((item, index) => (
               <div
                 key={index}
-                className={`slide ${index === currentSlide ? "active" : ""}`}
+                className={`slide flex justify-center items-center ${index === currentSlide ? "active" : ""}`}
               >
                 <h3
-                  className={`${index === currentSlide ? "slickCurrent text-4xl transform scale-110 transition-all duration-1000 ease-in-out" : "text-3xl"}`}
+                  className={`${index === currentSlide ? "slickCurrent text-4xl transform scale-110 transition-all duration-1000 ease-in-out" : "text-3xl"} `}
                 >
                   {item}
                 </h3>
