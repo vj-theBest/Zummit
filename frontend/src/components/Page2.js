@@ -14,11 +14,13 @@ function Page2() {
           <h1 className="text-2xl text-cyan-800 font-semibold">Our Story</h1>
           <p className="text-xl">
             An online therapy for mental health resource to empower,educate
-            andtransform with both group & individual therapy's
+            and transform with both group & individual therapy's
           </p>
-          <a className="text-end text-xl font-bold text-cyan-800" href="#">
+          
+          <a className="text-end text-xl font-bold text-cyan-800" href="/About">
             Know more
           </a>
+          
         </div>
         =
       </div>

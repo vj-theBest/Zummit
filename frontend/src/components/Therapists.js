@@ -62,7 +62,6 @@ const Therapists = () => {
       desc4: " Languages: Hindi, English",
       profile_image: "therapist_card_image.jpeg",
     },
-    
   ];
   return (
     <React.Fragment>
@@ -98,57 +97,60 @@ const Therapists = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 m-0 p-0  gap-x-[27px] gap-y-[32px]">
+          <div className="grid grid-cols-1 xlg:grid-cols-2 m-0 p-0  gap-x-[27px] gap-y-[32px]">
             {therapists_info.map((item, index) => {
-              return  <div className=" h-[288px] border border-[#B4F0FF] rounded-md" key={item.name+index}>
-              <div className="h-[209px]  m-0 p-[24px] pb-[19px] bg-[#0190B1] rounded-t-md">
-                <div className="m-0 p-0 h-full flex gap-[12px]">
-                  <div className="m-0 p-0 h-full sm:w-[129px] w-[0px] ">
-                    <img
-                      src={require(`./images/${item.profile_image}`)}
-                      alt={item.name}
-                      className="object-contain w-full rounded-md"
-                    />
+              return (
+                <div
+                  className=" h-[288px] border border-[#1d96b4] rounded-md"
+                  key={item.name + index}
+                >
+                  <div className="h-[209px]  m-0 p-[24px] pb-[19px] bg-[#0190B1] rounded-t-md">
+                    <div className="m-0 p-0 h-full flex gap-[12px]">
+                      <div className="m-0 p-0 h-full xlg:w-[0] xlg2:w-[100px] sm:w-[129px] w-[0px] ">
+                        <img
+                          src={require(`./images/${item.profile_image}`)}
+                          alt={item.name}
+                          className="object-contain w-full rounded-md"
+                        />
+                      </div>
+                      <div className="m-0 p-0 ">
+                        <p className="therapist-page__name 2xl:text-[28px] xl:text-[24px] lg:text-[22px] sm:text-[18px]">
+                          {item.name}
+                        </p>
+                        <p className="therapist-page__desc lg:text-[14px] xl:text-[14px] mt-[8px] sm:text-[14px]">
+                          {item.desc1}
+                        </p>
+                        <p className="therapist-page__desc lg:text-[14px] xl:text-[14px] mt-0 xl:mt-[8px] sm:text-[14px] lg:mt-[5px] sm:mt-[2px]">
+                          {item.desc2} <span>{item.desc2_span}</span>
+                        </p>
+                        <p className="therapist-page__desc lg:text-[14px] xl:text-[14px] mt-0 xl:mt-[8px] sm:text-[14px] lg:mt-[5px] sm:mt-[2px]">
+                          {" "}
+                          <span>{item.desc3_span}</span> {item.desc3}
+                        </p>
+                        <p className="therapist-page__desc lg:text-[14px] xl:text-[14px] mt-0 xl:mt-[8px]  sm:text-[14px] lg:mt-[5px] sm:mt-[2px]">
+                          {item.desc4}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="m-0 p-0 ">
-                    <p className="therapist-page__name xl:text-[28px] lg:text-[18px] sm:text-[24px]">
-                      {item.name}
-                    </p>
-                    <p className="therapist-page__desc lg:text-[12px] xl:text-[14px] mt-[8px] ">
-                      {item.desc1}
-                    </p>
-                    <p className="therapist-page__desc lg:text-[12px] xl:text-[14px] mt-0 xl:mt-[8px] lg:mt-[5px] sm:mt-[8px]">
-                      {item.desc2} <span>{item.desc2_span}</span>
-                    </p>
-                    <p className="therapist-page__desc lg:text-[12px] xl:text-[14px] mt-0 xl:mt-[8px] lg:mt-[5px] sm:mt-[8px]">
-                      {" "}
-                      <span>{item.desc3_span}</span> {item.desc3}
-                    </p>
-                    <p className="therapist-page__desc lg:text-[12px] xl:text-[14px] mt-0 xl:mt-[8px] lg:mt-[5px] sm:mt-[8px]">
-                      {item.desc4}
-                    </p>
-                  </div>
-                </div>
-              </div>
 
-              <div className="m-0 p-0 h-[77px]  rounded-b-md bg-[#EFF7FF] grid xl:grid-cols-[0.6fr_0.6fr_1fr_0.8fr] 2xl:grid-cols-[0.8fr_0.8fr_1fr_0.8fr] sm:grid-cols-[1fr_1fr]">
-                <div id="dummy"></div>
-                <div id="dummy"></div>
-                <div className="xl:mt-4 sm:mt-2 sm:ms-4">
-                  <button class="bg-transparent  text-[#0190B1] font-semibold py-2 px-4 border border-[#0190B1] rounded">
-                    View Profile
-                  </button>
+                  <div className="m-0 p-0 h-[77px]  rounded-b-md bg-[#EFF7FF] grid xl:grid-cols-[0.6fr_0.6fr_1fr_0.8fr] 2xl:grid-cols-[0.8fr_0.8fr_1fr_0.8fr] sm:grid-cols-[1fr_1fr]">
+                    <div id="dummy"></div>
+                    <div id="dummy"></div>
+                    <div className="xl:mt-4 sm:mt-2 sm:ms-4">
+                      <button class="bg-transparent  text-[#0190B1] font-semibold py-2 px-4 border border-[#0190B1] rounded">
+                        View Profile
+                      </button>
+                    </div>
+                    <div className="xl:mt-4 sm:mt-2 sm:ms-4">
+                      <button class="bg-[#0190B1] text-white font-semibold py-2 px-4 rounded">
+                        Book
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div className="xl:mt-4 sm:mt-2 sm:ms-4">
-                  <button class="bg-[#0190B1] text-white font-semibold py-2 px-4 rounded">
-                    Book
-                  </button>
-                </div>
-              </div>
-            </div>;
+              );
             })}
-
-           
           </div>
         </div>
       </div>

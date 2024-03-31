@@ -20,17 +20,18 @@ const Services = () => {
                 <div className="text-3xl font-medium leading-10 text-[#00677F] max-md:max-w-full">
                   Individual Therapy
                 </div>
-                <div className="mt-10 leading-5 text-justify text-slate-950 max-md:mt-10 max-md:max-w-full">
+                <div className="mt-7 leading-5 text-justify text-slate-950 max-md:mt-10 max-md:max-w-full">
                   <p style={{ fontSize: '16px' }}>
-                    We believe that people are naturally resilient with the right
-                    support. Therapy facilitates growth, empowerment and insight so
-                    your presenting concerns can be effectively addressed. Therapy is
-                    not a one size fits all process and varies person by person
-                    depending on their goals
+                  Individual counselling which is also called talk therapy or
+                  psychotherapy is a one-on-one process in which the therapist/counsellor works with the clients in a 
+                  confidential,non-judgmental, compassionate and safe environment. Counselling 
+                  aims to resolve emotional difficulties and improve overall well-being. It helps
+                  clients to reflect on self and develop insights which lead to growth and better
+                  understanding of oneself.
                   </p>
                 </div>
                 <Link to="/services/individual-therapy">
-                  <button className="justify-center self-start px-2 py-1 mt-10 text-white whitespace-nowrap bg-cyan-600 rounded">
+                  <button className="justify-center self-start px-2 py-1 mt-7 text-white whitespace-nowrap bg-cyan-600 rounded">
                     Know More
                   </button>
                 </Link>
@@ -39,23 +40,25 @@ const Services = () => {
           </div>
         </div>
         <div className="w-full  max-w-[1061px] max-md:max-w-full">
-          <div className="flex  mt-2 gap-8 max-md:flex-col max-md:gap-0">
+          <div className="flex  mt-5 gap-8 max-md:flex-col max-md:gap-0">
             <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
               <div className="flex flex-col px-5 my-auto text-base max-md:mt-10 max-md:max-w-full">
                 <div className="text-3xl font-medium leading-10 text-[#00677F]  whitespace-nowrap">
                   Group Therapy
                 </div>
-                <div className="mt-10 leading-5 text-justify text-slate-950 max-md:mt-10 max-md:max-w-full">
+                <div className="mt-7 leading-5 text-justify text-slate-950 max-md:mt-10 max-md:max-w-full">
                   <p style={{ fontSize: '16px' }}>
-                    We believe that people are naturally resilient with the right
-                    support. Therapy facilitates growth, empowerment and insight so
-                    your presenting concerns can be effectively addressed. Therapy is
-                    not a one size fits all process and varies person by person
-                    depending on their goals
+                  Group Counselling or Group Therapy is a form of therapy in which
+                  the group comprises 4-10 members facilitated by one or two group therapists who meet
+                  at regular intervals to work on certain issues. It usually focuses on a particular issue
+                  such as grief, caregiver burnout, addiction etc. The therapist leads the group and the
+                  members contribute by sharing their experiences and offer support and feedback to each
+                  other. It helps people going through similar issues come together and counter the
+                  feelings of isolation.
                   </p>
                 </div>
                 <Link to="/services/group-therapy">
-                  <button className="justify-center self-start px-2 py-1 mt-10 text-white whitespace-nowrap bg-cyan-600 rounded">
+                  <button className="justify-center self-start px-2 py-1 mt-7 text-white whitespace-nowrap bg-cyan-600 rounded">
                     Know More
                   </button>
                 </Link>
@@ -71,7 +74,7 @@ const Services = () => {
           </div>
         </div>
         <div className="w-full max-w-[1069px] max-md:max-w-full">
-          <div className="flex mt-2 gap-8 max-md:flex-col max-md:gap-0">
+          <div className="flex mt-5 gap-8 max-md:flex-col max-md:gap-0">
             <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
               <img
                 loading="lazy"
@@ -79,22 +82,21 @@ const Services = () => {
                 className="grow w-full aspect-[1.47] max-md:mt-10 max-md:max-w-full"
               />
             </div>
-            <div className="flex flex-col ml-5 mb-24 w-6/12 max-md:ml-0 max-md:w-full">
+            <div className="flex flex-col ml-5 mb-18 w-6/12 max-md:ml-0 max-md:w-full">
               <div className="flex flex-col self-stretch px-5 my-auto text-base max-md:mt-10 max-md:max-w-full">
                 <div className="text-3xl font-medium leading-10 text-[#00677F]  max-md:max-w-full">
                   Support Group Therapy
                 </div>
-                <div className="mt-10 leading-5 text-justify text-slate-950 max-md:mt-10 max-md:max-w-full">
+                <div className="mt-9 leading-5 text-justify text-slate-950 max-md:mt-10 max-md:max-w-full">
                   <p style={{ fontFamily: 'Quicksand', fontSize: '16px' }}>
-                    We believe that people are naturally resilient with the right
-                    support. Therapy facilitates growth, empowerment and insight so
-                    your presenting concerns can be effectively addressed. Therapy is
-                    not a one size fits all process and varies person by person
-                    depending on their goals
+                  Support group or self-help group is a platform for people going
+                  through similar concerns or experiences to come together and extend emotional support,
+                  share experiences, educational information and learn coping strategies. The group
+                  usually meets once a week and aims to garner peer support.
                   </p>
                 </div>
                 <Link to="/services/support-group">
-                  <button className="justify-center self-start px-2 py-1 mt-10 text-white whitespace-nowrap bg-cyan-600 rounded">
+                  <button className="justify-center self-start px-2 py-1 mt-9 text-white whitespace-nowrap bg-cyan-600 rounded">
                     Know More
                   </button>
                 </Link>

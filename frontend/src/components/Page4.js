@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function Page4() {
   return (
        <div className="flex">
@@ -16,7 +17,7 @@ function Page4() {
              An online therapy for mental health resource to empower,educate
              andtransform with both group & individual therapy's
            </p>
-           <a className="text-end text-xl font-bold text-cyan-800" href="#">
+           <a className="text-end text-xl font-bold text-cyan-800" href="/About">
              Know more
            </a>
          </div>

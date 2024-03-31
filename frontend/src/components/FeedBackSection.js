@@ -57,7 +57,7 @@ const FeedbackSection = () => {
 
   return (
     <div className='bg-[#FDFEF1] pb-[29px]'>
-      <div className="w-[77vw] mx-auto my-[32px]">
+      <div className="w-[77vw] mx-auto mt-0 pt-4 my-[32px]">
         <h2 className="font-medium text-[36px] text-[#272529] mb-[32px]">Clients Feedback</h2>
         <p className="text-[24px] font-medium">These quotes represent a few of many positive reviews that we have recieved for therapists.
           If you would like to review your therapists, please send your review to

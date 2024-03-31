@@ -61,11 +61,11 @@ const Hero = () => {
         <div className="flex flex-col  gap-5">
           <div className="flex flex-col justify-center items-center">
             <h1 className="text-[38px] text-neutral-900 max-md:max-w-full max-md:text-4xl">
-              Find Your Path to Mental Wellness with AroundWithin
+            Who looks outside, dreams who looks inside, awakes
             </h1>
-            <p className="text-[24px] text-center font-extralight leading-10 text-zinc-800 max-md-w-full">
+            <p className="text-[24px] text-center font-extralight leadin  g-10 text-zinc-800 max-md-w-full">
               Join a community of individuals committed to mental well-being and
-              gain access to valuable resources and support
+              gain access to <p>valuable resources and support</p>
             </p>
           </div>
           <div className="flex gap-8 max-md:flex-col justify-center max-md:gap-0 max-md:">

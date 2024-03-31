@@ -126,3 +126,34 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.activeNav {
+  font-weight: 800;
+  color: rgb(247, 247, 4); /* Or any other style you want to apply to the active link */
+ }
+
+
+ /* //arrow in upcoming groups  */
+ .nextArrow, .prevArrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: black;
+  padding: 10px;
+  border-radius: 5px;
+ }
+ 
+ .nextArrow {
+  right: 10px;
+ }
+ 
+ .prevArrow {
+  left: 10px;
+ }
+
+ .prevArrow {
+  visibility: visible;
+  display: block; 
+  z-index: 10; 
+ }

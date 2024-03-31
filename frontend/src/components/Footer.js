@@ -27,7 +27,9 @@ const Footer = () => {
                 <div className="flex flex-col ml-5 w-[30%] max-md:ml-0 max-md:w-full">
                   <div className="flex flex-col text-lg font-medium text-red-50 max-md:mt-10">
                     <div className="text-xl font-bold">Contact us</div>
+                    <a href="mailto:around@gmail.com">
                     <div className="mt-3.5">Around@gmail.com</div>
+                    </a>
                     <div className="mt-2.5">+225548411213</div>
                   </div>
                 </div>
