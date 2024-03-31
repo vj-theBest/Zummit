@@ -94,7 +94,7 @@ const Card = () => {
 
   return (
     <div className="bg-skin px-28 py-10">
-      <p className="text-4xl font-medium text-center my-4">
+      <p className="text-4xl font-medium my-4">
         Upcoming Groups
       </p>
       <div className="py-[32px]">
@@ -120,7 +120,7 @@ const Card = () => {
         </Slider>
       </div>
       <div className="py-10">
-        <p className="text-4xl font-medium text-center">Reach out us</p>
+        <p className="text-4xl font-medium mb-4">Reach Out To Us For</p>
         <div className="slider-container pt-16 text-3xl font-medium text-center">
           <Slider {...settings2}>
             {Data2.map((item, index) => (

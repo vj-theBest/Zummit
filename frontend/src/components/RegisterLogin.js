@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //main component toh yaha hey
 const Register__Login = () => {
@@ -90,8 +91,6 @@ const Register__Login = () => {
 
       //reload kee baad bhi data remain constant
       localStorage.setItem("token", data.token);
-     
-
 
       //jaao token leke aao
       const token = response.headers.get("Authorization");
@@ -163,7 +162,6 @@ const Register__Login = () => {
 
   //OTP ka page ka Handler hey
   const handleSubmission = (e) => {
-   
     //name filed blank hua toh show error set karo
     if (name.trim() === "") {
       setError("Name cannot be empty");
@@ -210,14 +208,12 @@ const Register__Login = () => {
 
     if (!signUp) {
       registerUser(userData);
-     
     } else {
       const loginData = {
         input,
         password,
       };
       loginUser(loginData);
-      
     }
 
     //cleanup toh karo ree
@@ -313,6 +309,15 @@ const Register__Login = () => {
                     ? "New here ?,Register Now"
                     : "Already Registered ? Login Now"}
                 </p>
+                {signUp ? (
+                  <Link to="/forgot-password">
+                    <p className="text-cyan-500 cursor-pointer mt-[-10px]">
+                      Forgot Password?
+                    </p>
+                  </Link>
+                ) : (
+                  <></>
+                )}
               </div>
             ) : (
               <div className="flex flex-col gap-3">
