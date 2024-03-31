@@ -21,7 +21,7 @@ const Register__Login = () => {
 
   const registerUser = async (userData) => {
     // Check if OTP and verifyOTP are equal
-    if (OTP != otpVerify) {
+        if (OTP != otpVerify) {
       alert("OTP verification failed");
       return;
     }
@@ -33,10 +33,9 @@ const Register__Login = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin":
-              "https://zummit-chandan.onrender.com",
           },
           body: JSON.stringify(userData),
+          credentials: 'include',
         }
       );
 
@@ -45,12 +44,6 @@ const Register__Login = () => {
       }
 
       const data = await response.json();
-
-      //jaao token leke aao
-      const token = response.headers.get("Authorization");
-      if (!token) {
-        throw new Error("Token not found in response headers");
-      }
 
       dispatch(addUser(data));
       console.log(data);
@@ -62,7 +55,7 @@ const Register__Login = () => {
       console.error("Error:", error);
     }
   };
-
+  
   const loginUser = async (loginData) => {
     try {
       const response = await fetch(
@@ -71,10 +64,9 @@ const Register__Login = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin":
-              "https://zummit-chandan.onrender.com",
           },
           body: JSON.stringify(loginData),
+          credentials: 'include',
         }
       );
 
