@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { removeUser } from "../utils/userSlice";
 
 function NavigationLink({ children, href = "#" }) {
@@ -12,6 +12,8 @@ function NavigationLink({ children, href = "#" }) {
   }
 
 function Navbar() {
+  const location = useLocation();
+  
   const navLinks = [
     { name: "About Us", to: "/about" },
     { name: "Services", to: "/services" },
@@ -40,7 +42,7 @@ function Navbar() {
         </a>
         <div className="flex gap-8 justify-between items-center  max-md:flex-wrap max-md:max-w-full">
         {navLinks.map((link) => (
-            <Link to={link.to} key={link.name} className="transition ease-in-out duration-700 hover:scale-110">
+            <Link to={link.to} key={link.name} className={`transition ease-in-out duration-700 hover:scale-110 ${location.pathname === link.to ? 'activeNav' : ''}`}>
               <h1>{link.name}</h1>
             </Link>
           ))}

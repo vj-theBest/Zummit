@@ -126,3 +126,8 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.activeNav {
+  font-weight: 800;
+  color: rgb(247, 247, 4); /* Or any other style you want to apply to the active link */
+ }
