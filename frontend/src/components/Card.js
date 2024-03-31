@@ -129,7 +129,7 @@ const Card = () => {
                 className={`slide ${index === currentSlide ? "active" : ""}`}
               >
                 <h3
-                  className={`${index === currentSlide ? "slickCurrent text-5xl transform scale-110 transition-all duration-1000 ease-in-out" : "text-3xl"}`}
+                  className={`${index === currentSlide ? "slickCurrent text-4xl transform scale-110 transition-all duration-1000 ease-in-out" : "text-3xl"}`}
                 >
                   {item}
                 </h3>
