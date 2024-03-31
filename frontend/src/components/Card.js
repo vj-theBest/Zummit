@@ -74,7 +74,9 @@ const Card = () => {
     autoplay: true,
     speed: 4000,
     autoplaySpeed: 3000,
-    cssEase: "ease-in-out"
+    cssEase: "ease-in-out",
+    arrows:false
+
   };
   const settings2 = {
     infinite: true,
