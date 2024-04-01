@@ -69,15 +69,43 @@ const Card = () => {
 
 // Custom arrow components
 const NextArrow = ({ onClick }) => (
- <div className="nextArrow" onClick={onClick}>
-    <i class="fa-solid fa-angle-right"></i>
- </div>
+<div className="nextArrow" onClick={onClick}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-chevron-right"
+        width="45"
+        height="45"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="#ffffff"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M9 6l6 6l-6 6" />
+      </svg>
+    </div>
 );
 
 const PrevArrow = ({ onClick }) => (
- <div className="prevArrow " onClick={onClick}>
-    <i class="fa-solid fa-angle-left"></i>
- </div>
+<div className="prevArrow " onClick={onClick}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-chevron-left"
+        width="45"
+        height="45"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="#ffffff"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M15 6l-6 6l6 6" />
+      </svg>
+    </div>
 );
 
   const settings = {
@@ -85,8 +113,9 @@ const PrevArrow = ({ onClick }) => (
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 4000,
+    speed: 1000,
     autoplaySpeed: 3000,
+    pauseOnHover: false,
     cssEase: "ease-in-out",
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -112,11 +141,12 @@ const PrevArrow = ({ onClick }) => (
       <p className="text-4xl font-medium my-4">
         Upcoming Groups
       </p>
-      <div className="py-[32px]">
+      <div className="relative">
+      <div className="absolute w-[20%] h-[485px] top-3 right-0  bg-gradient-to-l from-[#5e5e5e]"></div>
         <Slider {...settings}>
           {Data.map((item) => (
             <div>
-              <div className="w-[348px] h-[485px] p-[10px] rounded-lg hover:shadow-lg">
+              <div className="w-[348px] my-2 h-[485px] p-[10px] rounded-lg hover:shadow-lg">
                 <div className="relative">
                   <div className="bg-[#F7F131] absolute rounded-lg pl-2 pr-[8px,] py-[4px,] w-[129px] h-[28px] top-[5px] right-[5px]">
                     <p>Starts: {item.startsFrom}</p>
