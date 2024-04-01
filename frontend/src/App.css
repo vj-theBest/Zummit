@@ -99,8 +99,8 @@ body{
  
  .slide.active {
   color: black;
-  transform: scale(1.1);
-  font-weight: 700;
+  transform: scale(1);
+  font-weight: 500;
  }
 
 
@@ -108,7 +108,7 @@ body{
 .active {
   color: black;
   font-weight: 500;
-  font-size: large;
+  font-size: small;
  }
  
  /* CSS for inactive state */
@@ -139,7 +139,7 @@ input[type=number] {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: black;
+  color: white;
   padding: 10px;
   border-radius: 5px;
  }
