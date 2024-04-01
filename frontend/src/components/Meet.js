@@ -6,7 +6,7 @@ import Client4 from "./images/Client-4.webp";
 import { Link } from "react-router-dom";
 
 const Meet = () => {
-  const images = [Client1, Client2, Client3, Client4];  
+  const images = [Client1, Client2, Client3, Client4];
   const [currentImageIndex1, setCurrentImageIndex1] = useState(0);
   const [currentImageIndex2, setCurrentImageIndex2] = useState(1);
   const [currentImageIndex3, setCurrentImageIndex3] = useState(2);
@@ -31,9 +31,9 @@ const Meet = () => {
       clearInterval(interval3);
       clearInterval(interval4);
     };
- }, [images.length]);
+  }, [images.length]);
 
-  
+
   return (
     <>
       <div className="bg-[#001618] text-white flex px-28 py-10 justify-between items-center">
@@ -51,13 +51,13 @@ const Meet = () => {
             therapist, but with the ability to communicate when and how you
             want.
           </p>
-          
-          <Link to = "/Therapists" target="_top">
-          <button className="bg-cyan-500 text-black text-xl font-medium rounded-md w-[35%] px-2 py-1">
-            Know more
-        </button>
-        </Link>
-  
+
+          <Link to="/therapists" target="_top">
+            <button className="bg-cyan-500 text-black text-xl font-medium rounded-md w-[35%] px-2 py-1">
+              Know more
+            </button>
+          </Link>
+
         </div>
         {/* Right side container */}
         <div className="w-[60%] flex gap-3 overflow-hidden justify-center items-center text-black text-xl font-semibold">
@@ -84,7 +84,7 @@ const Meet = () => {
           </div>
           {/* Client 2 */}
           <div className="bg-gradient-to-b from-cyan-600 from-10% via-cyan-600 via-[percentage:20%_60%] to-yellow to-100% w-[30%] h-[72vh] overflow-hidden flex flex-col relative  justify-between  relative p-2 rounded-lg">
-            <h1>Therapist Kamalesh</h1>
+            <h1>Kamalesh</h1>
             <div className="flex justify-between absolute bottom-0  gap-8 items-end h-[80%]">
               <div>
                 <p className="text-lg font-semibold mt-48 w-0 h-0 mb-10 p-0  -rotate-90 whitespace-pre">
@@ -98,7 +98,7 @@ const Meet = () => {
                     backgroundImage: `url(${images[currentImageIndex2 % images.length]})`,
                     backgroundSize: "contain",
                     borderRadius: "2rem",
-                    backgroundRepeat:"no-repeat"
+                    backgroundRepeat: "no-repeat"
                   }}
                 ></div>
               </div>
@@ -106,7 +106,7 @@ const Meet = () => {
           </div>
           {/* Client 3 */}
           <div className="bg-gradient-to-b from-cyan-600 from-10% via-cyan-600 via-[percentage:20%_60%] to-yellow to-100% w-[31%] h-[80vh] overflow-hidden flex flex-col relative  justify-between  relative p-2 rounded-lg bg-cyan-500">
-            <h1>Therapist Kamalesh</h1>
+            <h1>Kamalesh</h1>
             <div className="flex justify-between absolute bottom-0  gap-8 items-end h-[80%]">
               <div>
                 <p className="text-lg font-semibold mt-48 w-0 h-0 mb-10 p-0  -rotate-90 whitespace-pre">
@@ -125,9 +125,9 @@ const Meet = () => {
               </div>
             </div>
           </div>
-         {/* Client 4 */}
-         <div className="bg-gradient-to-b from-cyan-600 from-10% via-cyan-600 via-[percentage:20%_60%] to-yellow to-100% w-[30%] h-[65vh] overflow-hidden flex flex-col relative  justify-between  relative p-2 rounded-lg">
-            <h1>Therapist Kamalesh</h1>
+          {/* Client 4 */}
+          <div className="bg-gradient-to-b from-cyan-600 from-10% via-cyan-600 via-[percentage:20%_60%] to-yellow to-100% w-[30%] h-[65vh] overflow-hidden flex flex-col relative  justify-between  relative p-2 rounded-lg">
+            <h1>Kamalesh</h1>
             <div className="flex justify-between absolute bottom-0  gap-8 items-end h-[80%]">
               <div>
                 <p className="text-lg font-semibold mt-48 w-0 h-0 mb-10 p-0  -rotate-90 whitespace-pre">

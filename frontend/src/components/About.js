@@ -74,14 +74,14 @@ const About = () => {
                 <p className="text-[24px] font-['Quicksand'] font-medium pb-6">
                   Sharaschandra - Co-Founder | Technology and Marketing
                 </p>
-                <p className=" pb-5 text-[16px] font-['Quicksand'] font-medium text-justify">
+                <p className=" pb-5 text-[16px] font-['Quicksand'] font-medium text-justify leading-[150%]">
                   Sharaschandra, an accomplished professional with a background
                   in engineering followed by an MBA specializing in Marketing.
                   With IIM as his alma mater and more than a decade of
                   experience in Data science and analytics brings a unique blend
                   of expertise to the table.
                 </p>
-                <p className="pb-5 text-[16px] font-['Quicksand'] font-medium text-justify">
+                <p className="pb-5 text-[16px] font-['Quicksand'] font-medium text-justify leading-[150%]">
                   He was introduced to mental health space during the COVID-19
                   pandemic for his struggles and having witnessed the stigma
                   around mental health and many people going through the same
@@ -90,7 +90,7 @@ const About = () => {
                   promoting mental health and well-being we can create a more
                   productive and efficient society.
                 </p>
-                <p className="pb-5 text-[16px] font-['Quicksand'] font-medium text-justify">
+                <p className="pb-5 text-[16px] font-['Quicksand'] font-medium text-justify leading-[150%]">
                   He is deeply committed to revolutionizing mental healthcare in
                   India, leveraging technology to forge partnerships, foster
                   communities, and curate events that aim to make mental health
@@ -128,7 +128,7 @@ const About = () => {
                 <p className="text-[24px] font-['Quicksand'] font-medium pb-6">
                   Asha Chillal (She/Her) - Co-Founder
                 </p>
-                <p className=" pb-5 text-[16px] font-['Quicksand'] font-medium text-justify">
+                <p className=" pb-5 text-[16px] font-['Quicksand'] font-medium text-justify leading-[150%]">
                   In 2016, Asha quit her job as an engineer and followed her
                   calling of being a Counseling Psychologist. After attaining a
                   Master's in Counseling Psychology from Christ University,
@@ -142,14 +142,14 @@ const About = () => {
                   relationships, pre-marital, marriage, grief, trauma, mental
                   health, work and parenting.
                 </p>
-                <p className="pb-5 text-[16px] font-['Quicksand'] font-medium text-justify">
+                <p className="pb-5 text-[16px] font-['Quicksand'] font-medium text-justify leading-[150%]">
                   She endures an eclectic approach to counseling and selectively
                   integrates CBT, REBT, DBT, CAT, Narrative therapy and
                   Humanistic approaches along with mindfulness to best suit the
                   client's needs. She is also a BWRT (Brain Working Recursive
                   Therapy) level 1 practitioner.
                 </p>
-                <p className="pb-5 text-[16px] font-['Quicksand'] font-medium text-justify">
+                <p className="pb-5 text-[16px] font-['Quicksand'] font-medium text-justify leading-[150%]">
                   She has worked at L&T construction for seven years and comes
                   with rich corporate experience which allowed her to travel
                   widely and understand different cultures and human
@@ -165,20 +165,20 @@ const About = () => {
                 <p className="text-[24px] font-['Quicksand'] font-medium pb-6">
                   Archita Bhalotia (She/Her) - Co-Founder
                 </p>
-                <p className=" pb-5 text-[16px] font-['Quicksand'] font-medium text-justify">
+                <p className=" pb-5 text-[16px] font-['Quicksand'] font-medium text-justify leading-[150%]">
                   Archita, a Clinical Mental Health Counselor, finds solace in
                   holding, comforting and safe spaces for her clients,
                   colleagues, communities and close folks. She found her place
                   in AroundWithin after years of experience in the mental health
                   fraternity, through different lenses.
                 </p>
-                <p className="pb-5 text-[16px] font-['Quicksand'] font-medium text-justify">
+                <p className="pb-5 text-[16px] font-['Quicksand'] font-medium text-justify leading-[150%]">
                   She has many feathers in her hat, including a Masters in
                   Clinical Mental Health Counseling and being a National
                   Certified Counselor (USA). Archita finds her deepest insights
                   through an integrated approach to counseling.
                 </p>
-                <p className="pb-5 text-[16px] font-['Quicksand'] font-medium text-justify">
+                <p className="pb-5 text-[16px] font-['Quicksand'] font-medium text-justify leading-[150%]">
                   When she is not knee deep in supporting fellow humans, she
                   draws energy from cooking, exploring, walking, reading and
                   catching a cat nap. Archita contributes to AroundWithin with

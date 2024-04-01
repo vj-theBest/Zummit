@@ -60,10 +60,15 @@ const Hero = () => {
       <main className="flex justify-center items-center px-40 py-10 bg-skyblue">
         <div className="flex flex-col  gap-5">
           <div className="flex flex-col justify-center items-center">
-            <h1 className="text-[38px] text-neutral-900 max-md:max-w-full max-md:text-4xl">
-            Who looks outside, dreams who looks inside, awakes
-            </h1>
-            <p className="text-[24px] text-center font-extralight leadin  g-10 text-zinc-800 max-md-w-full">
+            <div className="w-fit">
+              <h1 className="text-[45px] font-medium text-neutral-900 max-md:max-w-full max-md:text-4xl w-fit text-center">
+                "Who looks outside, dreams; who looks inside, awakes."
+              </h1>
+              <p className="font-medium text-[28px] text-right w-full px-1 mb-[24px] mt-[18px]">
+                - Carl Jung
+              </p>
+            </div>
+            <p className="text-[28px] text-center font-medium leadin  g-10 text-zinc-800 max-md-w-full">
               Join a community of individuals committed to mental well-being and
               gain access to <p>valuable resources and support</p>
             </p>

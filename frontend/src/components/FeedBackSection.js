@@ -70,7 +70,7 @@ const FeedbackSection = () => {
               if (index % 2 === 0) {
                 return (
                   <div className="bg-[rgb(235,247,255)] h-full w-[400px] grid gap-[5px] shadow-[rgba(0,0,0,0.24)_0px_3px_8px] p-3 rounded-[5px]" key={feedback.id}>
-                    <p className="font-medium text-[20px] text-[#3D3B3E]">{feedback.id}{feedback.message}</p>
+                    <p className="font-medium text-[20px] text-[#3D3B3E]">{feedback.message}</p>
                     <div className="self-end text-[#4DB3CB] text-[16px] font-normal">
                       {feedback.author} | {feedback.date}
                     </div>
@@ -87,7 +87,7 @@ const FeedbackSection = () => {
               if (index % 2 !== 0) {
                 return (
                   <div className="bg-[rgb(235,247,255)] h-full w-[400px] grid gap-[5px] shadow-[rgba(0,0,0,0.24)_0px_3px_8px] p-3 rounded-[5px]" key={feedback.id}>
-                    <p className="font-medium text-[20px] text-[#3D3B3E]">{feedback.id}{feedback.message}</p>
+                    <p className="font-medium text-[20px] text-[#3D3B3E]">{feedback.message}</p>
                     <div className="self-end text-[#4DB3CB] text-[16px] font-normal">
                       {feedback.author} | {feedback.date}
                     </div>

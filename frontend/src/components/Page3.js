@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 
 function Page3() {
@@ -18,12 +19,13 @@ function Page3() {
             andtransform with both group & individual therapy's
           </p>
           
-          <a className="text-end text-xl font-bold text-cyan-800" href="/About">
-            Know more
-          </a>
+          <Link to="/about" target="_top" className="self-end">
+            <a className="text-xl font-bold text-cyan-800">
+              Know more
+            </a>
+          </Link>
           
         </div>
-        =
       </div>
     </div>
   )

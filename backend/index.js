@@ -13,8 +13,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({extended:false}))
 app.use(
     cors({
-        origin:["http://localhost:5000/","https://zummit-chandan.vercel.app"],
-        "Access-Control-Allow-Origin": "https://zummit-chandan.vercel.app",
+        origin:["https://zummit-chandan.vercel.app"],
         credentials:true,
     })
 )

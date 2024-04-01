@@ -34,10 +34,9 @@ const Register__Login = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin":
-              "https://zummit-chandan.onrender.com",
           },
           body: JSON.stringify(userData),
+          credentials: 'include',
         }
       );
 
@@ -46,12 +45,6 @@ const Register__Login = () => {
       }
 
       const data = await response.json();
-
-      //jaao token leke aao
-      const token = response.headers.get("Authorization");
-      if (!token) {
-        throw new Error("Token not found in response headers");
-      }
 
       dispatch(addUser(data));
       console.log(data);
@@ -72,10 +65,9 @@ const Register__Login = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin":
-              "https://zummit-chandan.onrender.com",
           },
           body: JSON.stringify(loginData),
+          credentials: 'include',
         }
       );
 
@@ -241,20 +233,25 @@ const Register__Login = () => {
             <p className="text-center text-2xl font-medium">
               {signUp ? "Login" : "Register"}
             </p>
-            <div className="flex justify-around gap-10 cursor-pointer">
-              <p
-                onClick={handleClient}
-                className={role === "Client" ? "active" : "inactive"}
-              >
-                Client
-              </p>
-              <p
-                onClick={handleTherapist}
-                className={role === "Therapist" ? "active" : "inactive"}
-              >
-                Therapist
-              </p>
-            </div>
+                <div className="flex justify-around gap-10 cursor-pointer">
+                  <p
+                    onClick={handleClient}
+                    className={role === "Client" ? "active" : "inactive"}
+                  >
+                    Client
+                  </p>
+                  {
+                    signUp && (
+                      <p
+                    onClick={handleTherapist}
+                    className={role === "Therapist" ? "active" : "inactive"}
+                  >
+                    Therapist
+                  </p>
+                    )
+                  }
+                  
+                </div>
 
             {!showSection ? (
               <div className="flex flex-col gap-3">

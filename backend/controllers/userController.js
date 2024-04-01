@@ -69,9 +69,9 @@ const registerUser = asyncHandler(async (req, res) => {
     password,
   });
 
-  //Generate Token for User
+    //Generate Token for User
   if (user) {
-    const { _id, input,role } = User;
+    const { _id, input,role } = user;
     const token = generateToken(_id);
     res.cookie("token", token, {
       path: "/",
@@ -81,7 +81,7 @@ const registerUser = asyncHandler(async (req, res) => {
       // sameSite:none
     });
     // send user data
-    res.status(201).json({
+        res.status(201).json({
       success: true,
       data: _id,
       name,
