@@ -22,7 +22,7 @@ const Register__Login = () => {
 
   const registerUser = async (userData) => {
     // Check if OTP and verifyOTP are equal
-        if (OTP != otpVerify) {
+    if (OTP != otpVerify) {
       alert("OTP verification failed");
       return;
     }
@@ -56,7 +56,7 @@ const Register__Login = () => {
       console.error("Error:", error);
     }
   };
-  
+
   const loginUser = async (loginData) => {
     try {
       const response = await fetch(
@@ -233,20 +233,25 @@ const Register__Login = () => {
             <p className="text-center text-2xl font-medium">
               {signUp ? "Login" : "Register"}
             </p>
-            <div className="flex justify-around gap-10 cursor-pointer">
-              <p
-                onClick={handleClient}
-                className={role === "Client" ? "active" : "inactive"}
-              >
-                Client
-              </p>
-              <p
-                onClick={handleTherapist}
-                className={role === "Therapist" ? "active" : "inactive"}
-              >
-                Therapist
-              </p>
-            </div>
+                <div className="flex justify-around gap-10 cursor-pointer">
+                  <p
+                    onClick={handleClient}
+                    className={role === "Client" ? "active" : "inactive"}
+                  >
+                    Client
+                  </p>
+                  {
+                    signUp && (
+                      <p
+                    onClick={handleTherapist}
+                    className={role === "Therapist" ? "active" : "inactive"}
+                  >
+                    Therapist
+                  </p>
+                    )
+                  }
+                  
+                </div>
 
             {!showSection ? (
               <div className="flex flex-col gap-3">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -17,8 +18,13 @@ const Footer = () => {
               <div className="flex gap-8">
                 <div className="flex flex-col ml-5 w-[30%] max-md:ml-0 max-md:w-full">
                   <div className="flex flex-col grow text-lg font-medium text-red-50 whitespace-nowrap max-md:mt-10">
+                    <Link to="/about" target="_top">
                     <div className="text-xl font-bold">About Us</div>
+                    </Link>
+                    <Link to="/FAQs" target="_top">
                     <div className="mt-3.5">FAQ</div>
+                    </Link>
+                    
                     <div className="mt-2.5">Terms of use</div>
                     <div className="mt-2.5">Team</div>
                     <div className="mt-2.5">Privacy policy</div>

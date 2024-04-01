@@ -84,7 +84,7 @@ const Meet = () => {
           </div>
           {/* Client 2 */}
           <div className="bg-gradient-to-b from-cyan-600 from-10% via-cyan-600 via-[percentage:20%_60%] to-yellow to-100% w-[30%] h-[72vh] overflow-hidden flex flex-col relative  justify-between  relative p-2 rounded-lg">
-            <h1>Therapist Kamalesh</h1>
+            <h1>Kamalesh</h1>
             <div className="flex justify-between absolute bottom-0  gap-8 items-end h-[80%]">
               <div>
                 <p className="text-lg font-semibold mt-48 w-0 h-0 mb-10 p-0  -rotate-90 whitespace-pre">
@@ -106,7 +106,7 @@ const Meet = () => {
           </div>
           {/* Client 3 */}
           <div className="bg-gradient-to-b from-cyan-600 from-10% via-cyan-600 via-[percentage:20%_60%] to-yellow to-100% w-[31%] h-[80vh] overflow-hidden flex flex-col relative  justify-between  relative p-2 rounded-lg bg-cyan-500">
-            <h1>Therapist Kamalesh</h1>
+            <h1>Kamalesh</h1>
             <div className="flex justify-between absolute bottom-0  gap-8 items-end h-[80%]">
               <div>
                 <p className="text-lg font-semibold mt-48 w-0 h-0 mb-10 p-0  -rotate-90 whitespace-pre">
@@ -127,7 +127,7 @@ const Meet = () => {
           </div>
           {/* Client 4 */}
           <div className="bg-gradient-to-b from-cyan-600 from-10% via-cyan-600 via-[percentage:20%_60%] to-yellow to-100% w-[30%] h-[65vh] overflow-hidden flex flex-col relative  justify-between  relative p-2 rounded-lg">
-            <h1>Therapist Kamalesh</h1>
+            <h1>Kamalesh</h1>
             <div className="flex justify-between absolute bottom-0  gap-8 items-end h-[80%]">
               <div>
                 <p className="text-lg font-semibold mt-48 w-0 h-0 mb-10 p-0  -rotate-90 whitespace-pre">

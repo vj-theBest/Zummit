@@ -115,7 +115,7 @@ const PrevArrow = ({ onClick }) => (
     autoplay: true,
     speed: 1000,
     autoplaySpeed: 3000,
-    pauseOnHover: false,
+    pauseOnHover: true,
     cssEase: "ease-in-out",
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -145,15 +145,15 @@ const PrevArrow = ({ onClick }) => (
       <div className="absolute w-[20%] h-[485px] top-3 right-0  bg-gradient-to-l from-[#5e5e5e]"></div>
         <Slider {...settings}>
           {Data.map((item) => (
-            <div>
-              <div className="w-[348px] my-2 h-[485px] p-[10px] rounded-lg hover:shadow-lg">
+            <div className="flex justify-center inline-none">
+              <div className="w-[348px] my-2 h-[485px] p-[10px] rounded-lg hover:shadow-lg cursor-pointer">
                 <div className="relative">
                   <div className="bg-[#F7F131] absolute rounded-lg pl-2 pr-[8px,] py-[4px,] w-[129px] h-[28px] top-[5px] right-[5px]">
                     <p>Starts: {item.startsFrom}</p>
                   </div>
                   <img src={require(`${item.imageFile}`)} alt="" className="w-full" />
                 </div>
-                <p className="text-xl w-full text-center font-semibold text-[#121014] pb-2">
+                <p className="text-xl w-full text-center font-semibold text-[#121014] pb-2 hover:underline">
                   {item.heading}
                 </p>
                 <p className="leading-[20px] text-[#272529]">
