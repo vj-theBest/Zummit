@@ -141,8 +141,8 @@ const PrevArrow = ({ onClick }) => (
       <p className="text-4xl font-medium my-4">
         Upcoming Groups
       </p>
-      <div>
-      <div className="absolute w-[20%] h-[90%] right-28  bg-gradient-to-l from-[#414141]"></div>
+      <div className="relative">
+      <div className="absolute w-[20%] h-[485px] top-3 right-0  bg-gradient-to-l from-[#5e5e5e]"></div>
         <Slider {...settings}>
           {Data.map((item) => (
             <div>
