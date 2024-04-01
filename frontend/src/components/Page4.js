@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 
 function Page4() {
   return (
@@ -17,11 +17,12 @@ function Page4() {
              An online therapy for mental health resource to empower,educate
              andtransform with both group & individual therapy's
            </p>
-           <a className="text-end text-xl font-bold text-cyan-800" href="/About">
-             Know more
-           </a>
+           <Link to="/about" target="_top" className="self-end">
+            <a className="text-xl font-bold text-cyan-800">
+              Know more
+            </a>
+          </Link>
          </div>
-         =
        </div>
      </div>
   )

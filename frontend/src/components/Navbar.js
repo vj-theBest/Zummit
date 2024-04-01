@@ -42,8 +42,8 @@ function Navbar() {
         </a>
         <div className="flex gap-8 justify-between items-center  max-md:flex-wrap max-md:max-w-full">
         {navLinks.map((link) => (
-            <Link to={link.to} key={link.name} className={`transition ease-in-out duration-700 hover:scale-110 ${location.pathname === link.to ? 'activeNav' : ''}`}>
-              <h1>{link.name}</h1>
+            <Link to={link.to} key={link.name} className={`transition ease-in-out duration-700 hover:scale-90 ${location.pathname === link.to ? 'activeNav' : ''}`}>
+              <h1 className="text-[22px] font-semibold">{link.name}</h1>
             </Link>
           ))}
       {user.User==null &&  <Link to={'/login'}>
