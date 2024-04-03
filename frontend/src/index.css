@@ -99,3 +99,23 @@ p.aboutus-team{
 background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='22' ry='22' stroke='%230190B1FF' stroke-width='4' stroke-dasharray='30%2c 30' stroke-dashoffset='10' stroke-linecap='square'/%3e%3c/svg%3e");
 border-radius: 22px;
 }
+
+/* Support Group Page */
+
+p.support-group-headline{
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 500;
+  color: #001519;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+div.support-group-slider-heading{
+font-family: 'Quicksand';
+font-style: normal;
+font-weight: 500;
+font-size: 28px;
+line-height: 42px;
+color: #00677F;
+}
