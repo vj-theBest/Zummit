@@ -10,7 +10,7 @@ import Resources from "./components/Resources";
 import FAQ from "./components/FAQ";
 import IndividualTherapy from "./components/IndividualThearapy";
 import GroupTherapy from "./components/GroupThreapy";
-import SupportTherapy from "./components/SupportThreapy";
+import SupportTherapy from "./components/SupportTherapy";
 import "./App.css";
 import ContactSection from "./components/ContactSection";
 import GroupTherapyDetail from "./components/GroupTherapyDetail";
