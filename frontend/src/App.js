@@ -9,7 +9,7 @@ import Therapists from "./components/Therapists";
 import Resources from "./components/Resources";
 import FAQ from "./components/FAQ";
 import IndividualTherapy from "./components/IndividualThearapy";
-import GroupTherapy from "./components/GroupThreapy";
+import GroupTherapy from "./components/GroupTherapy";
 import SupportTherapy from "./components/SupportTherapy";
 import "./App.css";
 import ContactSection from "./components/ContactSection";
