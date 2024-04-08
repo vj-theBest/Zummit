@@ -4,10 +4,11 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
+
 //main component toh yaha hey
 const Register__Login = () => {
   const dispatch = useDispatch();
-  const [signUp, setSignUp] = useState(false);
+  const [signUp, setSignUp] = useState(true);
   const [role, setRole] = useState("Client");
   const [name, setName] = useState("");
   const [input, setInput] = useState("");
@@ -125,6 +126,7 @@ const Register__Login = () => {
 
   const handleInputChange = (e) => {
     setInput(e.target.value);
+    
   };
 
   const handlePasswordChange = (e) => {
@@ -230,8 +232,8 @@ const Register__Login = () => {
             </div>
           )}
           <div className="w-[50%] flex flex-col gap-5 shadow-lg rounded-lg  bg-white p-5">
-            <p className="text-center text-2xl font-medium">
-              {signUp ? "Login" : "Register"}
+            <p className="text-center text-3xl font-medium font-semibold">
+              {signUp ? "Login" : "Signup"}
             </p>
                 <div className="flex justify-around gap-10 cursor-pointer">
                   <p
@@ -296,14 +298,14 @@ const Register__Login = () => {
                   onClick={handleSubmission}
                   className="w-[40%] rounded-lg bg-yellow p-2 text-green-500 text-base"
                 >
-                  {signUp ? "Login" : "Register"}
+                  {signUp ? "Login" : "Send OTP"}
                 </button>
                 <p
                   onClick={handleClick}
                   className="text-cyan-500 cursor-pointer"
                 >
                   {signUp
-                    ? "New here ?,Register Now"
+                    ? "Signup "
                     : "Already Registered ? Login Now"}
                 </p>
                 {signUp ? (
