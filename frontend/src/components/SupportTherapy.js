@@ -119,10 +119,10 @@ const SupportTherapy = () => {
                       className="w-full h-[45px] w-[50px]"
                     ></img>
                   </div>
-                  <div onClick={"#"} className="">
+                  <div onClick={"#"} className="ml-[30px]">
                     <img
                       src={require("./images/Aroe.png")}
-                      className="w-full h-[45px] ml-[30px] w-[50px]"
+                      className="w-full h-[45px]  w-[50px]"
                     ></img>
                   </div>
                 </div>
