@@ -232,7 +232,7 @@ const Register__Login = () => {
             </div>
           )}
           <div className="w-[50%] flex flex-col gap-5 shadow-lg rounded-lg  bg-white p-5">
-            <p className="text-center text-3xl font-medium font-semibold">
+            <p className="text-center text-3xl font-medium">
               {signUp ? "Login" : "Signup"}
             </p>
                 <div className="flex justify-around gap-10 cursor-pointer">
