@@ -38,7 +38,7 @@ const Register__Login = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(userData),
-          credentials: 'include',
+          credentials: 'true',
         }
       );
 
@@ -69,7 +69,7 @@ const Register__Login = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(loginData),
-          credentials: 'include',
+          credentials: 'true',
         }
       );
 
@@ -206,6 +206,7 @@ const Register__Login = () => {
     } else {
       const loginData = {
         input,
+        role,
         password,
       };
       loginUser(loginData);

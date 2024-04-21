@@ -77,8 +77,8 @@ const registerUser = asyncHandler(async (req, res) => {
       path: "/",
       httpOnly: true,
       expires: new Date(Date.now() + 1000 * 86400),
-      // secure:true,  for deployment
-      // sameSite:none
+         secure:true,  //for deployment
+         sameSite:none
     });
     // send user data
         res.status(201).json({
@@ -122,8 +122,8 @@ const loginUser = asyncHandler(async (req, res) => {
         path:"/",
         httpOnly:true,
         expires: new Date(Date.now()+1000*86400),
-        // secure:true,
-        // sameSite:none,
+        secure:true,
+        sameSite:none,
     });
     //send user data
     res.status(201).json(newUser)
@@ -139,17 +139,28 @@ const logOut=asyncHandler(async(req,res)=>{
         path:"/",
         httpOnly:true,
         expires:new Date(0),
-        // secure:true,
-        // sameSite:none,
+        secure:true,
+        sameSite:none,
     });
     return res.status(200).json({
         message:"successfully logout"
     })
 })
 
+const getUser=(req,res)=>{
+    if(token){
+      const user=User.findBy(body.input);
+      res.status(200).json({
+        success:true,
+        data:user,
+        msg:"user found"
+      })
+    }
+}
 module.exports = {
   registerUser,
   loginUser,
   logOut,
+  getUser
 
 };
