@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const [showPrivacy,setShowPrivacy]=useState(false);
+  const togglePrivacyPopup=()=>{
+    setShowPrivacy(!showPrivacy);
+  }
+
+ 
   return (
     <div className="flex flex-col py-11 bg-cyan-600">
       <div className="flex gap-0 items-start self-center mt-5 w-full max-w-[1109px] max-md:flex-wrap max-md:max-w-full">
@@ -27,7 +33,7 @@ const Footer = () => {
                     
                     <div className="mt-2.5">Terms of use</div>
                     <div className="mt-2.5">Team</div>
-                    <div className="mt-2.5">Privacy policy</div>
+                    <div className="mt-2.5 cursor-pointer" onClick={togglePrivacyPopup}>Privacy policy</div>
                   </div>
                 </div>
                 <div className="flex flex-col ml-5 w-[30%] max-md:ml-0 max-md:w-full">
@@ -63,6 +69,18 @@ const Footer = () => {
       </div>
       <div className="mt-5 w-full bg-yellow-300 min-h-[1px] max-md:max-w-full" />
          
+      {showPrivacy && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded shadow-lg">
+            <button onClick={togglePrivacyPopup} className="absolute top-0 right-0 m-2">
+              X
+            </button>
+            <object data="path/to/your/privacy-policy.pdf" type="application/pdf" width="100%" height="600px">
+              <p>It appears you don't have a PDF plugin for this browser. No problem... you can <a href="path/to/your/privacy-policy.pdf">click here to download the PDF file.</a></p>
+            </object>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
