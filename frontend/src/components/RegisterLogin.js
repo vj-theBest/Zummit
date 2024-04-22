@@ -219,22 +219,17 @@ const Register__Login = () => {
     setReEnterPassword("");
     setRole("Client");
   };
+
+  //gif animation ka play once logic
   const gifRef = useRef(null);
-  
   useEffect(() => {
-     
-     const gifDuration = 5000; 
- 
-     
+     const gifDuration = 3500; 
      const timer = setTimeout(() => {
        if (gifRef.current) {
          gifRef.current.style.display = "none";
-         
        }
        setShowGif(false);
      }, gifDuration);
- 
-
      return () => clearTimeout(timer);
   }, []);
 
