@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useState , useRef } from "react";
 import { Link } from "react-router-dom";
+import { useReactToPrint } from 'react-to-print';
 import Resume from "../Privacy/AroundWithin - Privacy and Confidentiality Policy.pdf";
-
 const Footer = () => {
   const [showPrivacy, setShowPrivacy] = useState(false);
   const togglePrivacyPopup = () => {
     setShowPrivacy(!showPrivacy);
   };
   const currentDate = new Date().toLocaleDateString();
+
+  const PrintRef = useRef();
+
+  const handlePrint = useReactToPrint({
+    content: () => PrintRef.current,
+  });
 
   return (
     <div className="flex flex-col py-11 bg-cyan-600">
@@ -77,19 +83,21 @@ const Footer = () => {
          
       {showPrivacy && (
         <div className="background-overlay">
-          <div className="fixed inset-0 flex items-center justify-center z-50 m-60 mt-8">
-            <div className="privacy-popup">
-              <div className="privacy-popup-content scrollable-y">
+          <div className="fixed inset-0 flex items-center justify-center z-50  ">
+            <div className="privacy-popup ">
                 <div className="privacy-popup-header">
                   <i
-                    className="fa-regular fa-circle-xmark privacy-popup-close-icon h-10 cursor-pointer"
+                    className="fa-regular fa-circle-xmark privacy-popup-close-icon h-10 cursor-pointer font-bold  text-5xl"
                     onClick={togglePrivacyPopup}
-                  ></i>
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                  </i>
                 </div>
+              <div className="privacy-popup-content scrollable-y">
+                <div  ref={PrintRef} className="content" >
                 <h2 className="privacy-popup-title">
                   Privacy and Confidentiality Policy
                 </h2>
-
                 <p>
                   At AroundWithin, we recognize the sensitivity and importance
                   of maintaining the privacy and confidentiality of our users'
@@ -100,6 +108,7 @@ const Footer = () => {
                   platform, which provides group therapies, support groups, and
                   individual counseling.{" "}
                 </p>
+
                 <h2 className="privacy-popup-title">
                   Collection of Personal Information:
                 </h2>
@@ -258,7 +267,15 @@ const Footer = () => {
                     </li>
                   </div>
                 </div>
+               </div>
                 <div className="privacy-popup-footer">
+                  <div className="privacy-popup-footer-button">
+                  <button
+                    onClick={handlePrint}
+                    className="privacy-popup-footer-link"
+                  >
+                    Print
+                  </button>
                   <a
                     href={Resume}
                     download
@@ -266,6 +283,7 @@ const Footer = () => {
                   >
                     Download CV
                   </a>
+                  </div>
                 </div>
               </div>
             </div>

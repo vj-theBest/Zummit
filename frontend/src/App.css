@@ -176,29 +176,31 @@ input[type="number"] {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   max-width: 800px; /* Maximum width */
   width: 90%; /* Responsive width */
-  margin: 0 auto;
+  height: 90%;
 }
 
 .privacy-popup-content {
-  @apply bg-white p-6 rounded shadow-lg scrollable-y max-w-3xl w-full;
+  @apply bg-white  rounded shadow-lg scrollable-y max-w-3xl  w-full;
+  height: 100%;
 }
-
+.content {
+  @apply px-8 py-4 
+}
 .privacy-popup-header {
-  @apply flex justify-end;
-  display: flex;
- justify-content: flex-end;
- margin-bottom: 20px;
+  @apply absolute top-12 right-14 text-2xl justify-end;
+  justify-content: flex-end;
+  margin-bottom: 20px;
 }
 
 .privacy-popup-close-icon {
   @apply text-gray-500 hover:text-gray-700 cursor-pointer;
   display: flex;
- justify-content: flex-end;
- margin-bottom: 20px;
+  justify-content: flex-end;
+  margin-bottom: 20px;
 }
 
 .privacy-popup-title {
-  @apply text-2xl font-bold mb-4;
+  @apply text-2xl font-bold my-2;
 }
 
 .privacy-popup-body {
@@ -206,11 +208,13 @@ input[type="number"] {
 }
 
 .privacy-popup-footer {
-  @apply bg-green-500 flex justify-end sticky bottom-0;
+  @apply absolute left-0  justify-between sticky bottom-0;
 }
-
+.privacy-popup-footer-button {
+  @apply flex justify-between py-2  px-8
+}
 .privacy-popup-footer-link {
-  @apply text-white font-bold py-2 px-4 rounded hover:bg-green-600;
+  @apply text-white font-bold py-2 px-4 rounded bg-green-500  hover:bg-green-600;
 }
 
 .background-overlay {
@@ -219,11 +223,15 @@ input[type="number"] {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)); /* Gradient black background */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8)
+  ); /* Gradient black background */
   z-index: 40; /* Ensure it's above other content but below the popup */
   overflow: hidden; /* Prevent scrolling */
- }
- ::-webkit-scrollbar {
+}
+::-webkit-scrollbar {
   background-color: #000;
   height: 12px;
   width: 10px;
