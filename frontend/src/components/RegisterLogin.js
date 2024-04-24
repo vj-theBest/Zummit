@@ -39,7 +39,7 @@ const Register__Login = () => {
           },
           body: JSON.stringify(userData),
           credentials: 'include', // Changed from 'true' to 'include' for clarity
-          withCredentials: true,
+          // withCredentials: true,
         }
       );
 
@@ -71,7 +71,7 @@ const Register__Login = () => {
           },
           body: JSON.stringify(loginData),
           credentials: 'include', // Changed from 'true' to 'include' for clarity
-          withCredentials: true,
+          // withCredentials: true,
           
         }
       );
