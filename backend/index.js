@@ -15,6 +15,7 @@ app.use(
     cors({
         origin:["https://zummit-chandan.vercel.app","http://localhost:3000"],
         credentials:true,
+        
     })
 )
 //errorhandling

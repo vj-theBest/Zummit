@@ -38,7 +38,8 @@ const Register__Login = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(userData),
-          credentials: 'true',
+          credentials: 'include', // Changed from 'true' to 'include' for clarity
+          withCredentials: true,
         }
       );
 
@@ -69,7 +70,9 @@ const Register__Login = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(loginData),
-          credentials: 'true',
+          credentials: 'include', // Changed from 'true' to 'include' for clarity
+          withCredentials: true,
+          
         }
       );
 

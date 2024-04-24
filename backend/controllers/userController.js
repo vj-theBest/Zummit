@@ -77,8 +77,8 @@ const registerUser = asyncHandler(async (req, res) => {
       path: "/",
       httpOnly: true,
       expires: new Date(Date.now() + 1000 * 86400),
-         secure:true,  //for deployment
-         sameSite:none
+        //  secure:true,  //for deployment
+        //  sameSite:none
     });
     // send user data
         res.status(201).json({
@@ -122,8 +122,8 @@ const loginUser = asyncHandler(async (req, res) => {
         path:"/",
         httpOnly:true,
         expires: new Date(Date.now()+1000*86400),
-        secure:true,
-        sameSite:none,
+        // secure:true,
+        // sameSite:none,
     });
     //send user data
     res.status(201).json(newUser)

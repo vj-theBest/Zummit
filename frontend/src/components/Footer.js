@@ -1,6 +1,6 @@
 import React, { useState , useRef } from "react";
 import { Link } from "react-router-dom";
-import { useReactToPrint } from 'react-to-print';
+
 import Resume from "../Privacy/AroundWithin - Privacy and Confidentiality Policy.pdf";
 const Footer = () => {
   const [showPrivacy, setShowPrivacy] = useState(false);
@@ -11,9 +11,9 @@ const Footer = () => {
 
   const PrintRef = useRef();
 
-  const handlePrint = useReactToPrint({
-    content: () => PrintRef.current,
-  });
+  // const handlePrint = useReactToPrint({
+  //   content: () => PrintRef.current,
+  // });
 
   return (
     <div className="flex flex-col py-11 bg-cyan-600">
@@ -270,12 +270,12 @@ const Footer = () => {
                </div>
                 <div className="privacy-popup-footer">
                   <div className="privacy-popup-footer-button">
-                  <button
+                  {/* <button
                     onClick={handlePrint}
                     className="privacy-popup-footer-link"
-                  >
-                    Print
-                  </button>
+                  > */}
+                    {/* Print
+                  </button> */}
                   <a
                     href={Resume}
                     download
