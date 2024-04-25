@@ -10,14 +10,24 @@ const userRoute=require("./routes/userRoute")
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.urlencoded({extended:false}))
+app.use(express.urlencoded({extended:false}));
 app.use(
     cors({
-        origin:["https://zummit-chandan.vercel.app","http://localhost:3000"],
-        credentials:true,
-        
+      origin: ['https://zummit-chandan.vercel.app', 'http://localhost:3000'],
+      credentials: true,
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+      allowedHeaders: ['Content-Type', 'Authorization'],
     })
-)
+  );
+// app.use(
+//     cors({
+//         origin:["https://zummit-chandan.vercel.app",
+//         "http://localhost:3000"
+//     ],
+//         credentials:true,
+        
+//     })
+// )
 //errorhandling
 const errorHandler=require("./middleware/errorMiddleware")
 app.use(errorHandler);
