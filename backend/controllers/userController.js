@@ -20,10 +20,11 @@ const registerUser = asyncHandler(async (req, res) => {
 
   const { name, input, password,role } = req.body;
   //validation
-  if (!name || !input || !role || !password) {
-    res.status(400);
-    throw new Error("Please fill in all required fields");
-  }
+  // if (!name || !input || !role || !password) {
+  //   res.status(400);
+  //   throw new Error("Please fill in all required fields");
+  // }
+  console.log( name, input, password,role);
   if (password.length < 6) {
     res.status(400);
     throw new Error("password must be upto 6 character");

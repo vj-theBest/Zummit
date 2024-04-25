@@ -3,7 +3,7 @@ const express=require("express");
 const mongoose=require("mongoose");
 const cors=require("cors")
 const cookieParser=require("cookie-parser")
-const PORT=process.env.PORT || 4000
+const PORT= 4000
 const app= express();
 const userRoute=require("./routes/userRoute")
 
@@ -33,6 +33,6 @@ const dbConnect=require("./config/database");
 dbConnect();
 
 app.listen(PORT,()=>{
-    console.log("app run at 5000");
+    console.log(`app run at , ${PORT}`);
 })
      
