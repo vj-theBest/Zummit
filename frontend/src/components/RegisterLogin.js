@@ -91,7 +91,7 @@ const Register__Login = () => {
       localStorage.setItem("token", data.token);
 
       //jaao token leke aao
-      const token = response.get("Authorization");
+      const token = response["Authorization"];
       if (!token) {
         throw new Error("Token not found in response headers");
       }
