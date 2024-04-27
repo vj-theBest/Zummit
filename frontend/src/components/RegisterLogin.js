@@ -31,7 +31,7 @@ const Register__Login = () => {
    
     try {
       const response = await fetch(
-        "/api/users/register",
+        "https://zummit-kefo.onrender.com:4000/api/users/register",
         {
           method: "POST",
           headers: {
@@ -63,7 +63,7 @@ const Register__Login = () => {
   const loginUser = async (loginData) => {
     try {
       const response = await fetch(
-        "/api/users/login",
+        "https://zummit-kefo.onrender.com:4000/api/users/login",
         {
           method: "POST",
           headers: {

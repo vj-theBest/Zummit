@@ -30,7 +30,7 @@ function Navbar() {
     //data hatane ka ninja technique
     localStorage.removeItem("token");
     console.log("reached")
-    const response = await axios.get("/api/users/logout");
+    const response = await axios.get("https://zummit-kefo.onrender.com:4000/api/users/logout");
     console.log("after")
     dispatch(removeUser());
   };
