@@ -23,6 +23,7 @@ const Register__Login = () => {
   const navigate = useNavigate();
 
   const registerUser = async (userData) => {
+    console.log(userData);
     // Check if OTP and verifyOTP are equal
     if (OTP != otpVerify) {
       alert("OTP verification failed");
@@ -31,7 +32,7 @@ const Register__Login = () => {
    
     try {
       const response = await fetch(
-        "https://zummit-kefo.onrender.com:4000/api/users/register",
+        "https://zummit-kefo.onrender.com/api/users/register",
         {
           method: "POST",
           headers: {
@@ -63,7 +64,7 @@ const Register__Login = () => {
   const loginUser = async (loginData) => {
     try {
       const response = await fetch(
-        "https://zummit-kefo.onrender.com:4000/api/users/login",
+        "https://zummit-kefo.onrender.com/api/users/login",
         {
           method: "POST",
           headers: {
