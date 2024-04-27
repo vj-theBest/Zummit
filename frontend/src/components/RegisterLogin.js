@@ -23,6 +23,7 @@ const Register__Login = () => {
   const navigate = useNavigate();
 
   const registerUser = async (userData) => {
+    console.log(userData);
     // Check if OTP and verifyOTP are equal
     if (OTP != otpVerify) {
       alert("OTP verification failed");
@@ -31,7 +32,7 @@ const Register__Login = () => {
    
     try {
       const response = await fetch(
-        "/api/users/register",
+        "https://zummit-kefo.onrender.com/api/users/register",
         {
           method: "POST",
           headers: {
@@ -63,7 +64,7 @@ const Register__Login = () => {
   const loginUser = async (loginData) => {
     try {
       const response = await fetch(
-        "/api/users/login",
+        "https://zummit-kefo.onrender.com/api/users/login",
         {
           method: "POST",
           headers: {
@@ -84,13 +85,13 @@ const Register__Login = () => {
 
       dispatch(addUser(data));
       navigate("/booking");
-      console.log(data);
+      console.log(response);
 
       //reload kee baad bhi data remain constant
       localStorage.setItem("token", data.token);
 
       //jaao token leke aao
-      const token = response.headers.get("Authorization");
+      const token = response["Authorization"];
       if (!token) {
         throw new Error("Token not found in response headers");
       }

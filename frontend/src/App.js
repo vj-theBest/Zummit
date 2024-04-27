@@ -40,6 +40,7 @@ function App() {
         <Route path="/login" element={<RegisterLogin/>} />
         <Route path="/booking" element={<BookingPage/>} />
         <Route path="/forgot-password" element={<ForgotPassword/>} />
+
       </Routes>
       <ContactSection />
       <Footer />
