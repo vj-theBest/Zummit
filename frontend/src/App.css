@@ -1,12 +1,12 @@
 /*Feedback*/
 
-.Feedback_header{
+.Feedback_header {
   margin-left: 10vw;
   margin-right: 10vw;
   width: 60%;
 }
 
-.contact_form--input{
+.contact_form--input {
   border-color: darkcyan;
   border-width: thin;
   background: transparent;
@@ -14,8 +14,8 @@
   border-radius: 2px;
 }
 
-.feedback_card{
-  background-color:rgb(235, 247, 255);
+.feedback_card {
+  background-color: rgb(235, 247, 255);
   border-radius: 5px;
   min-width: 250px;
   max-width: 310px;
@@ -25,11 +25,11 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.gap{
+.gap {
   gap: 24px;
 }
 
-body{
+body {
   font-family: "Quicksand", sans-serif;
 }
 
@@ -72,12 +72,11 @@ body{
   }
 }
 
-.svg-rotate{
+.svg-rotate {
   transform: rotate(90deg);
 }
 
-
-.user{
+.user {
   height: 400px;
   width: 150px;
   overflow: hidden;
@@ -87,7 +86,7 @@ body{
   border: 2px solid yellow;
   position: absolute;
 }
-.client{
+.client {
   height: 20rem;
 }
 
@@ -95,26 +94,25 @@ body{
   color: gray;
   transition: transform 0.3s ease-in-out;
   font-weight: 100;
- }
- 
- .slide.active {
+}
+
+.slide.active {
   color: black;
   transform: scale(1);
   font-weight: 500;
- }
+}
 
-
- /* CSS for active state */
+/* CSS for active state */
 .active {
   color: black;
   font-weight: 500;
   font-size: small;
- }
- 
- /* CSS for inactive state */
- .inactive {
+}
+
+/* CSS for inactive state */
+.inactive {
   color: gray;
- }
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -123,17 +121,22 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .activeNav {
-  color: rgb(247, 247, 4); /* Or any other style you want to apply to the active link */
- }
+  color: rgb(
+    247,
+    247,
+    4
+  ); /* Or any other style you want to apply to the active link */
+}
 
-
- /* //arrow in upcoming groups  */
- .nextArrow, .prevArrow {
+/* //arrow in upcoming groups  */
+.nextArrow,
+.prevArrow {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -141,18 +144,112 @@ input[type=number] {
   color: white;
   padding: 10px;
   border-radius: 5px;
- }
- 
- .nextArrow {
-  right: 10px;
- }
- 
- .prevArrow {
-  left: 10px;
- }
+}
 
- .prevArrow {
+.nextArrow {
+  right: 10px;
+}
+
+.prevArrow {
+  left: 10px;
+}
+
+.prevArrow {
   visibility: visible;
-  display: block; 
-  z-index: 10; 
- }
+  display: block;
+  z-index: 10;
+}
+
+/* //privacy scroll */
+/* App.css or your custom CSS file */
+.scrollable-y {
+  /* margin-top: 30%; */
+  overflow-y: auto;
+  max-height: 800px; /* Adjust this value based on your needs */
+}
+
+.privacy-popup {
+  @apply fixed inset-0 flex items-center justify-center z-50 m-60 mt-8;
+  background-color: #ffffff; /* White background */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside the popup */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 800px; /* Maximum width */
+  width: 90%; /* Responsive width */
+  height: 90%;
+}
+
+.privacy-popup-content {
+  @apply bg-white  rounded shadow-lg scrollable-y max-w-3xl  w-full;
+  height: 100%;
+}
+.content {
+  @apply px-8 py-4 
+}
+.privacy-popup-header {
+  @apply absolute top-12 right-14 text-2xl justify-end;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.privacy-popup-close-icon {
+  @apply text-gray-500 hover:text-gray-700 cursor-pointer;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.privacy-popup-title {
+  @apply text-2xl font-bold my-2;
+}
+
+.privacy-popup-body {
+  @apply text-base text-gray-700 leading-6;
+}
+
+.privacy-popup-footer {
+  @apply absolute left-0  justify-between sticky bottom-0;
+}
+.privacy-popup-footer-button {
+  @apply flex justify-between py-2  px-8
+}
+.privacy-popup-footer-link {
+  @apply text-white font-bold py-2 px-4 rounded bg-green-500  hover:bg-green-600;
+}
+
+.background-overlay {
+  position: fixed; /* Fixed position to cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8)
+  ); /* Gradient black background */
+  z-index: 40; /* Ensure it's above other content but below the popup */
+  overflow: hidden; /* Prevent scrolling */
+}
+::-webkit-scrollbar {
+  background-color: #000;
+  height: 12px;
+  width: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.5, #a520ca),
+    color-stop(1, #2681cc)
+  );
+  border-radius: 10px;
+}

@@ -19,6 +19,7 @@ const Register__Login = () => {
   const [showOTP, setShowOTP] = useState(false);
   const [OTP, setOTP] = useState("");
   const [otpVerify, setOtpVerify] = useState("");
+  const [showGif,setShowGif]=useState(true);
   const navigate = useNavigate();
 
   const registerUser = async (userData) => {
@@ -27,17 +28,18 @@ const Register__Login = () => {
       alert("OTP verification failed");
       return;
     }
-
+   
     try {
       const response = await fetch(
-        "https://zummit-chandan.onrender.com/api/users/register",
+        "/api/users/register",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(userData),
-          credentials: 'include',
+          credentials: 'include', // Changed from 'true' to 'include' for clarity
+          withCredentials: true,
         }
       );
 
@@ -61,14 +63,16 @@ const Register__Login = () => {
   const loginUser = async (loginData) => {
     try {
       const response = await fetch(
-        "https://zummit-chandan.onrender.com/api/users/login",
+        "/api/users/login",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(loginData),
-          credentials: 'include',
+          credentials: 'include', // Changed from 'true' to 'include' for clarity
+          withCredentials: true,
+          
         }
       );
 
@@ -205,6 +209,7 @@ const Register__Login = () => {
     } else {
       const loginData = {
         input,
+        role,
         password,
       };
       loginUser(loginData);
@@ -217,6 +222,19 @@ const Register__Login = () => {
     setReEnterPassword("");
     setRole("Client");
   };
+
+  //gif animation ka play once logic
+  const gifRef = useRef(null);
+  useEffect(() => {
+     const gifDuration = 3500; 
+     const timer = setTimeout(() => {
+       if (gifRef.current) {
+         gifRef.current.style.display = "none";
+       }
+       setShowGif(false);
+     }, gifDuration);
+     return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -232,7 +250,7 @@ const Register__Login = () => {
             </div>
           )}
           <div className="w-[50%] flex flex-col gap-5 shadow-lg rounded-lg  bg-white p-5">
-            <p className="text-center text-3xl font-medium font-semibold">
+            <p className="text-center text-3xl font-medium">
               {signUp ? "Login" : "Signup"}
             </p>
                 <div className="flex justify-around gap-10 cursor-pointer">
@@ -347,15 +365,24 @@ const Register__Login = () => {
           </div>
         </div>
         {/* Right Container */}
-        <div className="w-[50%]">
-          <div className="bg-cyan-600 rounded-lg w-[306px]  flex items-center">
-            <img
-              src={require(`./images/aroundwithin-speed.gif`)}
-              alt=""
-              className="w-full rounded-md"
-            />
-          </div>
-        </div>
+     <div className="w-[50%]">
+     <div className="bg-cyan-600 rounded-lg w-[306px] flex items-center mr">
+      {showGif ? (
+        <img
+          src={require(`./images/aroundwithin-speed.gif`)}
+          alt=""
+          className="w-full rounded-md"
+        />
+      ) : (
+        <img
+          loading="lazy"
+          srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/097017b6221225ba91654ced9fdf666cd0fa2e4d4c5218e043ea12cb8afdf043?apiKey=8587097ed3a94b279b125430c3e068a6&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/097017b6221225ba91654ced9fdf666cd0fa2e4d4c5218e043ea12cb8afdf043?apiKey=8587097ed3a94b279b125430c3e068a6&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/097017b6221225ba91654ced9fdf666cd0fa2e4d4c5218e043ea12cb8afdf043?apiKey=8587097ed3a94b279b125430c3e068a6&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/097017b6221225ba91654ced9fdf666cd0fa2e4d4c5218e043ea12cb8afdf043?apiKey=8587097ed3a94b279b125430c3e068a6&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/097017b6221225ba91654ced9fdf666cd0fa2e4d4c5218e043ea12cb8afdf043?apiKey=8587097ed3a94b279b125430c3e068a6&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/097017b6221225ba91654ced9fdf666cd0fa2e4d4c5218e043ea12cb8afdf043?apiKey=8587097ed3a94b279b125430c3e068a6&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/097017b6221225ba91654ced9fdf666cd0fa2e4d4c5218e043ea12cb8afdf043?apiKey=8587097ed3a94b279b125430c3e068a6&"
+          className="w-full rounded-md"
+        />
+      )}
+    </div>
+     </div>
+        
       </form>
     </>
   );
