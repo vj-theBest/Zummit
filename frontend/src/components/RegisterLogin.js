@@ -84,13 +84,13 @@ const Register__Login = () => {
 
       dispatch(addUser(data));
       navigate("/booking");
-      console.log(data);
+      console.log(response);
 
       //reload kee baad bhi data remain constant
       localStorage.setItem("token", data.token);
 
       //jaao token leke aao
-      const token = response.headers.get("Authorization");
+      const token = response.get("Authorization");
       if (!token) {
         throw new Error("Token not found in response headers");
       }
