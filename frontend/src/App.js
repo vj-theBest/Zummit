@@ -17,6 +17,7 @@ import GroupTherapyDetail from "./components/GroupTherapyDetail";
 import RegisterLogin from "./components/RegisterLogin";
 import BookingPage from "./components/BookingPage";
 import ForgotPassword from "./components/ForgotPassword";
+import TherapistProfile from "./components/TherapistProfile";
 
 function App() {
   return (
@@ -34,7 +35,11 @@ function App() {
           </Route>
           <Route path="support-group" element={<SupportTherapy />} />
         </Route>
-        <Route path="/therapists" element={<Therapists />} />
+        <Route path="/therapists" element={<Therapists />}>
+          <Route path="profile" element={<TherapistProfile />}>
+            <Route path=":id"></Route>
+          </Route>
+        </Route>
         <Route path="/resources" element={<Resources />} />
         <Route path="/FAQs" element={<FAQ />} />
         <Route path="/login" element={<RegisterLogin/>} />
