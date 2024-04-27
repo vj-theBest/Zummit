@@ -29,9 +29,22 @@ function Navbar() {
   const logout = async () => {
     //data hatane ka ninja technique
     localStorage.removeItem("token");
-    console.log("reached")
-    const response = await axios.get("https://zummit-kefo.onrender.com/api/users/logout");
-    console.log("after")
+    
+    //const response = await axios.get("https://zummit-kefo.onrender.com/api/users/logout", {credentials: 'include',  withCredentials: true});
+    await fetch(
+      "https://zummit-kefo.onrender.com/api/users/logout",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        
+        credentials: 'include', // Changed from 'true' to 'include' for clarity
+        withCredentials: true,
+        
+      }
+    );
+    
     dispatch(removeUser());
   };
 
