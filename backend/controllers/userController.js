@@ -145,7 +145,7 @@ const loginUser = async (req, res) => {
 
 //logout user
 const logout=asyncHandler(async(req,res)=>{
-  
+
     /*res.cookie("token"," ",{
         path:"/",
         httpOnly:true,
