@@ -55,7 +55,7 @@ const Register__Login = () => {
 
       //reload kee baad bhi data remain constant
       localStorage.setItem("token", data.token);
-      navigate("/booking");
+      navigate("/userdashboard");
     } catch (error) {
       console.error("Error:", error);
     }
@@ -84,7 +84,7 @@ const Register__Login = () => {
       const data = await response.json();
 
       dispatch(addUser(data));
-      navigate("/booking");
+      navigate("/userdashboard");
       console.log(response);
 
       //reload kee baad bhi data remain constant
@@ -162,7 +162,7 @@ const Register__Login = () => {
   //OTP ka page ka Handler hey
   const handleSubmission = (e) => {
     //name filed blank hua toh show error set karo
-    if (name.trim() === "") {
+    if (!signUp && name.trim() === "") {
       setError("Name cannot be empty");
       return;
     }
@@ -186,8 +186,8 @@ const Register__Login = () => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async(e) => {
+    if(e) await e.preventDefault();
 
     if (input.trim() === "") {
       setError("Input cannot be empty");
@@ -206,14 +206,14 @@ const Register__Login = () => {
     };
 
     if (!signUp) {
-      registerUser(userData);
+      await registerUser(userData);
     } else {
       const loginData = {
         input,
         role,
         password,
       };
-      loginUser(loginData);
+      await loginUser(loginData);
     }
 
     //cleanup toh karo ree
@@ -240,7 +240,7 @@ const Register__Login = () => {
   return (
     <>
       <form
-        onSubmit={handleSubmit}
+        onSubmit={async(e)=>{await handleSubmit(e)}}
         className="flex justify-center mx-28 ml-48 my-16 items-center w-full"
       >
         {/* Left Container */}
