@@ -281,7 +281,7 @@ const Footer = () => {
                     download
                     className="privacy-popup-footer-link"
                   >
-                    Download CV
+                    Download Privacy Policy
                   </a>
                   </div>
                 </div>

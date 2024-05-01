@@ -73,6 +73,7 @@ const registerUser = asyncHandler(async (req, res) => {
     //Generate Token for User
   if (user) {
     const { _id, input,role } = user;
+    console.log("ID is ",_id)
     const token = generateToken(_id);
     res.cookie("token", token, {
       path: "/",
@@ -97,7 +98,9 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 //Login User
-const loginUser = asyncHandler(async (req, res) => {
+const loginUser = async (req, res) => {
+  try{
+    
   const { input, password } = req.body;
   //request ko toh validate kardoo
   if (!input || !password) {
@@ -112,10 +115,11 @@ const loginUser = asyncHandler(async (req, res) => {
 
   if(!user){
     res.status(400)
-    throw new Error("user doesnot exist")
+    throw new Error("user does not exist")
   }
 
   //generate token for new user
+
   const token = generateToken(user._id);
   if (user && passwordIsCorrect) {
     const newUser=await User.findOne({input}).select("-password")
@@ -127,23 +131,30 @@ const loginUser = asyncHandler(async (req, res) => {
         // sameSite:none,
     });
     //send user data
-    res.status(201).json(newUser)
+    res.status(201).json({newUser,"Authorization":token})
   }else{
     res.status(400);
     throw new Error("Invalid email or Password");
   }
-});
+  }
+  catch(error){
+    console.log(error);
+  }
+  
+};
 
 //logout user
-const logOut=asyncHandler(async(req,res)=>{
-    res.cookie("token"," ",{
+const logout=asyncHandler(async(req,res)=>{
+
+    /*res.cookie("token"," ",{
         path:"/",
         httpOnly:true,
         expires:new Date(0),
-        secure:true,
-        sameSite:none,
-    });
-    return res.status(200).json({
+        //secure:true,
+        //sameSite:none,
+    });*/
+    res.clearCookie('token');
+    res.status(200).json({
         message:"successfully logout"
     })
 })
@@ -161,7 +172,7 @@ const getUser=(req,res)=>{
 module.exports = {
   registerUser,
   loginUser,
-  logOut,
+  logout,
   getUser
 
 };
