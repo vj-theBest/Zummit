@@ -35,15 +35,18 @@ function App() {
           </Route>
           <Route path="support-group" element={<SupportTherapy />} />
         </Route>
-        <Route path="/therapists" element={<Therapists />}>
-          <Route path="profile" element={<TherapistProfile />}>
-            <Route path=":id"></Route>
+        <Route path="/therapists">
+          <Route index element={<Therapists />}/>
+          <Route path="profile" >
+            <Route path=":id" element={<TherapistProfile />}/>
+          </Route>
+          <Route path="book-slot">
+            <Route path=":id" element={<BookingPage />}/>
           </Route>
         </Route>
         <Route path="/resources" element={<Resources />} />
         <Route path="/FAQs" element={<FAQ />} />
         <Route path="/login" element={<RegisterLogin/>} />
-        <Route path="/booking" element={<BookingPage/>} />
         <Route path="/forgot-password" element={<ForgotPassword/>} />
       </Routes>
       <ContactSection />

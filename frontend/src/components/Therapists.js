@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Therapists = () => {
   const therapists_info = [
@@ -131,12 +132,15 @@ const Therapists = () => {
                     <div id="dummy"></div>
                     <div id="dummy"></div>
                     <div className="xl:mt-4 sm:mt-2 sm:ms-4">
+                      <Link to="/therapists/profile/1" target="_top">
                       <button class="bg-transparent  text-[#0190B1] font-semibold py-2 px-4 border border-[#0190B1] rounded">
                         View Profile
                       </button>
+                      </Link>
+                      
                     </div>
                     <div className="xl:mt-4 sm:mt-2 sm:ms-4">
-                      <Link>
+                      <Link to="/therapists/book-slot/1" target="_top">
                       <button class="bg-[#0190B1] text-white font-semibold py-2 px-4 rounded">
                         Book
                       </button>
