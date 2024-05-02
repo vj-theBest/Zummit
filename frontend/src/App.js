@@ -17,7 +17,9 @@ import GroupTherapyDetail from "./components/GroupTherapyDetail";
 import RegisterLogin from "./components/RegisterLogin";
 import BookingPage from "./components/BookingPage";
 import ForgotPassword from "./components/ForgotPassword";
+import TherapistProfile from "./components/TherapistProfile";
 import UserDashboard from "./components/UserDashboard";
+
 
 function App() {
   return (
@@ -34,6 +36,20 @@ function App() {
           </Route>
           <Route path="support-group" element={<WithHeaderAndFooter><SupportTherapy /></WithHeaderAndFooter>} />
         </Route>
+
+        <Route path="/therapists">
+          <Route index element={<Therapists />}/>
+          <Route path="profile" >
+            <Route path=":id" element={<TherapistProfile />}/>
+          </Route>
+          <Route path="book-slot">
+            <Route path=":id" element={<BookingPage />}/>
+          </Route>
+        </Route>
+        <Route path="/resources" element={<Resources />} />
+        <Route path="/FAQs" element={<FAQ />} />
+        <Route path="/login" element={<RegisterLogin/>} />
+        <Route path="/forgot-password" element={<ForgotPassword/>} />
         <Route path="/therapists" element={<WithHeaderAndFooter><Therapists /></WithHeaderAndFooter>} />
         <Route path="/resources" element={<WithHeaderAndFooter><Resources /></WithHeaderAndFooter>} />
         <Route path="/FAQs" element={<WithHeaderAndFooter><FAQ /></WithHeaderAndFooter>} />
@@ -41,6 +57,7 @@ function App() {
         <Route path="/booking" element={<WithHeaderAndFooter><BookingPage/></WithHeaderAndFooter>} />
         <Route path="/forgot-password" element={<WithHeaderAndFooter><ForgotPassword/></WithHeaderAndFooter>} />
         <Route path="/userdashboard" element={<UserDashboard/>} />
+
 
       </Routes>
      
