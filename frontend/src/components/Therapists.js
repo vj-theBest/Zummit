@@ -140,7 +140,7 @@ const Therapists = () => {
                       
                     </div>
                     <div className="xl:mt-4 sm:mt-2 sm:ms-4">
-                      <Link to="/therapists/book-slot/1" target="_top">
+                      <Link to="/therapists/booking/1" target="_top">
                       <button class="bg-[#0190B1] text-white font-semibold py-2 px-4 rounded">
                         Book
                       </button>

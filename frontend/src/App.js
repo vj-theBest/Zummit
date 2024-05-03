@@ -38,23 +38,17 @@ function App() {
         </Route>
 
         <Route path="/therapists">
-          <Route index element={<Therapists />}/>
+          <Route index element={<WithHeaderAndFooter><Therapists /></WithHeaderAndFooter>}/>
           <Route path="profile" >
-            <Route path=":id" element={<TherapistProfile />}/>
+            <Route path=":id" element={<WithHeaderAndFooter><TherapistProfile /></WithHeaderAndFooter>}/>
           </Route>
-          <Route path="book-slot">
-            <Route path=":id" element={<BookingPage />}/>
+          <Route path="booking">
+            <Route path=":id" element={<WithHeaderAndFooter><BookingPage/></WithHeaderAndFooter>}/>
           </Route>
         </Route>
-        <Route path="/resources" element={<Resources />} />
-        <Route path="/FAQs" element={<FAQ />} />
-        <Route path="/login" element={<RegisterLogin/>} />
-        <Route path="/forgot-password" element={<ForgotPassword/>} />
-        <Route path="/therapists" element={<WithHeaderAndFooter><Therapists /></WithHeaderAndFooter>} />
         <Route path="/resources" element={<WithHeaderAndFooter><Resources /></WithHeaderAndFooter>} />
         <Route path="/FAQs" element={<WithHeaderAndFooter><FAQ /></WithHeaderAndFooter>} />
         <Route path="/login" element={<WithHeaderAndFooter><RegisterLogin/></WithHeaderAndFooter>} />
-        <Route path="/booking" element={<WithHeaderAndFooter><BookingPage/></WithHeaderAndFooter>} />
         <Route path="/forgot-password" element={<WithHeaderAndFooter><ForgotPassword/></WithHeaderAndFooter>} />
         <Route path="/userdashboard" element={<UserDashboard/>} />
 

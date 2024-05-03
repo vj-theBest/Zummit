@@ -2,9 +2,9 @@ import * as React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { removeUser } from "../utils/userSlice";
-import axios from "axios";
-axios.defaults.headers.post["Content-Type"] = "application/json";
-axios.defaults.headers.patch["Content-Type"] = "application/json";
+//import axios from "axios";
+//axios.defaults.headers.post["Content-Type"] = "application/json";
+//axios.defaults.headers.patch["Content-Type"] = "application/json";
 
 function NavigationLink({ children, href = "#" }) {
   return (
