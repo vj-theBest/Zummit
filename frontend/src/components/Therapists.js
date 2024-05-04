@@ -1,65 +1,54 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';import { Link } from "react-router-dom";
+
 const Therapists = () => {
   const therapists_info = [
     {
       name: "Dr. Sundhari Prakhashan",
-      desc1: "I have Experience over 10 years",
-      desc2: "Expertise: ",
-      desc2_span: "ADHD, Anxiety, Body Image",
-      desc3_span: "Starts@ 499",
-      desc3: "for one session",
-      desc4: " Languages: Hindi, English",
+      experience: 10,
+      languages: ["Hindi", "English", "Kannada"],
+      expertise: ["ADHD", "Anxiety", "Body Image"],
+      charge: 499,
+      bio: "I have always been fascinated by human behavior and why people become the way they are. While we all may be individually different, we all derive our thoughts, patterns, and behaviors in the same way: life experience. We also all share the ability to show great strength, resilience, and insight when put to the test. My clients inspire me and continuously motivate me to be a better therapist and person. It is a privilege to hold space for people to be vulnerable and share their stories and I am honored to play a small part in their journeys of self-discovery and empowerment.",
+      appeal: "In our busy lives, we can often suppress our thoughts and feelings in ways that feel convenient but can build up over time and become burdensome. I can help you recognize your triggers and sources of anxiety so you can better deal with the unique challenges that come your way. My identity as an Asian-American woman also informs my practice through my passion to help those of the 1st to 2nd generation immigrant families. Have you felt stuck and in-between worlds",
+      qualification: "I am a National Certified Counselor with the National Board for Certified Counselors",
+      testimonials: ["In our busy lives, we can often suppress our thoughts and feelings in ways that feel convenient but can build up over time and become burdensome. I can help you recognize your triggers and sources of anxiety so you can better deal with the unique challenges"],
       profile_image: "therapist_card_image.jpeg",
     },
     {
       name: "Dr. Sundhari Prakhashan",
-      desc1: "I have Experience over 10 years",
-      desc2: "Expertise: ",
-      desc2_span: "ADHD, Anxiety, Body Image",
-      desc3_span: "Starts@ 499",
-      desc3: "for one session",
-      desc4: " Languages: Hindi, English",
+      experience: 10,
+      languages: ["Hindi", "English", "Kannada"],
+      expertise: ["ADHD", "Anxiety", "Body Image"],
+      charge: 499,
+      bio: "I have always been fascinated by human behavior and why people become the way they are. While we all may be individually different, we all derive our thoughts, patterns, and behaviors in the same way: life experience. We also all share the ability to show great strength, resilience, and insight when put to the test. My clients inspire me and continuously motivate me to be a better therapist and person. It is a privilege to hold space for people to be vulnerable and share their stories and I am honored to play a small part in their journeys of self-discovery and empowerment.",
+      appeal: "In our busy lives, we can often suppress our thoughts and feelings in ways that feel convenient but can build up over time and become burdensome. I can help you recognize your triggers and sources of anxiety so you can better deal with the unique challenges that come your way. My identity as an Asian-American woman also informs my practice through my passion to help those of the 1st to 2nd generation immigrant families. Have you felt stuck and in-between worlds",
+      qualification: "I am a National Certified Counselor with the National Board for Certified Counselors",
+      testimonials: ["In our busy lives, we can often suppress our thoughts and feelings in ways that feel convenient but can build up over time and become burdensome. I can help you recognize your triggers and sources of anxiety so you can better deal with the unique challenges"],
       profile_image: "therapist_card_image.jpeg",
     },
     {
       name: "Dr. Sundhari Prakhashan",
-      desc1: "I have Experience over 10 years",
-      desc2: "Expertise: ",
-      desc2_span: "ADHD, Anxiety, Body Image",
-      desc3_span: "Starts@ 499",
-      desc3: "for one session",
-      desc4: " Languages: Hindi, English",
+      experience: 10,
+      languages: ["Hindi", "English", "Kannada"],
+      expertise: ["ADHD", "Anxiety", "Body Image"],
+      charge: 499,
+      bio: "I have always been fascinated by human behavior and why people become the way they are. While we all may be individually different, we all derive our thoughts, patterns, and behaviors in the same way: life experience. We also all share the ability to show great strength, resilience, and insight when put to the test. My clients inspire me and continuously motivate me to be a better therapist and person. It is a privilege to hold space for people to be vulnerable and share their stories and I am honored to play a small part in their journeys of self-discovery and empowerment.",
+      appeal: "In our busy lives, we can often suppress our thoughts and feelings in ways that feel convenient but can build up over time and become burdensome. I can help you recognize your triggers and sources of anxiety so you can better deal with the unique challenges that come your way. My identity as an Asian-American woman also informs my practice through my passion to help those of the 1st to 2nd generation immigrant families. Have you felt stuck and in-between worlds",
+      qualification: "I am a National Certified Counselor with the National Board for Certified Counselors",
+      testimonials: ["In our busy lives, we can often suppress our thoughts and feelings in ways that feel convenient but can build up over time and become burdensome. I can help you recognize your triggers and sources of anxiety so you can better deal with the unique challenges"],
       profile_image: "therapist_card_image.jpeg",
     },
     {
       name: "Dr. Sundhari Prakhashan",
-      desc1: "I have Experience over 10 years",
-      desc2: "Expertise: ",
-      desc2_span: "ADHD, Anxiety, Body Image",
-      desc3_span: "Starts@ 499",
-      desc3: "for one session",
-      desc4: " Languages: Hindi, English",
-      profile_image: "therapist_card_image.jpeg",
-    },
-    {
-      name: "Dr. Sundhari Prakhashan",
-      desc1: "I have Experience over 10 years",
-      desc2: "Expertise: ",
-      desc2_span: "ADHD, Anxiety, Body Image",
-      desc3_span: "Starts@ 499",
-      desc3: "for one session",
-      desc4: " Languages: Hindi, English",
-      profile_image: "therapist_card_image.jpeg",
-    },
-    {
-      name: "Dr. Sundhari Prakhashan",
-      desc1: "I have Experience over 10 years",
-      desc2: "Expertise: ",
-      desc2_span: "ADHD, Anxiety, Body Image",
-      desc3_span: "Starts@ 499",
-      desc3: "for one session",
-      desc4: " Languages: Hindi, English",
+      experience: 10,
+      languages: ["Hindi", "English", "Kannada"],
+      expertise: ["ADHD", "Anxiety", "Body Image"],
+      charge: 499,
+      bio: "I have always been fascinated by human behavior and why people become the way they are. While we all may be individually different, we all derive our thoughts, patterns, and behaviors in the same way: life experience. We also all share the ability to show great strength, resilience, and insight when put to the test. My clients inspire me and continuously motivate me to be a better therapist and person. It is a privilege to hold space for people to be vulnerable and share their stories and I am honored to play a small part in their journeys of self-discovery and empowerment.",
+      appeal: "In our busy lives, we can often suppress our thoughts and feelings in ways that feel convenient but can build up over time and become burdensome. I can help you recognize your triggers and sources of anxiety so you can better deal with the unique challenges that come your way. My identity as an Asian-American woman also informs my practice through my passion to help those of the 1st to 2nd generation immigrant families. Have you felt stuck and in-between worlds",
+      qualification: "I am a National Certified Counselor with the National Board for Certified Counselors",
+      testimonials: ["In our busy lives, we can often suppress our thoughts and feelings in ways that feel convenient but can build up over time and become burdensome. I can help you recognize your triggers and sources of anxiety so you can better deal with the unique challenges"],
       profile_image: "therapist_card_image.jpeg",
     },
   ];
@@ -121,17 +110,22 @@ const Therapists = () => {
                           {item.name}
                         </p>
                         <p className="therapist-page__desc lg:text-[14px] xl:text-[14px] mt-[8px] sm:text-[14px]">
-                          {item.desc1}
+                          I have experience over {item.experience}
                         </p>
-                        <p className="therapist-page__desc lg:text-[14px] xl:text-[14px] mt-0 xl:mt-[8px] sm:text-[14px] lg:mt-[5px] sm:mt-[2px]">
-                          {item.desc2} <span>{item.desc2_span}</span>
+                        <p className="therapist-page__desc lg:text-[14px] xl:text-[14px] mt-0 xl:mt-[8px] sm:text-[14px] lg:mt-[5px] sm:mt-[2px] flex flex-row gap-1">
+                          Expertise:
+                            {item.expertise.map((expertise) => {
+                            return <span>{expertise}</span>
+                          })}
                         </p>
                         <p className="therapist-page__desc lg:text-[14px] xl:text-[14px] mt-0 xl:mt-[8px] sm:text-[14px] lg:mt-[5px] sm:mt-[2px]">
                           {" "}
-                          <span>{item.desc3_span}</span> {item.desc3}
+                          <span>Starts@ {item.charge}</span> for one session
                         </p>
-                        <p className="therapist-page__desc lg:text-[14px] xl:text-[14px] mt-0 xl:mt-[8px]  sm:text-[14px] lg:mt-[5px] sm:mt-[2px]">
-                          {item.desc4}
+                        <p className="therapist-page__desc lg:text-[14px] xl:text-[14px] mt-0 xl:mt-[8px]  sm:text-[14px] lg:mt-[5px] sm:mt-[2px] flex flex-row gap-1">
+                          Languages: {item.languages.map((language) => {
+                            return <span>{language}</span>
+                          })}
                         </p>
                       </div>
                     </div>
@@ -141,14 +135,20 @@ const Therapists = () => {
                     <div id="dummy"></div>
                     <div id="dummy"></div>
                     <div className="xl:mt-4 sm:mt-2 sm:ms-4">
+                      <Link to="/therapists/profile/1" target="_top">
                       <button class="bg-transparent  text-[#0190B1] font-semibold py-2 px-4 border border-[#0190B1] rounded">
                       <Link to="/TherapistDetailsPage">View Profile</Link>
                       </button>
+                      </Link>
+                      
                     </div>
                     <div className="xl:mt-4 sm:mt-2 sm:ms-4">
+                      <Link to="/therapists/booking/1" target="_top">
                       <button class="bg-[#0190B1] text-white font-semibold py-2 px-4 rounded">
                        <Link to="/BookTherapistPage">Book</Link>
                       </button>
+                      </Link>
+                      
                     </div>
                   </div>
                 </div>
