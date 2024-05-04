@@ -6,16 +6,16 @@ const Admin_SideBar = () => {
     return location.pathname === path;
   };
   const navigationItems = [
-    { path: '/admindashboard', label: 'Dashboard' },
-    { path: '/admin_appointments', label: 'Appointments' },
-    { path: '/admin_therapists', label: 'Therapists' },
-    { path: '/admin_groups', label: 'Groups' },
-    { path: '/admin_billings', label: 'Billings' },
-    { path: '/admin-resources', label: 'Resources' },
-    { path: '/FAQs', label: 'FAQ' },
-    { path: '/admin_profile', label: 'Profile' },
-    { path: '/logout', label: 'Logout' },
- ];
+    { path: "/admin-dashboard", label: "Dashboard" },
+    { path: "/admin-appointments", label: "Appointments" },
+    { path: "/admin-therapists", label: "Therapists" },
+    { path: "/admin-groups", label: "Groups" },
+    { path: "/admin-clients", label: "Client" },
+    { path: "/admin-resources", label: "Resources" },
+    { path: "/admin-reviews", label: "Reviews" },
+    { path: "/admin-transactions", label: "transactions" },
+    { path: "/admin-profile", label: "Profile" },
+  ];
   return (
     <div className="leftCont flex ">
       <div className="sidebar w-[18vw] bg-[#00677F]">
@@ -26,12 +26,12 @@ const Admin_SideBar = () => {
             className="pl-[16px] pt-[32px] w-[196px]"
           />
         </Link>
-        <div className="h-[697px] w-[227px] m-auto flex flex-col items-start text-white text-[22px] justify-evenly">
+        <div className="h-[850px] w-[227px]  flex flex-col  items-start  text-white text-[20px] gap-10 mt-8">
           {navigationItems.map((data) => (
             <button
-              className={` pl-4  ${
+              className={` pl-10  ${
                 isActive(data.path)
-                  ? "bg-[#FDFEF1] pl-4 text-black font-bold w-[227px] h-[49px] rounded-lg text-left"
+                  ? "bg-[#FDFEF1]  text-black font-bold w-[227px] h-[49px] rounded-lg text-left"
                   : ""
               }`}
             >
