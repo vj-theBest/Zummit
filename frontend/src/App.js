@@ -21,8 +21,8 @@ import UserDashboard from "./components/UserDashboard";
 import TherapistDetailsPage from "./components/TherapistDetailsPage";
 import BookTherapistPage from "./components/BookTherapistPage";
 import ShowBookingDetailsPage from "./components/ShowBookingDetailsPage";
-import AdminDashboard from "./components/Admin/AdminDashboard";
-import Admin_Appointments from "./components/Admin/Admin_Appointments";
+import AdminDashboard from "./components/Admin/Dashboard/AdminDashboard";
+import Admin_Appointments from "./components/Admin/Appointment/Admin_Appointments";
 import Admin_Groups from "./components/Admin/Admin_Groups";
 import Admin_Profile from "./components/Admin/Admin_Profile";
 import Admin_Therapists from "./components/Admin/Admin_Therapists";
@@ -177,6 +177,9 @@ const routes = [
         <ForgotPassword />
       </WithHeaderAndFooter>
     ),
+  },
+  {
+    path: "/",
   },
   { path: "/userdashboard", element: <UserDashboard /> },
   { path: "/BookingPage", element: <BookingPage /> },
