@@ -364,9 +364,6 @@ const AdminAppointmentData=(req,res)=>{
 
 }
 
-
-
-
 module.exports = {
   registerUser,
   loginUser,
