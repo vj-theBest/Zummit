@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';import { Link } from "react-router-dom";
 
 const Therapists = () => {
   const therapists_info = [
@@ -56,7 +56,7 @@ const Therapists = () => {
     <React.Fragment>
       <div className="m-0 p-0">
         <div className="px-[194px] m-0 pb-[68px]">
-          <div className="h-[164px] m-0 pt-[33px]">
+          <div className="h-[120px] m-0 pt-[33px]">
             <div className="p-0 m-0 flex justify-center">
               <div class="relative  h-[57px]">
                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -86,6 +86,9 @@ const Therapists = () => {
               </div>
             </div>
           </div>
+          <div className=" flex text-2xl mb-8font-medium leading-9 max-w-[416px] text-slate-950 mb-[2vh] ">
+            Therapists
+       </div>
           <div className="grid grid-cols-1 xlg:grid-cols-2 m-0 p-0  gap-x-[27px] gap-y-[32px]">
             {therapists_info.map((item, index) => {
               return (
@@ -134,7 +137,7 @@ const Therapists = () => {
                     <div className="xl:mt-4 sm:mt-2 sm:ms-4">
                       <Link to="/therapists/profile/1" target="_top">
                       <button class="bg-transparent  text-[#0190B1] font-semibold py-2 px-4 border border-[#0190B1] rounded">
-                        View Profile
+                      <Link to="/TherapistDetailsPage">View Profile</Link>
                       </button>
                       </Link>
                       
@@ -142,7 +145,7 @@ const Therapists = () => {
                     <div className="xl:mt-4 sm:mt-2 sm:ms-4">
                       <Link to="/therapists/booking/1" target="_top">
                       <button class="bg-[#0190B1] text-white font-semibold py-2 px-4 rounded">
-                        Book
+                       <Link to="/BookTherapistPage">Book</Link>
                       </button>
                       </Link>
                       

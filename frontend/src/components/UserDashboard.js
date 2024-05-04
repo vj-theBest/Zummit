@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Side_Navbar from "./Side_Navbar";
 function UserDashboard() {
   // Card Data
   const therapyOptions = [
@@ -143,28 +143,9 @@ function UserDashboard() {
 
   return (
     <>
+      <div className="flex">
       {/* Left Container */}
-      <div className="leftCont flex">
-        <div className="sidebar w-[18vw] bg-[#00677F]">
-          <Link to="/">
-          <img
-            src={require("./images/logo.png")}
-            alt=""
-            className="pl-[16px] pt-[32px] w-[196px]"
-          />
-          </Link>
-          <div className="h-[697px] w-[227px] m-auto flex flex-col items-start text-white text-[22px] justify-evenly">
-            <button className="bg-[#FDFEF1] pl-4 text-black font-bold w-[227px] h-[49px] rounded-lg text-left">Dashboard</button>
-            <button className="pl-4">Appointments</button>
-            <button className="pl-4">Therapists</button>
-            <button className="pl-4">Groups</button>
-            <button className="pl-4">Billings</button>
-            <button className="pl-4">Resources</button>
-            <button className="pl-4">FAQ</button>
-            <button className="pl-4">Profile</button>
-            <button className="pl-4">Logout</button>
-          </div>
-        </div>
+          <Side_Navbar />
 
         {/* Main Container */}
         <div className="mainContainer bg-[#f2fcff] pl-[22px] w-[82vw]">
@@ -215,7 +196,7 @@ function UserDashboard() {
             </div>
           </div>
         </div>
-      </div>
+        </div>
     </>
   );
 }

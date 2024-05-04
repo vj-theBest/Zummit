@@ -19,6 +19,9 @@ import BookingPage from "./components/BookingPage";
 import ForgotPassword from "./components/ForgotPassword";
 import TherapistProfile from "./components/TherapistProfile";
 import UserDashboard from "./components/UserDashboard";
+import TherapistDetailsPage from "./components/TherapistDetailsPage";
+import BookTherapistPage from "./components/BookTherapistPage";
+import ShowBookingDetailsPage from "./components/ShowBookingDetailsPage";
 
 
 function App() {
@@ -51,6 +54,10 @@ function App() {
         <Route path="/login" element={<WithHeaderAndFooter><RegisterLogin/></WithHeaderAndFooter>} />
         <Route path="/forgot-password" element={<WithHeaderAndFooter><ForgotPassword/></WithHeaderAndFooter>} />
         <Route path="/userdashboard" element={<UserDashboard/>} />
+        <Route path="/BookingPage" element={<BookingPage/>} />
+        <Route path="/TherapistDetailsPage" element={<TherapistDetailsPage/>} />
+        <Route path="/BookTherapistPage" element={<BookTherapistPage/>} />
+        <Route path="/ShowBookingDetailsPage" element={<ShowBookingDetailsPage/>} />
 
 
       </Routes>
