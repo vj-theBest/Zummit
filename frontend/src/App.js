@@ -11,7 +11,6 @@ import FAQ from "./components/FAQ";
 import IndividualTherapy from "./components/IndividualThearapy";
 import GroupTherapy from "./components/GroupTherapy";
 import SupportTherapy from "./components/SupportTherapy";
-import "./App.css";
 import ContactSection from "./components/ContactSection";
 import GroupTherapyDetail from "./components/GroupTherapyDetail";
 import RegisterLogin from "./components/RegisterLogin";
@@ -22,59 +21,82 @@ import UserDashboard from "./components/UserDashboard";
 import TherapistDetailsPage from "./components/TherapistDetailsPage";
 import BookTherapistPage from "./components/BookTherapistPage";
 import ShowBookingDetailsPage from "./components/ShowBookingDetailsPage";
-import AdminDashboard from "./components/Admin/AdminDashboard";
-
-
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<WithHeaderAndFooter><Home /></WithHeaderAndFooter>} />
-        <Route path="/about" element={<WithHeaderAndFooter><About /></WithHeaderAndFooter>} />
-        <Route path="/services">
-          <Route index element={<WithHeaderAndFooter><Services /></WithHeaderAndFooter>} />
-          <Route path="individual-therapy" element={<WithHeaderAndFooter><IndividualTherapy /></WithHeaderAndFooter>} />
-          <Route path="group-therapy">
-            <Route path=":id" element={<WithHeaderAndFooter><GroupTherapyDetail /></WithHeaderAndFooter>} />
-            <Route index element={<WithHeaderAndFooter><GroupTherapy /></WithHeaderAndFooter>} />
-          </Route>
-          <Route path="support-group" element={<WithHeaderAndFooter><SupportTherapy /></WithHeaderAndFooter>} />
-        </Route>
-
-        <Route path="/therapists">
-          <Route index element={<WithHeaderAndFooter><Therapists /></WithHeaderAndFooter>}/>
-          <Route path="profile" >
-            <Route path=":id" element={<WithHeaderAndFooter><TherapistProfile /></WithHeaderAndFooter>}/>
-          </Route>
-          <Route path="booking">
-            <Route path=":id" element={<WithHeaderAndFooter><BookingPage/></WithHeaderAndFooter>}/>
-          </Route>
-        </Route>
-        <Route path="/resources" element={<WithHeaderAndFooter><Resources /></WithHeaderAndFooter>} />
-        <Route path="/FAQs" element={<WithHeaderAndFooter><FAQ /></WithHeaderAndFooter>} />
-        <Route path="/login" element={<WithHeaderAndFooter><RegisterLogin/></WithHeaderAndFooter>} />
-        <Route path="/forgot-password" element={<WithHeaderAndFooter><ForgotPassword/></WithHeaderAndFooter>} />
-        <Route path="/userdashboard" element={<UserDashboard/>} />
-        <Route path="/BookingPage" element={<BookingPage/>} />
-        <Route path="/TherapistDetailsPage" element={<TherapistDetailsPage/>} />
-        <Route path="/BookTherapistPage" element={<BookTherapistPage/>} />
-        <Route path="/ShowBookingDetailsPage" element={<ShowBookingDetailsPage/>} />
-        <Route path="/admindashboard" element={<AdminDashboard/>} />
-
-
-      </Routes>
-     
-    </Router>
-  );
-}
 
 const WithHeaderAndFooter = ({ children }) => (
-  <>
+ <>
     <Navbar />
     {children}
     <ContactSection />
     <Footer />
-  </>
+ </>
 );
+
+const routes = [
+ { path: "/", element: <WithHeaderAndFooter><Home /></WithHeaderAndFooter> },
+ { path: "/about", element: <WithHeaderAndFooter><About /></WithHeaderAndFooter> },
+ {
+    path: "/services",
+    children: [
+      { path: "", element: <WithHeaderAndFooter><Services /></WithHeaderAndFooter> },
+      { path: "individual-therapy", element: <WithHeaderAndFooter><IndividualTherapy /></WithHeaderAndFooter> },
+      {
+        path: "group-therapy",
+        children: [
+          { path: "", element: <WithHeaderAndFooter><GroupTherapy /></WithHeaderAndFooter> },
+          { path: ":id", element: <WithHeaderAndFooter><GroupTherapyDetail /></WithHeaderAndFooter> },
+        ],
+      },
+      { path: "support-group", element: <WithHeaderAndFooter><SupportTherapy /></WithHeaderAndFooter> },
+    ],
+ },
+ {
+    path: "/therapists",
+    children: [
+      { path: "", element: <WithHeaderAndFooter><Therapists /></WithHeaderAndFooter> },
+      {
+        path: "profile",
+        children: [
+          { path: ":id", element: <WithHeaderAndFooter><TherapistProfile /></WithHeaderAndFooter> },
+        ],
+      },
+      {
+        path: "booking",
+        children: [
+          { path: ":id", element: <WithHeaderAndFooter><BookingPage/></WithHeaderAndFooter> },
+        ],
+      },
+    ],
+ },
+ { path: "/resources", element: <WithHeaderAndFooter><Resources /></WithHeaderAndFooter> },
+ { path: "/FAQs", element: <WithHeaderAndFooter><FAQ /></WithHeaderAndFooter> },
+ { path: "/login", element: <WithHeaderAndFooter><RegisterLogin/></WithHeaderAndFooter> },
+ { path: "/forgot-password", element: <WithHeaderAndFooter><ForgotPassword/></WithHeaderAndFooter> },
+ { path: "/userdashboard", element: <UserDashboard/> },
+ { path: "/BookingPage", element: <BookingPage/> },
+ { path: "/TherapistDetailsPage", element: <TherapistDetailsPage/> },
+ { path: "/BookTherapistPage", element: <BookTherapistPage/> },
+ { path: "/ShowBookingDetailsPage", element: <ShowBookingDetailsPage/> },
+];
+
+function renderRoutes(routes) {
+ return routes.map((route, index) => (
+    <Route
+      key={index}
+      path={route.path}
+      element={route.element}
+      children={route.children ? renderRoutes(route.children) : null}
+    />
+ ));
+}
+
+function App() {
+ return (
+    <Router>
+      <Routes>
+        {renderRoutes(routes)}
+      </Routes>
+    </Router>
+ );
+}
 
 export default App;
