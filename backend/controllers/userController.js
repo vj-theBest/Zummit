@@ -169,10 +169,209 @@ const getUser=(req,res)=>{
       })
     }
 }
+
+const AdminDashboardData=(req,res)=>{
+  if(token){
+    const doctorList=[
+      {
+        therapists:"Dr.Jordan Patel",
+        date:"02/08/2023"
+      },
+      {
+        therapists:"Dr.Jasmine Joshi",
+        date:"02/08/2023"
+      },
+      {
+        therapists:"Dr.Jasmine Joshi",
+        date:"02/08/2023"
+      },
+      {
+        therapists:"Dr.Jasmine Joshi",
+        date:"02/08/2023"
+      },
+      {
+        therapists:"Dr.Jasmine Joshi",
+        date:"02/08/2023"
+      },
+      {
+        therapists:"Dr.Jasmine Joshi",
+        date:"02/08/2023"
+      },
+      {
+        therapists:"Dr.Jasmine Joshi",
+        date:"02/08/2023"
+      },{
+        therapists:"Dr.Jasmine Joshi",
+        date:"02/08/2023"
+      },
+      {
+        therapists:"Dr.Jasmine Joshi",
+        date:"02/08/2023"
+      },{
+        therapists:"Dr.Jasmine Joshi",
+        date:"02/08/2023"
+      },
+    ];
+
+    const addedReview=[
+      {
+        image:" ",
+        title:"The Power of Therapy in Today's Stressful World",
+        review:"Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
+        author:"Andy Fold",
+        report:"Pending"
+      },
+      {
+        image:" ",
+        title:"The Power of Therapy in Today's Stressful World",
+        review:"Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
+        author:"Andy Fold",
+        report:"Published"
+      },
+      {
+        image:" ",
+        title:"The Power of Therapy in Today's Stressful World",
+        review:"Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
+        author:"Andy Fold",
+        report:"Published"
+      },
+      {
+        image:" ",
+        title:"The Power of Therapy in Today's Stressful World",
+        review:"Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
+        author:"Andy Fold",
+        report:"Published"
+      }
+    ];
+
+    res.status(200).json({
+      success:true,
+      list:doctorList,
+      review:addedReview,
+      message:"data found"
+    })
+  }
+}
+
+const AdminAppointmentData=(req,res)=>{
+  const appointmentsList=[
+    {
+      clientName:"Ragini Verma",
+      appointmentTime:{
+        date:"02/08/2023",
+        time:"11:00 AM- 11:30 AM"
+      },
+      therapyType:"Support group Anxiety",
+      amount:`"\u20B9" 1000`,
+      report: "Completed",
+      reason:"NA"
+    },
+    {
+      clientName:"Ragini Verma",
+      appointmentTime:{
+        date:"02/08/2023",
+        time:"11:00 AM- 11:30 AM"
+      },
+      therapyType:"Support group Anxiety",
+      amount:`"\u20B9" 1000`,
+      report: "Completed",
+      reason:"NA"
+    },
+    {
+      clientName:"Ragini Verma",
+      appointmentTime:{
+        date:"02/08/2023",
+        time:"11:00 AM- 11:30 AM"
+      },
+      therapyType:"Support group Anxiety",
+      amount:`"\u20B9" 1000`,
+      report: "Completed",
+      reason:"NA"
+    },
+    {
+      clientName:"Ragini Verma",
+      appointmentTime:{
+        date:"02/08/2023",
+        time:"11:00 AM- 11:30 AM"
+      },
+      therapyType:"Support group Anxiety",
+      amount:`"\u20B9" -1000`,
+      report: "Cancelled",
+      reason:"Emergency Call"
+    },
+    {
+      clientName:"Ragini Verma",
+      appointmentTime:{
+        date:"02/08/2023",
+        time:"11:00 AM- 11:30 AM"
+      },
+      therapyType:"Support group Anxiety",
+      amount:`"\u20B9" 1000`,
+      report: "Cancelled",
+      reason:"Emergency Call"
+    },
+    {
+      clientName:"Ragini Verma",
+      appointmentTime:{
+        date:"02/08/2023",
+        time:"11:00 AM- 11:30 AM"
+      },
+      therapyType:"Support group Anxiety",
+      amount:`"\u20B9" 1000`,
+      report: "Upcoming",
+      reason:"-"
+    },
+    {
+      clientName:"Ragini Verma",
+      appointmentTime:{
+        date:"02/08/2023",
+        time:"11:00 AM- 11:30 AM"
+      },
+      therapyType:"Support group Anxiety",
+      amount:`"\u20B9" 1000`,
+      report: "Upcoming",
+      reason:"-"
+    },
+    {
+      clientName:"Ragini Verma",
+      appointmentTime:{
+        date:"02/08/2023",
+        time:"11:00 AM- 11:30 AM"
+      },
+      therapyType:"Support group Anxiety",
+      amount:`"\u20B9" 1000`,
+      report: "Completed",
+      reason:"NA"
+    },
+    {
+      clientName:"Ragini Verma",
+      appointmentTime:{
+        date:"02/08/2023",
+        time:"11:00 AM- 11:30 AM"
+      },
+      therapyType:"Support group Anxiety",
+      amount:`"\u20B9" 1000`,
+      report: "Completed",
+      reason:"NA"
+    }
+  ];
+
+  res.status(200).json({
+    success:true,
+    appointments:appointmentsList,
+    message:"data found"
+  })
+
+}
+
+
+
+
 module.exports = {
   registerUser,
   loginUser,
   logout,
-  getUser
-
+  getUser,
+  AdminDashboardData,
+  AdminAppointmentData
 };
