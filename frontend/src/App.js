@@ -22,6 +22,7 @@ import UserDashboard from "./components/UserDashboard";
 import TherapistDetailsPage from "./components/TherapistDetailsPage";
 import BookTherapistPage from "./components/BookTherapistPage";
 import ShowBookingDetailsPage from "./components/ShowBookingDetailsPage";
+import AdminDashboard from "./components/Admin/AdminDashboard";
 
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
         <Route path="/TherapistDetailsPage" element={<TherapistDetailsPage/>} />
         <Route path="/BookTherapistPage" element={<BookTherapistPage/>} />
         <Route path="/ShowBookingDetailsPage" element={<ShowBookingDetailsPage/>} />
+        <Route path="/admindashboard" element={<AdminDashboard/>} />
 
 
       </Routes>
