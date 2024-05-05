@@ -167,23 +167,23 @@ const Reviews = () => {
       </div>
       <div className="p-4 w-[90%] rounded-lg bg-white ">
         <div className="bg-[#DCDCDD] text-lg mb-4 gap-2 rounded-lg w-full p-2 text-black flex items-center">
-          <h1 className="w-[10rem] border">Doctor Name</h1>
-          <h1 className="w-[10rem] border">Reviews</h1>
-          <h1 className="w-[22rem] border">Comment</h1>
-          <h1 className="w-[8rem] text-center border">Action</h1>
+          <h1 className="w-[10rem]">Doctor Name</h1>
+          <h1 className="w-[10rem]">Reviews</h1>
+          <h1 className="w-[22rem]">Comment</h1>
+          <h1 className="w-[8rem] text-center">Action</h1>
         </div>
 
         {reviews.map((item) => (
           <div className="flex gap-4 w-full p-2 text-lg rounded-lg items-center">
             <h1 className="w-[10rem]">{item.doctorName}</h1>
-            <h1 className=" w-[10rem]">
+            <h1 className="flex gap-2 w-[10rem]">
             {renderStars(item.review)}
             </h1>
             <h1 className="w-[22rem] text-sm">
               {item.comment.description}
               <p className="mt-3 text-[#00677F]">{item.comment.date}</p>
             </h1>
-            <h1 className="flex  gap-2 bg-[#B00202] p-1 rounded-lg text-sm">
+            <h1 className="flex items-center h-8 gap-2  bg-[#B00202] p-1 rounded-md text-sm">
               Delete
               <svg
                 width="20"

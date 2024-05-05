@@ -13,7 +13,7 @@ const Admin_SideBar = () => {
     { path: "/admin-clients", label: "Client" },
     { path: "/admin-resources", label: "Resources" },
     { path: "/admin-reviews", label: "Reviews" },
-    { path: "/admin-transactions", label: "transactions" },
+    { path: "/admin-transactions", label: "Transactions" },
     { path: "/admin-profile", label: "Profile" },
   ];
   return (
