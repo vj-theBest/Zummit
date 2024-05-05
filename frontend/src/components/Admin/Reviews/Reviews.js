@@ -174,7 +174,7 @@ const Reviews = () => {
         </div>
 
         {reviews.map((item) => (
-          <div className="flex gap-4 text-base  w-full p-2 text-lg rounded-lg items-center">
+          <div className="flex gap-4 w-full p-2 text-lg rounded-lg items-center">
             <h1 className="w-[10rem]">{item.doctorName}</h1>
             <h1 className=" w-[10rem]">
             {renderStars(item.review)}

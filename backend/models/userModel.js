@@ -5,8 +5,6 @@ var validateEmail = function(email) {
     return re.test(email)
 };
 
-
-
 const userSchema=mongoose.Schema(
     {
         name:{

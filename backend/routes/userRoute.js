@@ -1,6 +1,6 @@
 const express=require("express")
 const router=express.Router();
-const {registerUser, loginUser, logout, getUser}=require("../controllers/userController");
+const {registerUser, loginUser, logout, getUser}=require("../controllers/User/userController");
 const { protect } = require("../middleware/authMiddleware");
 
 //removed
