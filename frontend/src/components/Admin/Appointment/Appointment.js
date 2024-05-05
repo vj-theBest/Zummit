@@ -222,6 +222,7 @@ const Appointment = () => {
 
   return (
     <div className="w-full m-10 ">
+      {/* Search Bar */}
       <div className="flex justify-center gap-10 items-center">
         <div className="flex items-center bg-white w-[70%] border  pl-4 rounded-lg border-[#B4F0FF] ">
           <svg
@@ -272,6 +273,7 @@ const Appointment = () => {
           </svg>
         </div>
       </div>
+      
       <h1 className="text-2xl  my-8">Appointments</h1>
       <div className="p-4 w-full rounded-lg bg-white ">
         <div className="bg-[#DCDCDD] text-lg  rounded-lg w-full p-2 text-black flex gap-4 items-center">

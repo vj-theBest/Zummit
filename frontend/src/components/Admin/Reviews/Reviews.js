@@ -1,0 +1,232 @@
+import React from "react";
+
+const Reviews = () => {
+  const reviews = [
+    {
+      doctorName: "Dr.Jordan Patel",
+      review: 4,
+      comment: {
+        description:
+          "Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date: "02/08/2023",
+      },
+    },
+    {
+      doctorName: "Dr.Jordan Patel",
+      review: 4,
+      comment: {
+        description:
+          "Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date: "02/08/2023",
+      },
+    },
+    {
+      doctorName: "Dr.Jordan Patel",
+      review: 4,
+      comment: {
+        description:
+          "Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date: "02/08/2023",
+      },
+    },
+    {
+      doctorName: "Dr.Jordan Patel",
+      review: 4,
+      comment: {
+        description:
+          "Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date: "02/08/2023",
+      },
+    },
+    {
+      doctorName: "Dr.Jordan Patel",
+      review: 4,
+      comment: {
+        description:
+          "Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date: "02/08/2023",
+      },
+    },
+    {
+      doctorName: "Dr.Jordan Patel",
+      review: 4,
+      comment: {
+        description:
+          "Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date: "02/08/2023",
+      },
+    },
+    {
+      doctorName: "Dr.Jordan Patel",
+      review: 4,
+      comment: {
+        description:
+          "Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date: "02/08/2023",
+      },
+    },
+    {
+      doctorName: "Dr.Jordan Patel",
+      review: 4,
+      comment: {
+        description:
+          "Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date: "02/08/2023",
+      },
+    },
+    {
+      doctorName: "Dr.Jordan Patel",
+      review: 4,
+      comment: {
+        description:
+          "Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date: "02/08/2023",
+      },
+    },
+  ];
+
+ const renderStars = (reviewValue) => {
+    let stars = [];
+    for (let i = 0; i < 5; i++) {
+      stars.push(
+        <svg
+          key={i}
+          width="21"
+          height="20"
+          viewBox="0 0 21 20"
+          fill={i < reviewValue ? "#FED365" : "#ffffff"}
+          xmlns="http://www.w3.org/2000/svg"
+        //   className={i < reviewValue ? "#FED365" : ""}
+        >
+          <path
+            d="M10.667 1.12963L13.3086 6.48131C13.3814 6.62874 13.522 6.73097 13.6847 6.75474L19.5928 7.6183L15.3181 11.7818C15.2002 11.8967 15.1464 12.0623 15.1742 12.2245L16.1829 18.1058L10.8997 15.3275C10.754 15.2508 10.58 15.2508 10.4343 15.3275L5.15108 18.1058L6.1598 12.2245C6.18763 12.0623 6.1338 11.8967 6.01586 11.7818L1.7412 7.6183L7.64931 6.75474C7.81198 6.73097 7.95258 6.62874 8.02535 6.48131L10.667 1.12963Z"
+            stroke={i < reviewValue ? "#FED365" : "#000000"}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
+    }
+    return stars;
+ };
+  return (
+    <div className="w-full m-10 ">
+      {/* Search Bar */}
+      <div className="flex justify-center gap-10 items-center">
+        <div className="flex items-center bg-white w-[70%] border  pl-4 rounded-lg border-[#B4F0FF] ">
+          <svg
+            width="25"
+            height="26"
+            viewBox="0 0 24 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11 19.5C15.4183 19.5 19 15.9183 19 11.5C19 7.08172 15.4183 3.5 11 3.5C6.58172 3.5 3 7.08172 3 11.5C3 15.9183 6.58172 19.5 11 19.5Z"
+              stroke="#787579"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M21.0004 21.5004L16.6504 17.1504"
+              stroke="#787579"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search"
+            className="h-12 ml-5 rounded-lg outline-none w-[100%]"
+          />
+        </div>
+        <div className="p-2 rounded-full ">
+          <svg
+            width="45"
+            height="45"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="48" height="48" rx="24" fill="white" />
+            <path
+              d="M26.306 36.0003C26.0716 36.4044 25.7351 36.7399 25.3303 36.973C24.9255 37.2062 24.4665 37.3289 23.9993 37.3289C23.5322 37.3289 23.0732 37.2062 22.6684 36.973C22.2636 36.7399 21.9271 36.4044 21.6927 36.0003M37.3327 30.667H10.666C11.7269 30.667 12.7443 30.2456 13.4944 29.4954C14.2446 28.7453 14.666 27.7279 14.666 26.667V20.0003C14.666 17.525 15.6493 15.151 17.3997 13.4007C19.15 11.6503 21.524 10.667 23.9993 10.667C26.4747 10.667 28.8487 11.6503 30.599 13.4007C32.3494 15.151 33.3327 17.525 33.3327 20.0003V26.667C33.3327 27.7279 33.7541 28.7453 34.5043 29.4954C35.2544 30.2456 36.2718 30.667 37.3327 30.667Z"
+              stroke="#0190B1"
+              stroke-width="2.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <rect x="29" y="8" width="8" height="8" rx="4" fill="#B00202" />
+          </svg>
+        </div>
+      </div>
+      <div className="flex w-[90%] justify-between items-center">
+        <h1 className="text-2xl  my-8">Clients</h1>
+      </div>
+      <div className="p-4 w-[90%] rounded-lg bg-white ">
+        <div className="bg-[#DCDCDD] text-lg mb-4 gap-2 rounded-lg w-full p-2 text-black flex items-center">
+          <h1 className="w-[10rem] border">Doctor Name</h1>
+          <h1 className="w-[10rem] border">Reviews</h1>
+          <h1 className="w-[22rem] border">Comment</h1>
+          <h1 className="w-[8rem] text-center border">Action</h1>
+        </div>
+
+        {reviews.map((item) => (
+          <div className="flex gap-4 text-base  w-full p-2 text-lg rounded-lg items-center">
+            <h1 className="w-[10rem]">{item.doctorName}</h1>
+            <h1 className=" w-[10rem]">
+            {renderStars(item.review)}
+            </h1>
+            <h1 className="w-[22rem] text-sm">
+              {item.comment.description}
+              <p className="mt-3 text-[#00677F]">{item.comment.date}</p>
+            </h1>
+            <h1 className="flex  gap-2 bg-[#B00202] p-1 rounded-lg text-sm">
+              Delete
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 6H5H21"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M10 11V17"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M14 11V17"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </h1>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Reviews;

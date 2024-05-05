@@ -23,12 +23,12 @@ import BookTherapistPage from "./components/BookTherapistPage";
 import ShowBookingDetailsPage from "./components/ShowBookingDetailsPage";
 import AdminDashboard from "./components/Admin/Dashboard/AdminDashboard";
 import Admin_Appointments from "./components/Admin/Appointment/Admin_Appointments";
-import Admin_Groups from "./components/Admin/Admin_Groups";
+import Admin_Groups from "./components/Admin/Groups/Admin_Groups";
 import Admin_Profile from "./components/Admin/Admin_Profile";
 import Admin_Therapists from "./components/Admin/Therapist/Admin_Therapists";
-import Admin_Resources from "./components/Admin/Admin_Resources";
-import Admin_Clients from "./components/Admin/Admin_Clients";
-import Admin_Reviews from "./components/Admin/Admin_Reviews";
+import Admin_Resources from "./components/Admin/Resources/Admin_Resources";
+import Admin_Clients from "./components/Admin/Client/Admin_Clients";
+import Admin_Reviews from "./components/Admin/Reviews/Admin_Reviews";
 import Admin_Transactions from "./components/Admin/Admin_Transactions";
 
 const WithHeaderAndFooter = ({ children }) => (

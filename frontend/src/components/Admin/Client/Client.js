@@ -1,64 +1,71 @@
 import React from "react";
 
-const Therapist = () => {
-  const therapistsDetails = [
+const Client = () => {
+  const clientList = [
     {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
+      clientId: "5364879",
+      clientName: "Prabha Murthy",
+      therapistName: "Sundhari Prakhash",
+      lastSession: "02/08/2023",
     },
     {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
+      clientId: "5364879",
+      clientName: "Prabha Murthy",
+      therapistName: "Sundhari Prakhash",
+      lastSession: "02/08/2023",
     },
     {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
+      clientId: "5364879",
+      clientName: "Prabha Murthy",
+      therapistName: "Sundhari Prakhash",
+      lastSession: "02/08/2023",
     },
     {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
+      clientId: "5364879",
+      clientName: "Prabha Murthy",
+      therapistName: "Sundhari Prakhash",
+      lastSession: "02/08/2023",
     },
     {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
+      clientId: "5364879",
+      clientName: "Prabha Murthy",
+      therapistName: "Sundhari Prakhash",
+      lastSession: "02/08/2023",
     },
     {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
+      clientId: "5364879",
+      clientName: "Prabha Murthy",
+      therapistName: "Sundhari Prakhash",
+      lastSession: "02/08/2023",
     },
     {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
+      clientId: "5364879",
+      clientName: "Prabha Murthy",
+      therapistName: "Sundhari Prakhash",
+      lastSession: "02/08/2023",
     },
     {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
+      clientId: "5364879",
+      clientName: "Prabha Murthy",
+      therapistName: "Sundhari Prakhash",
+      lastSession: "02/08/2023",
     },
     {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
+      clientId: "5364879",
+      clientName: "Prabha Murthy",
+      therapistName: "Sundhari Prakhash",
+      lastSession: "02/08/2023",
+    },
+    {
+      clientId: "5364879",
+      clientName: "Prabha Murthy",
+      therapistName: "Sundhari Prakhash",
+      lastSession: "02/08/2023",
     },
   ];
   return (
     <div className="w-full m-10 ">
+      {/* Search Bar */}
       <div className="flex justify-center gap-10 items-center">
         <div className="flex items-center bg-white w-[70%] border  pl-4 rounded-lg border-[#B4F0FF] ">
           <svg
@@ -110,44 +117,22 @@ const Therapist = () => {
         </div>
       </div>
       <div className="flex w-[90%] justify-between items-center">
-        <h1 className="text-2xl  my-8">Therapists</h1>
-        <button className="rounded-md py-2 px-4   text-lg bg-[#00677F] text-white">
-          Add New
-        </button>
-      </div>
-      <div className="w-[90%] flex justify-end items-center mb-5">
-        <svg
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M4 19.9997V25.333C4 26.7997 5.2 27.9997 6.66667 27.9997H25.3333C26.0406 27.9997 26.7189 27.7187 27.219 27.2186C27.719 26.7185 28 26.0403 28 25.333V19.9997M22.6667 11.9997L16 18.6663L9.33333 11.9997M16 17.0663V3.33301"
-            stroke="#00677F"
-            stroke-width="2.66667"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
+        <h1 className="text-2xl  my-8">Clients</h1>
       </div>
       <div className="p-4 w-[90%] rounded-lg bg-white ">
         <div className="bg-[#DCDCDD] text-lg mb-4  rounded-lg w-full p-2 text-black flex gap-4 justify-between  items-center">
-          <h1>Doctor Name</h1>
-          <h1>Appointments</h1>
-          <h1>Reviews</h1>
-          <h1>Joining Date</h1>
+          <h1>Client ID</h1>
+          <h1>Client Name</h1>
+          <h1>Therapist</h1>
+          <h1>Last Session</h1>
         </div>
 
-        {therapistsDetails.map((item) => (
+        {clientList.map((item) => (
           <div className="flex gap-4  justify-between w-full p-2 text-lg rounded-lg items-center">
-            <h1>{item.doctorName}</h1>
-            <div className="w-[60px] flex justify-end items-center">
-              <h1>{item.appointments}</h1>
-            </div>
-            <h1>{item.reviews}</h1>
-            <h1>{item.joiningDate}</h1>
+            <h1>{item.clientId}</h1>
+            <h1>{item.clientName}</h1>
+            <h1>{item.therapistName}</h1>
+            <h1>{item.lastSession}</h1>
           </div>
         ))}
       </div>
@@ -155,4 +140,4 @@ const Therapist = () => {
   );
 };
 
-export default Therapist;
+export default Client;
