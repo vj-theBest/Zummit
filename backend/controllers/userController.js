@@ -364,11 +364,505 @@ const AdminAppointmentData=(req,res)=>{
 
 }
 
+const AdminTherapistsDetails=(req,res)=>{
+  const therapistsDetails=[
+    {
+      doctorName:"Dr.Jordan Patel",
+      appointments:10,
+      reviews:4,
+      joiningDate:"02/08/2023"
+    },
+    {
+      doctorName:"Dr.Jordan Patel",
+      appointments:10,
+      reviews:4,
+      joiningDate:"02/08/2023"
+    },
+    {
+      doctorName:"Dr.Jordan Patel",
+      appointments:10,
+      reviews:4,
+      joiningDate:"02/08/2023"
+    },
+    {
+      doctorName:"Dr.Jordan Patel",
+      appointments:10,
+      reviews:4,
+      joiningDate:"02/08/2023"
+    },
+    {
+      doctorName:"Dr.Jordan Patel",
+      appointments:10,
+      reviews:4,
+      joiningDate:"02/08/2023"
+    },
+    {
+      doctorName:"Dr.Jordan Patel",
+      appointments:10,
+      reviews:4,
+      joiningDate:"02/08/2023"
+    },
+    {
+      doctorName:"Dr.Jordan Patel",
+      appointments:10,
+      reviews:4,
+      joiningDate:"02/08/2023"
+    },
+    {
+      doctorName:"Dr.Jordan Patel",
+      appointments:10,
+      reviews:4,
+      joiningDate:"02/08/2023"
+    },
+    {
+      doctorName:"Dr.Jordan Patel",
+      appointments:10,
+      reviews:4,
+      joiningDate:"02/08/2023"
+    }
+  ];
+  res.status(200).json({
+    success: true,
+    data: therapistsDetails,
+    message:"data found"
+  })
+}
+
+const AdminGroups=(req,res)=>{
+  const groupsDetails=[
+    {
+      image:"",
+      email:"zummit-chandan@gmail.com",
+      groupName:"Better Than Tomorrow",
+      purpose_Goals:"Improving every minute",
+      sessionNumber:10,
+      slots:10,
+      startDate:"",
+      price:"",
+      time:{
+        shift:"",
+        hours:""
+      },
+      selectDay:""
+    },
+    {
+      image:"",
+      email:"zummit-chandan@gmail.com",
+      groupName:"Better Than Tomorrow",
+      purpose_Goals:"Improving every minute",
+      sessionNumber:10,
+      slots:10,
+      startDate:"",
+      price:"",
+      time:{
+        shift:"",
+        hours:""
+      },
+      selectDay:""
+    },
+    {
+      image:"",
+      email:"zummit-chandan@gmail.com",
+      groupName:"Better Than Tomorrow",
+      purpose_Goals:"Improving every minute",
+      sessionNumber:10,
+      slots:10,
+      startDate:"",
+      price:"",
+      time:{
+        shift:"",
+        hours:""
+      },
+      selectDay:""
+    },
+    {
+      image:"",
+      email:"zummit-chandan@gmail.com",
+      groupName:"Better Than Tomorrow",
+      purpose_Goals:"Improving every minute",
+      sessionNumber:10,
+      slots:10,
+      startDate:"",
+      price:"",
+      time:{
+        shift:"",
+        hours:""
+      },
+      selectDay:""
+    },
+    {
+      image:"",
+      email:"zummit-chandan@gmail.com",
+      groupName:"Better Than Tomorrow",
+      purpose_Goals:"Improving every minute",
+      sessionNumber:10,
+      slots:10,
+      startDate:"",
+      price:"",
+      time:{
+        shift:"",
+        hours:""
+      },
+      selectDay:""
+    }
+  ];
+
+  res.status(200).json({
+    success:true,
+    data:groupsDetails,
+    message:"data found"
+  })
+}
+
+const AdminClients=(req,res)=>{
+  const clientList=[
+    {
+      clientId:"5364879",
+      clientName:"Prabha Murthy",
+      therapistName:"Sundhari Prakhash",
+      lastSession:"02/08/2023"
+    },
+    {
+      clientId:"5364879",
+      clientName:"Prabha Murthy",
+      therapistName:"Sundhari Prakhash",
+      lastSession:"02/08/2023"
+    },
+    {
+      clientId:"5364879",
+      clientName:"Prabha Murthy",
+      therapistName:"Sundhari Prakhash",
+      lastSession:"02/08/2023"
+    },
+    {
+      clientId:"5364879",
+      clientName:"Prabha Murthy",
+      therapistName:"Sundhari Prakhash",
+      lastSession:"02/08/2023"
+    },
+    {
+      clientId:"5364879",
+      clientName:"Prabha Murthy",
+      therapistName:"Sundhari Prakhash",
+      lastSession:"02/08/2023"
+    },
+    {
+      clientId:"5364879",
+      clientName:"Prabha Murthy",
+      therapistName:"Sundhari Prakhash",
+      lastSession:"02/08/2023"
+    },
+    {
+      clientId:"5364879",
+      clientName:"Prabha Murthy",
+      therapistName:"Sundhari Prakhash",
+      lastSession:"02/08/2023"
+    },
+    {
+      clientId:"5364879",
+      clientName:"Prabha Murthy",
+      therapistName:"Sundhari Prakhash",
+      lastSession:"02/08/2023"
+    },
+    {
+      clientId:"5364879",
+      clientName:"Prabha Murthy",
+      therapistName:"Sundhari Prakhash",
+      lastSession:"02/08/2023"
+    },
+    {
+      clientId:"5364879",
+      clientName:"Prabha Murthy",
+      therapistName:"Sundhari Prakhash",
+      lastSession:"02/08/2023"
+    },
+  ];
+
+  res.status(200).json({
+    success: true,
+    data:clientList,
+    message:"data found"
+  })
+}
+
+const AdminResources=(req,res)=>{
+  const resources=[
+    {
+      image:" ",
+      title:"The Power of Therapy in Today's Stressful World",
+      review:"Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
+      author:"Andy Fold",
+      report:"Pending"
+    },
+    {
+      image:" ",
+      title:"The Power of Therapy in Today's Stressful World",
+      review:"Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
+      author:"Andy Fold",
+      report:"Published"
+    },
+    {
+      image:" ",
+      title:"The Power of Therapy in Today's Stressful World",
+      review:"Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
+      author:"Andy Fold",
+      report:"Published"
+    },
+    {
+      image:" ",
+      title:"The Power of Therapy in Today's Stressful World",
+      review:"Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
+      author:"Andy Fold",
+      report:"Published"
+    },
+    {
+      image:" ",
+      title:"The Power of Therapy in Today's Stressful World",
+      review:"Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
+      author:"Andy Fold",
+      report:"Published"
+    },
+    {
+      image:" ",
+      title:"The Power of Therapy in Today's Stressful World",
+      review:"Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
+      author:"Andy Fold",
+      report:"Published"
+    },
+    {
+      image:" ",
+      title:"The Power of Therapy in Today's Stressful World",
+      review:"Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
+      author:"Andy Fold",
+      report:"Published"
+    },
+    {
+      image:" ",
+      title:"The Power of Therapy in Today's Stressful World",
+      review:"Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
+      author:"Andy Fold",
+      report:"Published"
+    }
+  ];
+  res.status(200).json({
+    success:true,
+    data:resources,
+    message:"data found"
+  })
+}
+
+const AdminReviews=(req,res)=>{
+  const reviews=[
+    {
+      doctorName:"Dr.Jordan Patel",
+      review:4,
+      comment:{
+        description:"Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date:"02/08/2023"
+      }
+    },
+    {
+      doctorName:"Dr.Jordan Patel",
+      review:4,
+      comment:{
+        description:"Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date:"02/08/2023"
+      }
+    },
+    {
+      doctorName:"Dr.Jordan Patel",
+      review:4,
+      comment:{
+        description:"Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date:"02/08/2023"
+      }
+    },{
+      doctorName:"Dr.Jordan Patel",
+      review:4,
+      comment:{
+        description:"Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date:"02/08/2023"
+      }
+    },{
+      doctorName:"Dr.Jordan Patel",
+      review:4,
+      comment:{
+        description:"Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date:"02/08/2023"
+      }
+    },{
+      doctorName:"Dr.Jordan Patel",
+      review:4,
+      comment:{
+        description:"Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date:"02/08/2023"
+      }
+    },
+    {
+      doctorName:"Dr.Jordan Patel",
+      review:4,
+      comment:{
+        description:"Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date:"02/08/2023"
+      }
+    },{
+      doctorName:"Dr.Jordan Patel",
+      review:4,
+      comment:{
+        description:"Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date:"02/08/2023"
+      }
+    },
+    {
+      doctorName:"Dr.Jordan Patel",
+      review:4,
+      comment:{
+        description:"Nec tortor quam turpis nunc nibh lorem quam dolor. Neque suspendisse tincidunt id arcu mollis praesent",
+        date:"02/08/2023"
+      }
+    }
+  ];
+
+  res.status(200).json({
+    success:true,
+    data:reviews,
+    message:"data found"
+  })
+}
+
+const AdminTransactions=(req,res)=>{
+  const transactions=[
+    {
+      invoiceNumber:635847693584,
+      clientId:"000461884",
+      clientName:"Rohan",
+      doctorName:"Vijay Kapoor",
+      amount:`"\u20A8" 1000`,
+      report:"Completed"
+    },
+    {
+      invoiceNumber:635847693584,
+      clientId:"000461884",
+      clientName:"Rohan",
+      doctorName:"Vijay Kapoor",
+      amount:`"\u20A8" 1000`,
+      report:"Completed"
+    },
+    {
+      invoiceNumber:635847693584,
+      clientId:"000461884",
+      clientName:"Rohan",
+      doctorName:"Vijay Kapoor",
+      amount:`"\u20A8" 1000`,
+      report:"Completed"
+    },
+    {
+      invoiceNumber:635847693584,
+      clientId:"000461884",
+      clientName:"Rohan",
+      doctorName:"Vijay Kapoor",
+      amount:`"\u20A8" -1000`,
+      report:"Cancelled"
+    },
+    {
+      invoiceNumber:635847693584,
+      clientId:"000461884",
+      clientName:"Rohan",
+      doctorName:"Vijay Kapoor",
+      amount:`"\u20A8" 1000`,
+      report:"Completed"
+    },
+    {
+      invoiceNumber:635847693584,
+      clientId:"000461884",
+      clientName:"Rohan",
+      doctorName:"Vijay Kapoor",
+      amount:`"\u20A8" 1000`,
+      report:"Completed"
+    },
+    {
+      invoiceNumber:635847693584,
+      clientId:"000461884",
+      clientName:"Rohan",
+      doctorName:"Vijay Kapoor",
+      amount:`"\u20A8" -1000`,
+      report:"Cancelled"
+    },
+    {
+      invoiceNumber:635847693584,
+      clientId:"000461884",
+      clientName:"Rohan",
+      doctorName:"Vijay Kapoor",
+      amount:`"\u20A8" 1000`,
+      report:"Completed"
+    },
+    {
+      invoiceNumber:635847693584,
+      clientId:"000461884",
+      clientName:"Rohan",
+      doctorName:"Vijay Kapoor",
+      amount:`"\u20A8" 1000`,
+      report:"Completed"
+    },
+    {
+      invoiceNumber:635847693584,
+      clientId:"000461884",
+      clientName:"Rohan",
+      doctorName:"Vijay Kapoor",
+      amount:`"\u20A8" -1000`,
+      report:"Cancelled"
+    },
+    {
+      invoiceNumber:635847693584,
+      clientId:"000461884",
+      clientName:"Rohan",
+      doctorName:"Vijay Kapoor",
+      amount:`"\u20A8" 1000`,
+      report:"Completed"
+    },
+    {
+      invoiceNumber:635847693584,
+      clientId:"000461884",
+      clientName:"Rohan",
+      doctorName:"Vijay Kapoor",
+      amount:`"\u20A8" 1000`,
+      report:"Completed"
+    }
+  ];
+
+  res.status(200).json({
+    success:true,
+    data:transactions,
+    message:"data found"
+  })
+}
+
+const AdminProfile=(req,res)=>{
+  const profile={
+    name:"Ragini Meyer",
+    email:"ragini.meyer@gmail.com",
+    phone:"09874656123",
+    dateofBirth:"5 May 2024"
+  };
+  res.status(200).json({
+    success:true,
+    data:profile,
+    message:"data found"
+  })
+}
+
 module.exports = {
   registerUser,
   loginUser,
   logout,
   getUser,
   AdminDashboardData,
-  AdminAppointmentData
+  AdminAppointmentData,
+  AdminTherapistsDetails,
+  AdminClients,
+  AdminGroups,
+  AdminResources,
+  AdminReviews,
+  AdminTransactions,
+  AdminProfile
 };
