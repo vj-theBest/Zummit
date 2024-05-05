@@ -25,7 +25,7 @@ import AdminDashboard from "./components/Admin/Dashboard/AdminDashboard";
 import Admin_Appointments from "./components/Admin/Appointment/Admin_Appointments";
 import Admin_Groups from "./components/Admin/Admin_Groups";
 import Admin_Profile from "./components/Admin/Admin_Profile";
-import Admin_Therapists from "./components/Admin/Admin_Therapists";
+import Admin_Therapists from "./components/Admin/Therapist/Admin_Therapists";
 import Admin_Resources from "./components/Admin/Admin_Resources";
 import Admin_Clients from "./components/Admin/Admin_Clients";
 import Admin_Reviews from "./components/Admin/Admin_Reviews";
