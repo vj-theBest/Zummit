@@ -276,13 +276,7 @@ const Footer = () => {
                   > */}
                     {/* Print
                   </button> */}
-                  <a
-                    href={Resume}
-                    download
-                    className="privacy-popup-footer-link"
-                  >
-                    Download Privacy Policy
-                  </a>
+                  
                   </div>
                 </div>
               </div>
