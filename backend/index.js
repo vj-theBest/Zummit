@@ -6,6 +6,7 @@ const cookieParser=require("cookie-parser")
 const PORT= 4000
 const app= express();
 const userRoute=require("./routes/userRoute")
+const adminRoute = require("./routes/adminRoute");
 
 //middlewares
 app.use(express.json());
@@ -37,6 +38,7 @@ app.get("/",(req,res)=>{
     res.send("homepage")
 })
 app.use("/api/users",userRoute);
+app.use("/api/admin", adminRoute);
 
 //connect to the database
 const dbConnect=require("./config/database");
