@@ -59,8 +59,8 @@ const Therapist = () => {
   ];
   return (
     <div className="w-full m-10 ">
-      <div className="flex justify-center gap-10 items-center">
-        <div className="flex items-center bg-white w-[70%] border  pl-4 rounded-lg border-[#B4F0FF] ">
+      <div className="flex  justify-end w-[95%] gap-10 items-center">
+        <div className="flex items-center bg-white w-[80%] border  pl-4 rounded-lg border-[#B4F0FF] ">
           <svg
             width="25"
             height="26"
@@ -89,7 +89,7 @@ const Therapist = () => {
             className="h-12 ml-5 rounded-lg outline-none w-[100%]"
           />
         </div>
-        <div className="p-2 rounded-full ">
+        <div className="p-2 cursor-pointer rounded-full ">
           <svg
             width="45"
             height="45"
@@ -109,17 +109,18 @@ const Therapist = () => {
           </svg>
         </div>
       </div>
-      <div className="flex w-[90%] justify-between items-center">
+      <div className="flex w-[95%] justify-between items-center">
         <h1 className="text-2xl  my-8">Therapists</h1>
-        <button className="rounded-md py-2 px-4   text-lg bg-[#00677F] text-white">
+        <button className="rounded-md py-2 px-4 cursor-pointer  text-lg bg-[#00677F] text-white">
           Add New
         </button>
       </div>
-      <div className="w-[90%] flex justify-end items-center mb-5">
+      <div className="w-[95%]  flex justify-end items-center mb-5">
         <svg
           width="32"
           height="32"
           viewBox="0 0 32 32"
+          className="cursor-pointer"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -132,7 +133,7 @@ const Therapist = () => {
           />
         </svg>
       </div>
-      <div className="p-4 w-[90%] rounded-lg bg-white ">
+      <div className="p-4 w-[95%] rounded-lg bg-white ">
         <div className="bg-[#DCDCDD] text-lg mb-4  rounded-lg w-full p-2 text-black flex gap-4 justify-between  items-center">
           <h1>Doctor Name</h1>
           <h1>Appointments</h1>

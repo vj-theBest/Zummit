@@ -1,9 +1,9 @@
 import React from "react";
-
+import FlowerImage from "../../images/flower-img.png";
 const Groups = () => {
   const groupsDetails = [
     {
-      image:"../.././images/flower-img.png",
+      image: FlowerImage,
       email: "zummit-chandan@gmail.com",
       groupName: "Better Than Yesterday",
       purpose_Goals:
@@ -19,7 +19,7 @@ const Groups = () => {
       selectDay: "",
     },
     {
-      image:"../.././images/flower-img.png",
+      image: FlowerImage,
       email: "zummit-chandan@gmail.com",
       groupName: "Better Than Tomorrow",
       purpose_Goals: "Improving every minute",
@@ -34,7 +34,7 @@ const Groups = () => {
       selectDay: "",
     },
     {
-      image:"../.././images/flower-img.png",
+      image: FlowerImage,
       email: "zummit-chandan@gmail.com",
       groupName: "Better Than Tomorrow",
       purpose_Goals: "Improving every minute",
@@ -49,7 +49,7 @@ const Groups = () => {
       selectDay: "",
     },
     {
-      image:"../.././images/flower-img.png",
+      image: FlowerImage,
       email: "zummit-chandan@gmail.com",
       groupName: "Better Than Tomorrow",
       purpose_Goals: "Improving every minute",
@@ -64,7 +64,7 @@ const Groups = () => {
       selectDay: "",
     },
     {
-      image:"../.././images/flower-img.png",
+      image: FlowerImage,
       email: "zummit-chandan@gmail.com",
       groupName: "Better Than Tomorrow",
       purpose_Goals: "Improving every minute",
@@ -134,31 +134,27 @@ const Groups = () => {
       </div>
       <div className="flex w-[90%] justify-between items-center">
         <h1 className="text-2xl  my-8">Groups</h1>
-        <button className="rounded-md py-2 px-4   text-lg bg-[#00677F] text-white">
-         Create Now
-        </button>
       </div>
-    <div className="flex bg-white p-4 rounded-lg justify-between">
+    <div className="flex flex-wrap bg-white p-4 rounded-lg gap-5">
       {groupsDetails.map((item)=>(
-        <div className="group w-72 my-2 bg-[#FDFEF1] p-[10px] rounded-lg hover:shadow-lg cursor-pointer">
+        <div className="group w-72 my-2 bg-[#FDFEF1] p-2 rounded-lg hover:shadow-lg cursor-pointer">
         <div className="relative overflow-hidden rounded-lg">
-          <div className="relative group-hover:scale-[1.05] transition ease-in-out duration-300 overflow-hidden">
+          <div className="relative group-hover:scale-[1.08] transition ease-in-out duration-700 overflow-hidden">
             <img
               src={item.image}
               alt=""
-              className="w-60 m-auto"
+              className="w-72 m-auto"
             />
           </div>
           <div className="bg-[#F7F131] absolute rounded-lg pl-2 pr-[8px,] py-[4px,] w-[129px] h-[28px] top-[5px] right-[20px]">
-            <p>Starts: 16 March</p>
+            <p>Starts: 16 March</p> 
           </div>
         </div>
-        <p className="w-full  text-center text-[#121014] pb-2 group-hover:underline">
-          Lacus amet egestas ullamcorper fermentum
+        <p className="w-full font-medium  text-center text-[17px] text-[#121014] pb-2 group-hover:underline">
+          {item.groupName}
         </p>
-        <p className="leading-[20px] text-base pl-2 text-[#272529]">
-          Trauma, Anxiety, Depression, Life Transitions, Career Uncertainty,
-          Relationship Challenges, Quarter-Life Crisis, Couples Therapy
+        <p className="leading-[20px]  text-sm pl-2 text-[#272529]">
+          {item.purpose_Goals}
         </p>
       </div>
       ))}

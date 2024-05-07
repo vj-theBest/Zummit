@@ -1,6 +1,7 @@
 import React from "react";
 import Admin_SideBar from "../Admin_SideBar";
 import Main_Dashboard from "./Main_Dashboard";
+import Author from "./Author";
 
 const AdminDashboard = () => {
   return (
@@ -10,6 +11,8 @@ const AdminDashboard = () => {
       </div>
       <div className="w-[81.5%]  bg-[#F2FCFF]">
         <Main_Dashboard />
+        {/* <Resources_Edit /> */}
+        {/* <Author/> */}
       </div>
     </div>
   );
