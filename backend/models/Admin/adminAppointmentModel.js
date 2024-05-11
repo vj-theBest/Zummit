@@ -35,5 +35,5 @@ const appointment=mongoose.Schema(
       },
 )
 
-const Appointment=mongoose.model("Appointmen",appointment);
+const Appointment=mongoose.model("Appointment",appointment);
 module.exports=Appointment;

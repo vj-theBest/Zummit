@@ -1,9 +1,10 @@
 const asyncHandler = require("express-async-handler");
-const Admin = require("../../models/Admin/AdminDashboard/adminSecurity"); 
-const DashboardReview = require("../../models/Admin/AdminDashboard/dashboardReviewModel");
+const Admin = require("../../models/Admin/AdminDashboard/adminSecurity");
 const jwt = require("jsonwebtoken"); 
+const Appointment = require("../../models/Admin/adminAppointmentModel");
+const AdminReview = require("../../models/Admin/adminReviewModel");
 
-const adminDashboard = asyncHandler(async (req, res) => {
+const addedReview = asyncHandler(async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -23,33 +24,17 @@ const adminDashboard = asyncHandler(async (req, res) => {
         return res.status(401).json({ message: "Unauthorized" });
       }
 
-      
-      const doctorList = await Admin.find({});
-      const dashboardReview = await DashboardReview.find({});
+      const addedreview=await AdminReview.find({});
 
       res.status(200).json({
         success: true,
-        doctorList: doctorList,
-        reviews: dashboardReview,
-        message: "Admin list Granted"
+        addedReview:addedreview,
+        message: "Added Reviews Granted"
       });
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: "Server error" });
     }
 });
-      
 
-const transactions = async(req,res) =>{
-    try {
-      res.send("Transactions");
-    } catch (error) {
-      console.log(error.message);
-    }
-}
-
-
-module.exports = {
-  adminDashboard,
-  transactions,
-};
+module.exports=addedReview;
