@@ -38,18 +38,8 @@ const adminDashboard = asyncHandler(async (req, res) => {
       res.status(500).json({ message: "Server error" });
     }
 });
-      
-
-const transactions = async(req,res) =>{
-    try {
-      res.send("Transactions");
-    } catch (error) {
-      console.log(error.message);
-    }
-}
-
-
+    
 module.exports = {
   adminDashboard,
-  transactions,
+  
 };

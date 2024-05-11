@@ -1,7 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const Admin = require("../../models/Admin/AdminDashboard/adminSecurity");
 const jwt = require("jsonwebtoken"); 
-const Appointment = require("../../models/Admin/adminAppointmentModel");
 const AdminReview = require("../../models/Admin/adminReviewModel");
 
 const reviewsList = asyncHandler(async (req, res) => {
