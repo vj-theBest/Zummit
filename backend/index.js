@@ -20,16 +20,7 @@ app.use(
       allowedHeaders: ['Content-Type', 'Authorization'],
     })
   );
-// app.use(
-//     cors({
-//         origin:["https://zummit-chandan.vercel.app",
-//         "http://localhost:3000"
-//     ],
-//         credentials:true,
-        
-//     })
-// )
-//errorhandling
+
 const errorHandler=require("./middleware/errorMiddleware")
 app.use(errorHandler);
 

@@ -2,6 +2,7 @@ const asyncHandler = require("express-async-handler");
 const Admin = require("../../models/Admin/AdminDashboard/adminSecurity");
 const jwt = require("jsonwebtoken"); 
 const Client = require("../../models/Admin/adminClientModel");
+const { validationResult } = require('express-validator');
 
 const clientsList = asyncHandler(async (req, res) => {
     const errors = validationResult(req);
@@ -14,7 +15,7 @@ const clientsList = asyncHandler(async (req, res) => {
     try {
       const admin = await Admin.findOne({ email: adminEmail });
       if (!admin) {
-        return res.status(404).json({ message: "Admin not found" });
+        return res.status(404).json({ message: "Client List not found" });
       }
 
      

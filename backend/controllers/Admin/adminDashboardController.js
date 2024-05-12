@@ -2,6 +2,7 @@ const asyncHandler = require("express-async-handler");
 const Admin = require("../../models/Admin/AdminDashboard/adminSecurity"); 
 const DashboardReview = require("../../models/Admin/AdminDashboard/dashboardReviewModel");
 const jwt = require("jsonwebtoken"); 
+const { validationResult } = require('express-validator');
 
 const adminDashboard = asyncHandler(async (req, res) => {
     const errors = validationResult(req);

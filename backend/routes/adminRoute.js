@@ -9,7 +9,7 @@ const therapistsDetails = require("../controllers/Admin/therapistsDetails");
 const transactions = require("../controllers/Admin/transactions");
 const router = express.Router();
 
-router.route("/").get(adminDashboard);
+router.route("/adminDashboard").get(adminDashboard);
 router.route("/appointmentslist").get(appointmentsList);
 router.route("/clienlist").get(clientsList);
 router.route("/profile").get(profiles);

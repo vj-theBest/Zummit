@@ -1,7 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const Admin = require("../../models/Admin/AdminDashboard/adminSecurity");
 const jwt = require("jsonwebtoken"); 
-const Appointment = require("../../models/Admin/adminAppointmentModel");
+const { validationResult } = require('express-validator');
 const AdminGroups = require("../../models/Admin/adminGroupsModel");
 
 const groupsDetails = asyncHandler(async (req, res) => {
@@ -15,7 +15,7 @@ const groupsDetails = asyncHandler(async (req, res) => {
     try {
       const admin = await Admin.findOne({ email: adminEmail });
       if (!admin) {
-        return res.status(404).json({ message: "Admin not found" });
+        return res.status(404).json({ message: "Group Details not found" });
       }
 
      

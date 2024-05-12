@@ -1,8 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const Admin = require("../../models/Admin/AdminDashboard/adminSecurity");
 const jwt = require("jsonwebtoken"); 
-const Appointment = require("../../models/Admin/adminAppointmentModel");
-const AdminTherapists = require("../../models/Admin/adminTherapist.Model");
+const { validationResult } = require('express-validator');
 const AdminTransaction = require("../../models/Admin/adminTransactionModel");
 
 const transactions = asyncHandler(async (req, res) => {
@@ -16,7 +15,7 @@ const transactions = asyncHandler(async (req, res) => {
     try {
       const admin = await Admin.findOne({ email: adminEmail });
       if (!admin) {
-        return res.status(404).json({ message: "Admin not found" });
+        return res.status(404).json({ message: "Transactions not found" });
       }
 
      
