@@ -7,11 +7,13 @@ const PORT= 4000
 const app= express();
 const userRoute=require("./routes/userRoute")
 const adminRoute = require("./routes/adminRoute");
+const bookingRoute = require("./routes/bookingRoute")
 
 //middlewares
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({extended:false}));
+
 app.use(
     cors({
       origin: ['https://zummit-chandan.vercel.app', 'http://localhost:3000','https://vaibhav-zummit-2.vercel.app'],
@@ -30,12 +32,17 @@ app.get("/",(req,res)=>{
 })
 app.use("/api/users",userRoute);
 app.use("/api/admin", adminRoute);
+app.use("/api/booking", bookingRoute);
+
 
 //connect to the database
 const dbConnect=require("./config/database");
 dbConnect();
 
+const {MySqlConnect} = require('./controllers/Booking/mysql')
+MySqlConnect()
+
 app.listen(PORT,()=>{
     console.log(`app run at , ${PORT}`);
 })
-     
+
