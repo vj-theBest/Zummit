@@ -109,6 +109,7 @@ function UserDashboard() {
         <img
           className="w-[112px] h-[112px] mr-[15px]"
           src={require(`${imageURL}`)}
+          alt="cards"
         />
         <div className="flex">
           <div>

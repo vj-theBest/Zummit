@@ -8,7 +8,7 @@ function Page4() {
          <div className="w-[50%]">
            <img
              className="object-cover mt-8 pr-10  w-[50vw] h-[45vh]"
-             src={require("./images/img.jpg")}
+             src="../../../../images/img.jpg"
            ></img>
          </div>
          <div className="w-[45%] flex flex-col justify-center gap-8">

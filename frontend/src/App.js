@@ -17,7 +17,6 @@ import GroupTherapyDetail from "./components/GroupTherapyDetail";
 import RegisterLogin from "./components/RegisterLogin";
 import BookingPage from "./components/BookingPage";
 import ForgotPassword from "./components/ForgotPassword";
-import TherapistProfile from "./components/TherapistProfile";
 import UserDashboard from "./components/UserDashboard";
 import TherapistDetailsPage from "./components/TherapistDetailsPage";
 import BookTherapistPage from "./components/BookTherapistPage";
@@ -119,19 +118,7 @@ const routes = [
           </WithHeaderAndFooter>
         ),
       },
-      {
-        path: "profile",
-        children: [
-          {
-            path: ":id",
-            element: (
-              <WithHeaderAndFooter>
-                <TherapistProfile />
-              </WithHeaderAndFooter>
-            ),
-          },
-        ],
-      },
+  
       {
         path: "booking",
         children: [
