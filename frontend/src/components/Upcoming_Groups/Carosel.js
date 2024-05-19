@@ -3,10 +3,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
-import Page1 from "./Page1";
-import Page2 from "./Page2";
-import Page3 from "./Page3";
-import Page4 from "./Page4";
+import Slide1 from "./Slide1";
+import Slide2 from "./Slide2";
+import Slide3 from "./Slide3";
+import Slide4 from "./Slide4";
 
 export default function Carosel() {
   return (
@@ -25,16 +25,16 @@ export default function Carosel() {
           className="mySwiper"
         >
           <SwiperSlide>
-            <Page1 />
+            <Slide1 />
           </SwiperSlide>
           <SwiperSlide>
-            <Page2 />
+            <Slide2 />
           </SwiperSlide>
           <SwiperSlide>
-            <Page3 />
+            <Slide3 />
           </SwiperSlide>
           <SwiperSlide>
-            <Page4 />
+            <Slide4 />
           </SwiperSlide>
         </Swiper>
       </div>

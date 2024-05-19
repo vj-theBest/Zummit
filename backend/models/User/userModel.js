@@ -33,15 +33,12 @@ const userSchema=mongoose.Schema(
     }
 )
 
-
-
-//Hash Password for Encryption before saving to DB
 userSchema.pre("save",async function(next){
     const bcrypt=require("bcryptjs")
     if(!this.isModified("password")){
         return next();
     }
-    //Hash Password
+    
     const hashed=await bcrypt.genSalt(10)
     const hashPassword=await bcrypt.hash(this.password,hashed)
     this.password=hashPassword

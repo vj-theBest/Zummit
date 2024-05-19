@@ -11,10 +11,7 @@ const protect=asyncHandler(async(req,res,next)=>{
         throw new Error("Not Authorized, please Login");
 
        }
-       //verify token
        const verified=jwt.verify(token,process.env.JWT_SECRET)
-
-       //get userid from token
        const user=await User.findById(verified.id).select("-password")
        req.user=user
        next()
