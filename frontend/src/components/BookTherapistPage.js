@@ -41,7 +41,7 @@ function BookTherapistPage() {
             Therapists/Dr. Sundhari Prakhashan
        </div>
        {/* book page */}
-       <div className="flex justify-center items-center px-16 py-5 bg-white rounded shadow max-w-[935px] max-md:px-5 shadow-lg" >
+       <div className="flex justify-center items-center px-16 py-5 bg-white rounded max-w-[935px] max-md:px-5 shadow-lg" >
       <div className="flex flex-col px-12 w-full max-w-[707px] max-md:px-5 max-md:max-w-full">
         <div className="self-center text-2xl font-medium leading-9 text-slate-950">
           Session Booking

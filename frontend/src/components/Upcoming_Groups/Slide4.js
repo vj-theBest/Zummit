@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Page4() {
+function Slide4() {
   return (
        <div className="flex">
        <div className="flex justify-center items-center ">
          <div className="w-[50%]">
            <img
              className="object-cover mt-8 pr-10  w-[50vw] h-[45vh]"
-             src={require("./images/img.jpg")}
+             src={require("../images/img.jpg")}
            ></img>
          </div>
          <div className="w-[45%] flex flex-col justify-center gap-8">
@@ -28,4 +28,4 @@ function Page4() {
   )
 }
 
-export default Page4
+export default Slide4

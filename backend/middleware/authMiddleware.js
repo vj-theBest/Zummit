@@ -1,6 +1,7 @@
 const asyncHandler=require("express-async-handler");
 const jwt=require("jsonwebtoken");
-const User = require("../models/userModel");
+const User = require("../models/User/userModel");
+
 
 const protect=asyncHandler(async(req,res,next)=>{
     try{
@@ -10,10 +11,7 @@ const protect=asyncHandler(async(req,res,next)=>{
         throw new Error("Not Authorized, please Login");
 
        }
-       //verify token
        const verified=jwt.verify(token,process.env.JWT_SECRET)
-
-       //get userid from token
        const user=await User.findById(verified.id).select("-password")
        req.user=user
        next()

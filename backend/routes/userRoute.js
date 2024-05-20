@@ -3,7 +3,6 @@ const router=express.Router();
 const {registerUser, loginUser, logout, getUser}=require("../controllers/User/userController");
 const { protect } = require("../middleware/authMiddleware");
 
-//removed
 router.post("/register",registerUser);
 router.post("/login",loginUser)
 router.get("/logout",logout)

@@ -20,4 +20,5 @@ const profile=mongoose.Schema(
         }
       }
 )
-module.exports=mongoose.model("AdminProfile",profile);
+const Profile=mongoose.model("AdminProfile",profile);
+module.exports=Profile;
