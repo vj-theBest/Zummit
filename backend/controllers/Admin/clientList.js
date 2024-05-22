@@ -18,7 +18,7 @@ const clientsList = asyncHandler(async (req, res) => {
         return res.status(404).json({ message: "Client List not found" });
       }
 
-     
+  
       const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
       if (decodedToken.id!== admin._id) {
         return res.status(401).json({ message: "Unauthorized" });
