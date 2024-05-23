@@ -10,7 +10,7 @@ const transactions = require("../controllers/Admin/transactions");
 const router = express.Router();
 
 //Create API's
-router.route("/createAppointmentLists").post(createAppointment)
+router.route("/createAppointmentLists").post(createAppointment )
 
 //get API's
 router.route("/adminDashboard").get(adminDashboard);
