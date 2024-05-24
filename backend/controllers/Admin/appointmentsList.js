@@ -46,6 +46,14 @@ const createAppointment = asyncHandler(async (req, res) => {
 
   const { adminEmail, token, appointmentData } = req.body;
 
+  if (
+    !adminEmail ||
+    !token ||
+    !appointmentData
+  ) {
+    return res.status(402).json({ message: "Please fill all fileds" });
+  }
+
   try {
     const admin = await Admin.findOne({ email: adminEmail });
     if (!admin) {
