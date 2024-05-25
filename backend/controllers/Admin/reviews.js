@@ -72,6 +72,6 @@ const createReviewsList = asyncHandler(async (req, res) => {
 });
 
 
-
+// now we are create delete controller
 
 module.exports = reviewsList;
