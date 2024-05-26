@@ -20,6 +20,7 @@ router.route("/createCreateProfiles").post(createProfiles);
 router.route("/createTherapistsDetails").post(createtherapistsDetails);
 router.route("/createTransactions").post(createtransactions);
 router.route("/adminRegister").post(registerAdmin);
+router.route("/adminLogin").post(loginAdmin);
 //get API's
 router.route("/adminDashboard").get(adminDashboard);
 router.route("/appointmentslist").get(appointmentsList);
