@@ -30,7 +30,7 @@ const registerAdmin = asyncHandler(async (req, res) => {
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
-  const admin = await Admin.create({
+  const admin = await AdminLoginRegister.create({
     name,
     email,
     password: hashedPassword,
