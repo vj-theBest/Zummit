@@ -35,7 +35,7 @@ const Footer = () => {
                       <div className="text-xl font-bold">About Us</div>
                     </Link>
                     <Link to="/FAQs" target="_top">
-                      <div className="mt-3.5">FAQ</div>
+                      <div className="mt-3.5">FAQs</div>
                     </Link>
 
                     <div className="mt-2.5">Terms of use</div>

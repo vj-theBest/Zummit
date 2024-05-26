@@ -22,7 +22,7 @@ function Navbar() {
     { name: "Services", to: "/services" },
     { name: "Our Therapists", to: "/therapists" },
     { name: "Resources", to: "/resources" },
-    { name: "FAQ", to: "/FAQs" },
+    { name: "FAQs", to: "/FAQs" },
   ];
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();

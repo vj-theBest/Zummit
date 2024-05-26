@@ -147,7 +147,7 @@ const About = () => {
             <div className="m-0 p-0 ">
               <div className="m-0 p-0 ps-6 w-[775px]">
                 <p className="text-[24px] font-['Quicksand'] font-medium pb-6">
-                  Asha Chillal (She/Her) - Co-Founder
+                  Asha (She/Her) - Co-Founder
                 </p>
                 <p className=" pb-5 text-[16px] font-['Quicksand'] font-medium text-justify leading-[150%]">
                   In 2016, Asha quit her job as an engineer and followed her
@@ -184,7 +184,7 @@ const About = () => {
             <div className="m-0 p-0 ">
               <div className="m-0 p-0 pe-6 w-[775px]">
                 <p className="text-[24px] font-['Quicksand'] font-medium pb-6">
-                  Archita Bhalotia (She/Her) - Co-Founder
+                  Archita (She/Her) - Co-Founder
                 </p>
                 <p className=" pb-5 text-[16px] font-['Quicksand'] font-medium text-justify leading-[150%]">
                   Archita, a Clinical Mental Health Counselor, finds solace in

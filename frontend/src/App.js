@@ -8,7 +8,7 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Therapists from "./components/Therapists";
 import Resources from "./components/Resources";
-import FAQ from "./components/FAQ";
+import FAQs from "./components/FAQs";
 import IndividualTherapy from "./components/IndividualThearapy";
 import GroupTherapy from "./components/GroupTherapy";
 import SupportTherapy from "./components/SupportTherapy";
@@ -146,7 +146,7 @@ const routes = [
     path: "/FAQs",
     element: (
       <WithHeaderAndFooter>
-        <FAQ />
+        <FAQs />
       </WithHeaderAndFooter>
     ),
   },

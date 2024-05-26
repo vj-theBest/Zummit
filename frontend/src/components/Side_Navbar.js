@@ -38,7 +38,7 @@ function Side_Navbar() {
               <Link to="/resources" >Resources</Link>
             </button>
             <button className={`pl-4 ${isActive('/FAQs') ? 'bg-[#FDFEF1] pl-4 text-black font-bold w-[227px] h-[49px] rounded-lg text-left' : ''}`}>
-              <Link to="/FAQs" >FAQ</Link>
+              <Link to="/FAQs" >FAQs</Link>
             </button>
             <button className={`pl-4 ${isActive('/') ? 'bg-[#FDFEF1] pl-4 text-black font-bold w-[227px] h-[49px] rounded-lg text-left' : ''}`}>
               <Link to="/" >Profile</Link>

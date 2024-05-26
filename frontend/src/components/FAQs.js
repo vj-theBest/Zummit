@@ -59,7 +59,7 @@ const Section = ({ title, description, isVisible, toggleVisibility }) => {
   );
 };
 
-const FAQs = () => {
+const FAQss = () => {
   const [showPrivacy, setShowPrivacy] = useState(false);
   const togglePrivacyPopup = () => {
     setShowPrivacy(!showPrivacy);
@@ -134,7 +134,7 @@ const FAQs = () => {
       <div className="flex justify-center mt-10 mb-4"></div>
       <div className="flex flex-col gap-3 text-start">
         {/* <h1 className="text-2xl font-semibold">How can we help</h1> */}
-        <p className="text-3xl font-semibold mb-10 text-center">FAQ</p>
+        <p className="text-3xl font-semibold mb-10 text-center">FAQs</p>
       </div>
       <div>
         {/* <h1 className="text-2xl ml-[25%] my-4 text-start font-semibold">Booking an appointment</h1> */}
@@ -496,4 +496,4 @@ const FAQs = () => {
   );
 };
 
-export default FAQs;
+export default FAQss;
