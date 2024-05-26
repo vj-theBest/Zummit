@@ -9,7 +9,7 @@ const adminSchema=mongoose.Schema(
     {
         name:{
             type:String,
-            required:[true,"please add a note"]
+            required:[true,"please add a name"]
         },
         input:{
             type:String,
@@ -19,9 +19,8 @@ const adminSchema=mongoose.Schema(
         },
         role:{
             type:String,
-            required:[true,"plase specify a role : Client or Therapist"],
-            default:"client",
-            email:["customer","admin"],
+            required:[true,"plase specify a role : Client or Admin"],
+            default:"Admin",
         },
 
         password:{
