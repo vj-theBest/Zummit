@@ -20,11 +20,11 @@ const registerAdmin = asyncHandler(async (req, res) => {
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
+  if (!emailRegex.test(input)) {
     return res.status(400).json({ success: false, msg: "Please enter a valid email address." });
   }
 
-  const adminExists = await AdminLoginRegister.findOne({ email });
+  const adminExists = await AdminLoginRegister.findOne({ input });
   if (adminExists) {
     return res.status(400).json({ success: false, msg: "Admin already registered." });
   }
@@ -38,7 +38,7 @@ const registerAdmin = asyncHandler(async (req, res) => {
   });
 
   if (admin) {
-    const { _id, email, role } = admin;
+    const { _id, input, role } = admin;
     const token = generateToken(_id);
     res.cookie("token", token, {
       path: "/",

@@ -20,8 +20,7 @@ const userSchema=mongoose.Schema(
         role:{
             type:String,
             required:[true,"plase specify a role : Client or Therapist"],
-            default:"client",
-            email:["customer","admin"],
+            default:"Client",
         },
 
         password:{
