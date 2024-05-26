@@ -73,7 +73,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
   }
 
   const passwordIsCorrect = await bcrypt.compare(password, admin.password);
-
+  
   if (!passwordIsCorrect) {
     return res.status(400).json({ success: false, msg: "Incorrect password." });
   }
