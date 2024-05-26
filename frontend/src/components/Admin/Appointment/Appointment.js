@@ -259,7 +259,7 @@ const Appointment = () => {
             className="h-12 ml-5 rounded-lg outline-none w-[100%]"
           />
         </div>
-        <div className="p-2  cursor-pointer   rounded-full ">
+        <div className="p-2 cursor-pointer rounded-full ">
           <svg
             width="45"
             height="45"
