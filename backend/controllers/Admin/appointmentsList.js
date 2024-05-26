@@ -1,8 +1,8 @@
 const asyncHandler = require("express-async-handler");
-const Admin = require("../../models/Admin/AdminDashboard/adminSecurity");
 const jwt = require("jsonwebtoken"); 
 const Appointment = require("../../models/Admin/adminAppointmentModel");
 const { validationResult } = require('express-validator');
+const AdminLoginRegister = require("../../models/Admin/AdminRegisterLogin/adminModel");
 
 const appointmentsList = asyncHandler(async (req, res) => {
     const errors = validationResult(req);
@@ -10,10 +10,10 @@ const appointmentsList = asyncHandler(async (req, res) => {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { adminEmail, token } = req.body;
+    const { input, token } = req.body;
 
     try {
-      const admin = await Admin.findOne({ email: adminEmail });
+      const admin = await AdminLoginRegister.findOne({ input });
       if (!admin) {
         return res.status(404).json({ message: "Appointment list not found" });
       }
@@ -44,10 +44,10 @@ const createAppointment = asyncHandler(async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
-  const { adminEmail, token, appointmentData } = req.body;
+  const { input, token, appointmentData } = req.body;
 
   if (
-    !adminEmail ||
+    !input ||
     !token ||
     !appointmentData
   ) {
@@ -55,7 +55,7 @@ const createAppointment = asyncHandler(async (req, res) => {
   }
 
   try {
-    const admin = await Admin.findOne({ email: adminEmail });
+    const admin = await AdminLoginRegister.findOne({ input });
     if (!admin) {
       return res.status(404).json({ message: "Admin not found" });
     }
