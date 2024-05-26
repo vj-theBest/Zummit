@@ -13,7 +13,7 @@ const generateToken = (id) => {
 const registerAdmin = asyncHandler(async (req, res) => {
   let isValid = false;
   let msg = '';
-  const { name, email, password, role } = req.body;
+  const { name, input, password, role } = req.body;
 
   if (password.length < 6) {
     return res.status(400).json({ success: false, msg: "Password must be at least 6 characters long." });
@@ -32,7 +32,7 @@ const registerAdmin = asyncHandler(async (req, res) => {
   const hashedPassword = await bcrypt.hash(password, 10);
   const admin = await AdminLoginRegister.create({
     name,
-    email,
+    input,
     password: hashedPassword,
     role,
   });
@@ -49,7 +49,7 @@ const registerAdmin = asyncHandler(async (req, res) => {
       success: true,
       data: _id,
       name,
-      email,
+      input,
       role,
       token,
       message: "Admin registered successfully.",
@@ -61,13 +61,13 @@ const registerAdmin = asyncHandler(async (req, res) => {
 
 
 const loginAdmin = asyncHandler(async (req, res) => {
-  const { email, password } = req.body;
+  const { input, password } = req.body;
 
-  if (!email ||!password) {
+  if (!input ||!password) {
     return res.status(400).json({ success: false, msg: "Please provide email and password." });
   }
 
-  const admin = await AdminLoginRegister.findOne({ email });
+  const admin = await AdminLoginRegister.findOne({ input });
   if (!admin) {
     return res.status(400).json({ success: false, msg: "No admin found with this email." });
   }
