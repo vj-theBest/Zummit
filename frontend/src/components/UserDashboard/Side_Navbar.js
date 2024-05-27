@@ -13,7 +13,7 @@ function Side_Navbar() {
         <div className="sidebar w-[18vw] bg-[#00677F]">
           <Link to="/userdashboard">
           <img
-            src={require("./images/logo.png")}
+            src={require("../images/logo.png")}
             alt=""
             className="pl-[16px] pt-[32px] w-[196px]"
           />

@@ -1,5 +1,5 @@
 import * as React from "react";
-import Therapists from "./Therapists";
+import Therapists from "../Therapists";
 import Side_Navbar from "./Side_Navbar";
 function BookingPage() {
     return (<>
