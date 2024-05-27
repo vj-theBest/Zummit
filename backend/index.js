@@ -39,7 +39,7 @@ app.use("/api/booking", bookingRoute);
 const dbConnect=require("./config/database");
 dbConnect();
 
-const {MySqlConnect} = require('./controllers/Booking/mysql')
+const {MySqlConnect} = require('./controllers/Booking/BookingSlotsController')
 MySqlConnect()
 
 app.listen(PORT,()=>{
