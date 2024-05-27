@@ -1,8 +1,8 @@
 const asyncHandler = require("express-async-handler");
-const Admin = require("../../models/Admin/AdminDashboard/adminSecurity");
 const jwt = require("jsonwebtoken");
 const { validationResult } = require('express-validator');
 const AdminTransaction = require("../../models/Admin/adminTransactionModel");
+const AdminLoginRegister = require("../../models/Admin/AdminRegisterLogin/adminModel");
 
 const transactions = asyncHandler(async (req, res) => {
   const errors = validationResult(req);
@@ -10,10 +10,13 @@ const transactions = asyncHandler(async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
-  const { adminEmail, token } = req.body;
+  const { input, token } = req.body;
+  if (!input || !token) {
+    return res.status(402).json({ message: "Please fill all fileds" });
+  }
 
   try {
-    const admin = await Admin.findOne({ email: adminEmail });
+    const admin = await AdminLoginRegister.findOne({ input });
     if (!admin) {
       return res.status(404).json({ message: "Transactions not found" });
     }
@@ -43,10 +46,14 @@ const createtransactions = asyncHandler(async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
-  const { adminEmail, token, transaction } = req.body;
+  const { input, token, transaction } = req.body;
+
+  if (!input || !token || !transaction) {
+    return res.status(402).json({ message: "Please fill all fileds" });
+  }
 
   try {
-    const admin = await Admin.findOne({ email: adminEmail });
+    const admin = await AdminLoginRegister.findOne({ input });
     if (!admin) {
       return res.status(404).json({ message: "transactions not found" });
     }
