@@ -1,8 +1,8 @@
 const asyncHandler = require("express-async-handler");
-const Admin = require("../../models/Admin/AdminDashboard/adminSecurity");
 const jwt = require("jsonwebtoken"); 
 const Appointment = require("../../models/Admin/adminAppointmentModel");
 const { validationResult } = require('express-validator');
+const AdminLoginRegister = require("../../models/Admin/AdminRegisterLogin/adminModel");
 
 const appointmentsList = asyncHandler(async (req, res) => {
     const errors = validationResult(req);
@@ -10,10 +10,10 @@ const appointmentsList = asyncHandler(async (req, res) => {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { adminEmail, token } = req.body;
+    const { input, token } = req.body;
 
     try {
-      const admin = await Admin.findOne({ email: adminEmail });
+      const admin = await AdminLoginRegister.findOne({ input });
       if (!admin) {
         return res.status(404).json({ message: "Appointment list not found" });
       }
@@ -25,6 +25,7 @@ const appointmentsList = asyncHandler(async (req, res) => {
       }
 
       const appointmentsLists=await Appointment.find({});
+      
 
       res.status(200).json({
         success: true,
@@ -37,4 +38,46 @@ const appointmentsList = asyncHandler(async (req, res) => {
     }
 });
 
-module.exports=appointmentsList;
+const createAppointment = asyncHandler(async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  const { input, token, appointmentData } = req.body;
+
+  if (
+    !input ||
+    !token ||
+    !appointmentData
+  ) {
+    return res.status(402).json({ message: "Please fill all fileds" });
+  }
+
+  try {
+    const admin = await AdminLoginRegister.findOne({ input });
+    if (!admin) {
+      return res.status(404).json({ message: "Admin not found" });
+    }
+
+    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+    if (decodedToken.id!== admin._id) {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
+
+    const newAppointment = new Appointment(appointmentData);
+
+    await newAppointment.save();
+
+    res.status(201).json({
+      success: true,
+      message: "Appointment created successfully",
+      appointment: newAppointment
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+module.exports={appointmentsList,createAppointment};

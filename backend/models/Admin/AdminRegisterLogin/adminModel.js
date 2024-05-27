@@ -5,11 +5,11 @@ var validateEmail = function(email) {
     return re.test(email)
 };
 
-const userSchema=mongoose.Schema(
+const adminSchema=mongoose.Schema(
     {
         name:{
             type:String,
-            required:[true,"please add a note"]
+            required:[true,"please add a name"]
         },
         input:{
             type:String,
@@ -19,8 +19,8 @@ const userSchema=mongoose.Schema(
         },
         role:{
             type:String,
-            required:[true,"plase specify a role : Client or Therapist"],
-            default:"Client",
+            required:[true,"plase specify a role : Client or Admin"],
+            default:"Admin",
         },
 
         password:{
@@ -32,7 +32,7 @@ const userSchema=mongoose.Schema(
     }
 )
 
-userSchema.pre("save",async function(next){
+adminSchema.pre("save",async function(next){
     const bcrypt=require("bcryptjs")
     if(!this.isModified("password")){
         return next();
@@ -44,6 +44,5 @@ userSchema.pre("save",async function(next){
     next();
 })
 
-
-const User=mongoose.model('User',userSchema);
-module.exports=User;
+const AdminLoginRegister=mongoose.model('AdminLoginRegister',adminSchema);
+module.exports=AdminLoginRegister;
