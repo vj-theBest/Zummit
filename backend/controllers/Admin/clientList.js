@@ -85,7 +85,7 @@ const createClient = asyncHandler(async (req, res) => {
 
     res.status(201).json({
       success: true,
-      message: "Appointment created successfully",
+      message: "ClientList created successfully",
       appointment: newClient,
     });
   } catch (error) {
