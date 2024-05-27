@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
 
 const Card = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -149,9 +150,8 @@ const Card = () => {
         <div className="absolute w-[20%] h-[485px] top-3 right-0  bg-gradient-to-l from-[#5e5e5e]"></div>
         <Slider {...settings}>
           {Data.map((item) => (
-            <Link to="">
-            </Link>
-            <div className="flex justify-center inline-none">
+            <Link to="#">
+              <div className="flex justify-center inline-none">
               <div className="w-[348px] my-2 h-[485px] p-[10px] rounded-lg hover:shadow-lg cursor-pointer">
                 <div className="relative">
                   <div className="relative group overflow-hidden">
@@ -173,6 +173,7 @@ const Card = () => {
                 </p>
               </div>
             </div>
+            </Link>
           ))}
         </Slider>
       </div>
