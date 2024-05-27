@@ -177,6 +177,7 @@ const routes = [
   { path: "/admin-therapists", element: <Admin_Therapists /> },
   { path: "/admin-transactions", element: <Admin_Transactions /> },
   { path: "/admin-resources", element: <Admin_Resources /> },
+  { path: "/bookingPage", element: <BookingPage />},
 ];
 
 function renderRoutes(routes) {
