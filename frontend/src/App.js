@@ -118,20 +118,14 @@ const routes = [
           </WithHeaderAndFooter>
         ),
       },
-  
       {
-        path: "booking",
-        children: [
-          {
-            path: ":id",
-            element: (
-              <WithHeaderAndFooter>
-                <BookingPage />
-              </WithHeaderAndFooter>
-            ),
-          },
-        ],
-      },
+        path: ":id",
+        element: (
+          <WithHeaderAndFooter>
+            <TherapistDetailsPage />
+          </WithHeaderAndFooter>
+        )
+      }
     ],
   },
   {
@@ -170,7 +164,7 @@ const routes = [
     path: "/",
   },
   { path: "/userdashboard", element: <UserDashboard /> },
-  { path: "/BookingPage", element: <BookingPage /> },
+  { path: "/book-slot/:id", element: <BookingPage /> },
   { path: "/TherapistDetailsPage", element: <TherapistDetailsPage /> },
   { path: "/BookTherapistPage", element: <BookTherapistPage /> },
   { path: "/ShowBookingDetailsPage", element: <ShowBookingDetailsPage /> },
