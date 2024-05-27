@@ -4,7 +4,7 @@ import Side_Navbar from "./Side_Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { add_councellor } from "../utils/bookingSlice";
+import { add_councellor } from "../../utils/bookingSlice";
 
 function TherapistDetailsPage() {
 
