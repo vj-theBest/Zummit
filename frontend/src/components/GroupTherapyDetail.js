@@ -1,13 +1,47 @@
 import React from 'react'
+import { useEffect, useState } from "react";
 import FrustrationVector from './images/Frustration_concept_vector.png'
 import FacilitatorImage from './images/facilitator_group_service.jpg'
 import GroupTherapyImg1 from './images/group_therapy_img1.jpg'
 import GroupTherapyImg2 from './images/group_therapy_img2.jpg'
 import GroupTherapyImg3 from './images/group_therapy_img3.jpg'
+import { useDispatch, useSelector } from "react-redux";
+import { add_group } from '../utils/bookingSlice'
+import { Link, useParams } from 'react-router-dom';
+import axios from "axios";
 
 /* this page is resusable, so components which has "variable" tag will be added through prop, 
 and components with tag "rendered" will be iterable*/
 const GroupTherapyDetail = () => {
+
+  const group_details = useSelector((state) => state.booking.selected_councellor)
+  const dispatch = useDispatch();
+
+  const { id } = useParams;
+
+  async function getGroupData() {
+    //get data from API
+    await axios.get(`booking_api/${id}`, {
+      withCredentials: true,
+    }).then((data) => {
+        console.log(data)
+        //add fetched data in redux state if data is available
+        if (data) {
+          dispatch(add_group(data))
+        } else {
+          return (
+            <>
+              <h1>404 Not Found...</h1>
+            </>
+          )
+        }
+      }).catch((err) => console.log(err))
+  }
+
+  useEffect(() => {
+    getGroupData()
+  }, [id, dispatch]);
+
     return (
         <div>
             <div className="px-[99px] py-[31px] flex flex-row">

@@ -71,7 +71,4 @@ const createReviewsList = asyncHandler(async (req, res) => {
   }
 });
 
-
-
-
 module.exports = reviewsList;
