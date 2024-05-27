@@ -3,6 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import Side_Navbar from "./Side_Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import { useEffect, useState } from "react";
+import { add_councellor } from "../utils/bookingSlice";
 
 function TherapistDetailsPage() {
 
@@ -12,19 +14,31 @@ function TherapistDetailsPage() {
   const { id } = useParams;
 
   async function getCouncellorData() {
-    await axios.get(`${BOOKING_BASE_URL}/api/booking/getTherapistDetails/${id}`, {
+    //get data from API
+    await axios.get(`/api/booking/getTherapistDetails/${id}`, {
       withCredentials: true,
-    })
-    .then((data) => console.log(data))
-    .catch((err) => console.log(err))
-
-    
+    }).then((data) => {
+        console.log(data)
+        //add fetched data in redux state if data is available
+        if (data) {
+          dispatch(add_councellor(data))
+        } else {
+          return (
+            <>
+              <h1>404 Not Found...</h1>
+            </>
+          )
+        }
+      }).catch((err) => console.log(err))
   }
 
   useEffect(() => {
     getCouncellorData()
   }, [id, dispatch]);
 
+  function handle_click_booking(){
+    
+  }
   return (<>
     <div className="flex">
       <Side_Navbar />
@@ -142,7 +156,7 @@ function TherapistDetailsPage() {
                     />
                   </div>
                   <div className="justify-center px-10 py-4 mt-11 text-xl font-medium text-black bg-cyan-600 rounded max-md:px-5 max-md:mt-10">
-                    <Link to="/BookTherapistPage">Book a Session</Link>
+                    <Link onClick={handle_click_booking}>Book a Session</Link>
                   </div>
                 </div>
               </div>
