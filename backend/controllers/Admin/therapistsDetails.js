@@ -1,9 +1,9 @@
 const asyncHandler = require("express-async-handler");
-const Admin = require("../../models/Admin/AdminDashboard/adminSecurity");
 const jwt = require("jsonwebtoken");
 const Appointment = require("../../models/Admin/adminAppointmentModel");
 const AdminTherapists = require("../../models/Admin/adminTherapist.Model");
 const { validationResult } = require('express-validator');
+const AdminLoginRegister = require("../../models/Admin/AdminRegisterLogin/adminModel");
 
 const therapistsDetails = asyncHandler(async (req, res) => {
   const errors = validationResult(req);
@@ -11,10 +11,13 @@ const therapistsDetails = asyncHandler(async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
-  const { adminEmail, token } = req.body;
+  const { input, token } = req.body;
+  if (!input || !token ) {
+    return res.status(402).json({ message: "Please fill all fileds" });
+  }
 
   try {
-    const admin = await Admin.findOne({ email: adminEmail });
+    const admin = await AdminLoginRegister.findOne({ input });
     if (!admin) {
       return res.status(404).json({ message: "Therapists Details  not found" });
     }
@@ -44,10 +47,14 @@ const createtherapistsDetails = asyncHandler(async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
-  const { adminEmail, token, therapistsDetails } = req.body;
+  const { input, token, therapistsDetails } = req.body;
+
+  if (!input || !token || !therapistsDetails) {
+    return res.status(402).json({ message: "Please fill all fileds" });
+  }
 
   try {
-    const admin = await Admin.findOne({ email: adminEmail });
+    const admin = await AdminLoginRegister.findOne({ input });
     if (!admin) {
       return res.status(404).json({ message: "therapist Details not found" });
     }
