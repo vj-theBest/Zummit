@@ -44,10 +44,14 @@ const CreategroupsDetails = asyncHandler(async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
-  const { adminEmail, token, groupsDetails } = req.body;
+  const { input, token, groupsDetails } = req.body;
+
+  if (!input || !token || !groupsDetails) {
+    return res.status(402).json({ message: "Please fill all fileds" });
+  }
 
   try {
-    const admin = await Admin.findOne({ email: adminEmail });
+    const admin = await Admin.findOne({ input });
     if (!admin) {
       return res.status(404).json({ message: "Group Details not found" });
     }

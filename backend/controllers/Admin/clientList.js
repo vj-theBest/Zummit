@@ -44,7 +44,7 @@ const createClient = asyncHandler(async (req, res) => {
   }
 
   const {
-    adminEmail,
+    input,
     token,
     clientId,
     clientName,
@@ -53,7 +53,7 @@ const createClient = asyncHandler(async (req, res) => {
   } = req.body;
 
   if (
-    !adminEmail ||
+    !input ||
     !token ||
     !clientId ||
     !clientName ||
@@ -64,7 +64,7 @@ const createClient = asyncHandler(async (req, res) => {
   }
 
   try {
-    const admin = await Admin.findOne({ email: adminEmail });
+    const admin = await Admin.findOne({ input });
     if (!admin) {
       return res.status(404).json({ message: "Admin not found" });
     }
