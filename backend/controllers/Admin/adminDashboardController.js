@@ -10,10 +10,13 @@ const adminDashboard = asyncHandler(async (req, res) => {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { adminEmail, token } = req.body;
+    const { input, token } = req.body;
+    if (!input || !token) {
+      return res.status(402).json({ message: "Please fill all fileds" });
+    }
 
     try {
-      const admin = await Admin.findOne({ email: adminEmail });
+      const admin = await Admin.findOne({ input });
       if (!admin) {
         return res.status(404).json({ message: "Admin not found" });
       }
