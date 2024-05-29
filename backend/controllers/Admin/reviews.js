@@ -23,7 +23,7 @@ const reviewsList = asyncHandler(async (req, res) => {
 
 
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-    if (decodedToken.id !== admin._id) {
+    if (JSON.stringify(decodedToken.id) !== JSON.stringify(admin._id)) {
       return res.status(401).json({ message: "Unauthorized" });
     }
 
@@ -60,7 +60,7 @@ const createReviewsList = asyncHandler(async (req, res) => {
 
 
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-    if (decodedToken.id !== admin._id) {
+    if (JSON.stringify(decodedToken.id) !== JSON.stringify(admin._id)) {
       return res.status(401).json({ message: "Unauthorized" });
     }
 
