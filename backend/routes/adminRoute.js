@@ -8,7 +8,7 @@ const {reviewsList, createReviewsList} = require("../controllers/Admin/reviews")
 const {therapistsDetails,createtherapistsDetails} = require("../controllers/Admin/therapistsDetails");
 const {transactions,createtransactions} = require("../controllers/Admin/transactions");
 const {registerAdmin,loginAdmin} = require("../controllers/Admin/adminController/register_Login");
-const { createResource } = require("../controllers/Admin/resourcesList");
+const { createResource, updateResource } = require("../controllers/Admin/resourcesList");
 
 
 const router = express.Router();
@@ -24,6 +24,11 @@ router.route("/adminRegister").post(registerAdmin);
 router.route("/adminLogin").post(loginAdmin);
 router.route("/createResource").post(createResource);
 router.route("/createReviews").post(createReviewsList);
+
+// update API's
+
+router.route("/updateReviews").post(updateResource);
+
 //get API's
 router.route("/adminDashboard").get(adminDashboard);
 router.route("/appointmentslist").get(appointmentsList);
