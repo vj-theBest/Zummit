@@ -3,6 +3,7 @@ const Admin = require("../../models/Admin/AdminDashboard/adminSecurity");
 const jwt = require("jsonwebtoken"); 
 const AdminResources = require("../../models/Admin/adminResourcesModel");
 const { validationResult } = require('express-validator');
+const AdminLoginRegister = require("../../models/Admin/AdminRegisterLogin/adminModel");
 
 const resources = asyncHandler(async (req, res) => {
     const errors = validationResult(req);
@@ -10,17 +11,17 @@ const resources = asyncHandler(async (req, res) => {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { adminEmail, token } = req.body;
+    const { input, token } = req.body;
 
     try {
-      const admin = await Admin.findOne({ email: adminEmail });
+      const admin = await AdminLoginRegister.findOne({ input });
       if (!admin) {
         return res.status(404).json({ message: "Resources list not found" });
       }
 
      
       const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-      if (decodedToken.id!== admin._id) {
+      if (JSON.stringify(decodedToken.id)!== JSON.stringify(admin._id)) {
         return res.status(401).json({ message: "Unauthorized" });
       }
 
@@ -51,14 +52,14 @@ const createResource = asyncHandler(async (req, res) => {
   }
 
   try {
-    const admin = await Admin.findOne({ input });
+    const admin = await AdminLoginRegister.findOne({ input });
     if (!admin) {
       return res.status(404).json({ message: "Resources Lists not found" });
     }
 
 
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-    if (decodedToken.id !== admin._id) {
+    if (JSON.stringify(decodedToken.id)!== JSON.stringify(admin._id)) {
       return res.status(401).json({ message: "Unauthorized" });
     }
 
