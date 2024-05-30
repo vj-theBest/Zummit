@@ -78,6 +78,53 @@ const createResource = asyncHandler(async (req, res) => {
 });
 
 
+const updateResource = asyncHandler(async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  const { input, token, resource, resourceId } = req.body;
+
+  if (!input || !token || !resource) {
+    return res.status(400).json({ message: "Please fill all fields" });
+  }
+
+  try {
+    const admin = await AdminLoginRegister.findOne({ input });
+    if (!admin) {
+      return res.status(404).json({ message: "Admin not found" });
+    }
+
+    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+    if (JSON.stringify(decodedToken.id) !== JSON.stringify(admin._id)) {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
+
+    let newResource;
+    if (resourceId) {
+      // Update existing resource
+      newResource = await AdminResources.findByIdAndUpdate(resourceId, resource, { new: true });
+      if (!newResource) {
+        return res.status(404).json({ message: "Resource not found" });
+      }
+    } else {
+      // Create new resource
+      newResource = new AdminResources(resource);
+      await newResource.save();
+    }
+
+    res.status(200).json({
+      success: true,
+      resource: newResource,
+      message: resourceId ? "Resource updated successfully" : "Resource created successfully"
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
 module.exports = {
-  resources,createResource
+  resources,createResource,updateResource
 };
