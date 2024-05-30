@@ -3,6 +3,8 @@ const Admin = require("../../models/Admin/AdminDashboard/adminSecurity");
 const DashboardReview = require("../../models/Admin/AdminDashboard/dashboardReviewModel");
 const jwt = require("jsonwebtoken"); 
 const { validationResult } = require('express-validator');
+const AdminLoginRegister = require("../../models/Admin/AdminRegisterLogin/adminModel");
+
 
 const adminDashboard = asyncHandler(async (req, res) => {
     const errors = validationResult(req);
@@ -16,14 +18,14 @@ const adminDashboard = asyncHandler(async (req, res) => {
     }
 
     try {
-      const admin = await Admin.findOne({ input });
+      const admin = await AdminLoginRegister.findOne({ input });
       if (!admin) {
         return res.status(404).json({ message: "Admin not found" });
       }
 
      
       const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-      if (decodedToken.id!== admin._id) {
+      if (JSON.stringify(decodedToken.id)!== JSON.stringify(admin._id)) {
         return res.status(401).json({ message: "Unauthorized" });
       }
 
