@@ -1,184 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Appointment = () => {
-  const appointmentsList = [
-    {
-      clientName: "Ragini Verma",
-      appointmentTime: {
-        date: "02/08/2023",
-        time: "11:00 AM- 11:30 AM",
-      },
-      therapyType: "Support group Anxiety",
-      amount: `\u20B91000`,
-      report: "Completed",
-      reason: "NA",
-    },
-    {
-      clientName: "Ragini Verma",
-      appointmentTime: {
-        date: "02/08/2023",
-        time: "11:00 AM- 11:30 AM",
-      },
-      therapyType: "Support group Anxiety",
-      amount: `\u20B91000`,
-      report: "Completed",
-      reason: "NA",
-    },
-    {
-      clientName: "Ragini Verma",
-      appointmentTime: {
-        date: "02/08/2023",
-        time: "11:00 AM- 11:30 AM",
-      },
-      therapyType: "Support group Anxiety",
-      amount: `\u20B91000`,
-      report: "Completed",
-      reason: "NA",
-    },
-    {
-      clientName: "Ragini Verma",
-      appointmentTime: {
-        date: "02/08/2023",
-        time: "11:00 AM- 11:30 AM",
-      },
-      therapyType: "Support group Anxiety",
-      amount: `-\u20B91000`,
-      report: "Cancelled",
-      reason: "Emergency Call",
-    },
-    {
-      clientName: "Ragini Verma",
-      appointmentTime: {
-        date: "02/08/2023",
-        time: "11:00 AM- 11:30 AM",
-      },
-      therapyType: "Support group Anxiety",
-      amount: `-\u20B91000`,
-      report: "Cancelled",
-      reason: "Emergency Call",
-    },
-    {
-      clientName: "Ragini Verma",
-      appointmentTime: {
-        date: "02/08/2023",
-        time: "11:00 AM- 11:30 AM",
-      },
-      therapyType: "Support group Anxiety",
-      amount: `-\u20B91000`,
-      report: "Cancelled",
-      reason: "Emergency Call",
-    },
-    {
-      clientName: "Ragini Verma",
-      appointmentTime: {
-        date: "02/08/2023",
-        time: "11:00 AM- 11:30 AM",
-      },
-      therapyType: "Support group Anxiety",
-      amount: `-\u20B91000`,
-      report: "Cancelled",
-      reason: "Emergency Call",
-    },
-    {
-      clientName: "Ragini Verma",
-      appointmentTime: {
-        date: "02/08/2023",
-        time: "11:00 AM- 11:30 AM",
-      },
-      therapyType: "Support group Anxiety",
-      amount: `-\u20B91000`,
-      report: "Cancelled",
-      reason: "Emergency Call",
-    },
-    {
-      clientName: "Ragini Verma",
-      appointmentTime: {
-        date: "02/08/2023",
-        time: "11:00 AM- 11:30 AM",
-      },
-      therapyType: "Support group Anxiety",
-      amount: `-\u20B91000`,
-      report: "Cancelled",
-      reason: "Emergency Call",
-    },
-    {
-      clientName: "Ragini Verma",
-      appointmentTime: {
-        date: "02/08/2023",
-        time: "11:00 AM- 11:30 AM",
-      },
-      therapyType: "Support group Anxiety",
-      amount: `-\u20B91000`,
-      report: "Cancelled",
-      reason: "Emergency Call",
-    },
-    {
-      clientName: "Ragini Verma",
-      appointmentTime: {
-        date: "02/08/2023",
-        time: "11:00 AM- 11:30 AM",
-      },
-      therapyType: "Support group Anxiety",
-      amount: `-\u20B91000`,
-      report: "Cancelled",
-      reason: "Emergency Call",
-    },
-    {
-      clientName: "Ragini Verma",
-      appointmentTime: {
-        date: "02/08/2023",
-        time: "11:00 AM- 11:30 AM",
-      },
-      therapyType: "Support group Anxiety",
-      amount: `-\u20B91000`,
-      report: "Cancelled",
-      reason: "Emergency Call",
-    },
-    {
-      clientName: "Ragini Verma",
-      appointmentTime: {
-        date: "02/08/2023",
-        time: "11:00 AM- 11:30 AM",
-      },
-      therapyType: "Support group Anxiety",
-      amount: `\u20B91000`,
-      report: "Upcoming",
-      reason: "-",
-    },
-    {
-      clientName: "Ragini Verma",
-      appointmentTime: {
-        date: "02/08/2023",
-        time: "11:00 AM- 11:30 AM",
-      },
-      therapyType: "Support group Anxiety",
-      amount: `\u20B91000`,
-      report: "Upcoming",
-      reason: "-",
-    },
-    {
-      clientName: "Ragini Verma",
-      appointmentTime: {
-        date: "02/08/2023",
-        time: "11:00 AM- 11:30 AM",
-      },
-      therapyType: "Support group Anxiety",
-      amount: `\u20B91000`,
-      report: "Completed",
-      reason: "NA",
-    },
-    {
-      clientName: "Ragini Verma",
-      appointmentTime: {
-        date: "02/08/2023",
-        time: "11:00 AM- 11:30 AM",
-      },
-      therapyType: "Support group Anxiety",
-      amount: `\u20B91000`,
-      report: "Completed",
-      reason: "NA",
-    },
-  ];
+  const [appointmentsList, setAppointmentsList] = useState([]);
+  const [showSort, setShowSort] = useState(false);
+  const [selectedSort, setSelectedSort] = useState("");
+
+  useEffect(() => {
+    axios
+      .post("http://localhost:4000/api/admin/appointmentslist", {
+        input: "akib@gmail.com",
+        token: 
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWEwNGRiMTk3Mzk4MTgwNzAwZDZjNCIsImlhdCI6MTcxNzE3NTUxNiwiZXhwIjoxNzE5NzY3NTE2fQ.nT9mK7G3tCQlHfhpFBC-iefz4XkGdBIP8BUNN9tOoUQ",
+      })
+      .then((response) => {
+        if (response.data.success) {
+          setAppointmentsList(response.data.adminAppointmentList);
+        } else {
+          console.error("Failed to fetch appointments");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching appointments:", error);
+      });
+  }, []);
 
   const cancelledStyle = { color: "#B00202" };
   const completedStyle = { color: "#02B04A" };
@@ -217,8 +62,6 @@ const Appointment = () => {
         return "#001519";
     }
   };
-  const [showSort, setShowSort] = useState(false);
-  const [selectedSort, setSelectedSort] = useState("");
 
   const BtnHandler = () => {
     setShowSort(!showSort);
