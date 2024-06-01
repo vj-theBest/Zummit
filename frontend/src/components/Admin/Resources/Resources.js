@@ -1,72 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Main_Dashboard_img from "../../images/Main_Dashboard_img.png";
 const Resources = () => {
-  const AddedReview = [
-    {
-      image: Main_Dashboard_img,
-      title: "The Power of Therapy in Today's Stressful World",
-      review:
-        "Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
-      author: "Andy Fold",
-      report: "Pending",
-    },
-    {
-      image: Main_Dashboard_img,
-      title: "The Power of Therapy in Today's Stressful World",
-      review:
-        "Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
-      author: "Andy Fold",
-      report: "Published",
-    },
-    {
-      image: "../../images/Main_Dashboard_img.png",
-      title: "The Power of Therapy in Today's Stressful World",
-      review:
-        "Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
-      author: "Andy Fold",
-      report: "Published",
-    },
-    {
-      image: Main_Dashboard_img,
-      title: "The Power of Therapy in Today's Stressful World",
-      review:
-        "Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
-      author: "Andy Fold",
-      report: "Published",
-    },
-    {
-      image: Main_Dashboard_img,
-      title: "The Power of Therapy in Today's Stressful World",
-      review:
-        "Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
-      author: "Andy Fold",
-      report: "Pending",
-    },
-    {
-      image: Main_Dashboard_img,
-      title: "The Power of Therapy in Today's Stressful World",
-      review:
-        "Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
-      author: "Andy Fold",
-      report: "Published",
-    },
-    {
-      image: "../../images/Main_Dashboard_img.png",
-      title: "The Power of Therapy in Today's Stressful World",
-      review:
-        "Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
-      author: "Andy Fold",
-      report: "Published",
-    },
-    {
-      image: Main_Dashboard_img,
-      title: "The Power of Therapy in Today's Stressful World",
-      review:
-        "Discover how therapy is becoming a transformative tool for individuals navigating the complexities of modern life.",
-      author: "Andy Fold",
-      report: "Published",
-    },
-  ];
+ const [addedReview,setAddedReview] = useState([])
+  
+  useEffect(() => {
+    axios
+      .post("https://zummit-kefo.onrender.com/api/admin/resources", {
+        input: "Dom@gmail.com",
+        token: 
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWFiOGNjNDQ1MmIxM2Q1MGJmYTYzNCIsImlhdCI6MTcxNzIyMTU4MCwiZXhwIjoxNzE5ODEzNTgwfQ.ZKxsQmALrx7CpkOpNzA1i1Ub1exmI9ghmsdY9bQVzuI",
+      })
+      .then((response) => {
+        if (response.data.success) {
+          setAddedReview(response.data.resource);
+        } else {
+          console.error("Failed to fetch appointments");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching appointments:", error);
+      });
+  }, []);
 
   const pendingStyle = { color: "#FED365" };
   const publishedStyle = { color: "#02B04A" };
@@ -185,7 +140,7 @@ const Resources = () => {
           <h1>Pending</h1>
         </div>
         <div className="w-full flex gap-5 justify-center flex-wrap">
-          {AddedReview.map((item) => (
+          {addedReview.map((item) => (
             <>
               <div className=" w-[40%] p-2 mb-2">
                 <div className="flex gap-4 justify-between">
