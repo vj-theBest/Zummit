@@ -1,10 +1,10 @@
 {
   "/api/users/register/": {
-    "target": "https://zummit-kefo.onrender.com/",
+    "target": "https://zummit-chandan.onrender.com/",
     "changeOrigin": true
   },
   "/api/users/login/": {
-    "target": "https://zummit-kefo.onrender.com/",
+    "target": "https://zummit-chandan.onrender.com/",
     "changeOrigin": true
   }
 }

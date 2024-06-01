@@ -7,7 +7,7 @@ const Therapist = () => {
     const fetchTherapistsDetails = async () => {
       try {
         const response = await axios.post(
-          "https://zummit-kefo.onrender.com/api/admin/therapistsdetails",
+          "https://zummit-chandan.onrender.com/api/admin/therapistsdetails",
           {
             input: "akib@gmail.com",
             token:
