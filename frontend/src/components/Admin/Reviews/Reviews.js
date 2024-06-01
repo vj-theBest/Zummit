@@ -7,7 +7,7 @@ const Reviews = () => {
 
   useEffect(() => {
     axios
-      .post("http://localhost:4000/api/admin/reviews", {
+      .post("https://zummit-kefo.onrender.com/api/admin/reviews", {
         input: "Dom@gmail.com",
         token: 
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWFiOGNjNDQ1MmIxM2Q1MGJmYTYzNCIsImlhdCI6MTcxNzIyMTU4MCwiZXhwIjoxNzE5ODEzNTgwfQ.ZKxsQmALrx7CpkOpNzA1i1Ub1exmI9ghmsdY9bQVzuI",
