@@ -3,7 +3,6 @@ import axios from "axios";
 
 const Therapist = () => {
   const [therapistsDetails, setTherapistsDetails] = useState([]);
-  console.log("the" , therapistsDetails)
   useEffect(() => {
     const fetchTherapistsDetails = async () => {
       try {
@@ -16,13 +15,9 @@ const Therapist = () => {
           }
         );
 
-        console.log("res", response);
 
         if (response.data.success) {
           setTherapistsDetails(response.data.therapists);
-          console.log("dnskvf", response.data.therapists
-
-          );
         } else {
           console.error("Failed to fetch therapists details");
         }
