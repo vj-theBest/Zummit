@@ -1,12 +1,8 @@
-const mongoose=require("mongoose")
-const {objectId}=mongoose.Schema;
-var validateEmail = function(email) {
-    var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    return re.test(email)
-};
+const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
-const adminSchema=mongoose.Schema(
-    {
+const adminLoginRegisterSchema = new mongoose.Schema(
+  {
         name:{
             type:String,
             required:[true,"please add a name"]
@@ -29,20 +25,16 @@ const adminSchema=mongoose.Schema(
             minLength:[6,"Password must be upto 6 characters"],
         },
        
-    }
-)
+    },
+  { timestamps: true }
+);
 
-// adminSchema.pre("save",async function(next){
-//     const bcrypt=require("bcryptjs")
-//     if(!this.isModified("password")){
-//         return next();
-//     }
-    
-//     const hashed=await bcrypt.genSalt(10)
-//     const hashPassword=await bcrypt.hash(this.password,hashed)
-//     this.password=hashPassword
-//     next();
-// })
+// Method to compare passwords
+adminLoginRegisterSchema.methods.matchPasswords = async function (
+  enteredPassword
+) {
+  return await bcrypt.compare(enteredPassword, this.password);
+};
 
-const AdminLoginRegister=mongoose.model('AdminLoginRegister',adminSchema);
-module.exports=AdminLoginRegister;
+
+module.exports = AdminLoginRegister;
