@@ -1,7 +1,7 @@
 {
   "name": "integrate",
   "version": "0.1.0",
-  "proxy":"https://zummit-kefo.onrender.com:4000",
+  "proxy":"https://zummit-d3yc.onrender.com",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
