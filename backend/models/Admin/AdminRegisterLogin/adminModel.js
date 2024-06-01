@@ -32,17 +32,17 @@ const adminSchema=mongoose.Schema(
     }
 )
 
-adminSchema.pre("save",async function(next){
-    const bcrypt=require("bcryptjs")
-    if(!this.isModified("password")){
-        return next();
-    }
+// adminSchema.pre("save",async function(next){
+//     const bcrypt=require("bcryptjs")
+//     if(!this.isModified("password")){
+//         return next();
+//     }
     
-    const hashed=await bcrypt.genSalt(10)
-    const hashPassword=await bcrypt.hash(this.password,hashed)
-    this.password=hashPassword
-    next();
-})
+//     const hashed=await bcrypt.genSalt(10)
+//     const hashPassword=await bcrypt.hash(this.password,hashed)
+//     this.password=hashPassword
+//     next();
+// })
 
 const AdminLoginRegister=mongoose.model('AdminLoginRegister',adminSchema);
 module.exports=AdminLoginRegister;

@@ -32,13 +32,13 @@ router.route("/updateResource").post(updateResource);
 //get API's
 router.route("/adminDashboard").get(adminDashboard);
 router.route("/appointmentslist").post(appointmentsList);
-router.route("/clienlist").get(clientsList);
+router.route("/clienlist").post(clientsList);
 router.route("/profile").get(profiles);
 router.route("/groupsdetails").get(groupsDetails);
 router.route("/addedreview").get(reviewsList);
-router.route("/reviews").get(reviewsList);
+router.route("/reviews").post(reviewsList);
 router.route("/therapistsdetails").post(therapistsDetails);
 router.route("/transactions").get(transactions);
-router.route("/resources").get(resources);
+router.route("/resources").post(resources);
 
 module.exports = router;
