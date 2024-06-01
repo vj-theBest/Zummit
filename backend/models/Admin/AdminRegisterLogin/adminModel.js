@@ -36,5 +36,9 @@ adminLoginRegisterSchema.methods.matchPasswords = async function (
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
+const AdminLoginRegister = mongoose.model(
+  "AdminLoginRegister",
+  adminLoginRegisterSchema
+);
 
 module.exports = AdminLoginRegister;
