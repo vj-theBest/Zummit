@@ -11,10 +11,36 @@ const generateToken = (id) => {
 
 const registerAdmin = asyncHandler(async (req, res) => {
   const { name, input, password, role } = req.body;
+  let isValid = false;
+  let msg = "";
 
   if (!name || !input || !password || !role) {
     return res.status(400).json({ message: "Please provide all fields" });
   }
+
+  if (password.length < 6) {
+    return res
+      .status(400)
+      .json({
+        success: false,
+        msg: "Password must be at least 6 characters long.",
+      });
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(input)) {
+    return res
+      .status(400)
+      .json({ success: false, msg: "Please enter a valid email address." });
+  }
+
+  const adminExists = await AdminLoginRegister.findOne({ input });
+  if (adminExists) {
+    return res
+      .status(400)
+      .json({ success: false, msg: "Admin already registered." });
+  }
+  
   try {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
