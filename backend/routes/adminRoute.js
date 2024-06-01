@@ -29,6 +29,10 @@ router.route("/createReviews").post(createReviewsList);
 router.route("/updateResource").post(updateResource);
 
 
+// delete API's
+router.route("/deleteReview").post(deleteReview);
+
+
 //get API's
 router.route("/adminDashboard").get(adminDashboard);
 router.route("/appointmentslist").post(appointmentsList);

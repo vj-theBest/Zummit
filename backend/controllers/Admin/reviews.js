@@ -78,4 +78,41 @@ const createReviewsList = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { reviewsList, createReviewsList };
+const deleteReview = asyncHandler(async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  const { input, token, reviewId } = req.body;
+  if (!input || !token || !reviewId) {
+    return res.status(402).json({ message: "Please fill all fields" });
+  }
+
+  try {
+    const admin = await AdminLoginRegister.findOne({ input });
+    if (!admin) {
+      return res.status(404).json({ message: "Admin not found" });
+    }
+
+    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+    if (JSON.stringify(decodedToken.id) !== JSON.stringify(admin._id)) {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
+
+    const review = await AdminReview.findByIdAndDelete(reviewId);
+    if (!review) {
+      return res.status(404).json({ message: "Review not found" });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Review deleted successfully"
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+module.exports = { reviewsList, createReviewsList, deleteReview };
