@@ -42,7 +42,8 @@ router.route("/groupsdetails").get(groupsDetails);
 router.route("/addedreview").get(reviewsList);
 router.route("/reviews").post(reviewsList);
 router.route("/therapistsdetails").post(therapistsDetails);
-router.route("/transactions").get(transactions);
+router.route("/transactions").post(transactions);
 router.route("/resources").post(resources);
 
 module.exports = router;
+
