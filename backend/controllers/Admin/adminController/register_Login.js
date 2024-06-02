@@ -34,7 +34,9 @@ const registerAdmin = asyncHandler(async (req, res) => {
       .json({ success: false, msg: "Please enter a valid email address." });
   }
 
-  const adminExists = await AdminLoginRegister.findOne({ input });
+  const adminExists = await AdminLoginRegister.findOne({ input }).select(
+    "-password"
+  )
   if (adminExists) {
     return res
       .status(400)
@@ -86,7 +88,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
 
   try {
     const admin = await AdminLoginRegister.findOne({ input }).select(
-      "+password"
+      "-password"
     );
 
     if (!admin) {

@@ -17,7 +17,9 @@ const therapistsDetails = asyncHandler(async (req, res) => {
   }
 
   try {
-    const admin = await AdminLoginRegister.findOne({ input });
+    const admin = await AdminLoginRegister.findOne({ input }).select(
+      "-password"
+    )
     if (!admin) {
       return res.status(404).json({ message: "Therapists Details  not found" });
     }
@@ -54,7 +56,9 @@ const createtherapistsDetails = asyncHandler(async (req, res) => {
   }
 
   try {
-    const admin = await AdminLoginRegister.findOne({ input });
+    const admin = await AdminLoginRegister.findOne({ input }).select(
+      "-password"
+    )
     if (!admin) {
       return res.status(404).json({ message: "therapist Details not found" });
     }

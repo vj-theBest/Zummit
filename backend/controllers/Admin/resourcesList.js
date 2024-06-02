@@ -14,7 +14,9 @@ const resources = asyncHandler(async (req, res) => {
     const { input, token } = req.body;
 
     try {
-      const admin = await AdminLoginRegister.findOne({ input });
+      const admin = await AdminLoginRegister.findOne({ input }).select(
+        "-password"
+      )
       if (!admin) {
         return res.status(404).json({ message: "Resources list not found" });
       }
@@ -52,7 +54,9 @@ const createResource = asyncHandler(async (req, res) => {
   }
 
   try {
-    const admin = await AdminLoginRegister.findOne({ input });
+    const admin = await AdminLoginRegister.findOne({ input }).select(
+      "-password"
+    )
     if (!admin) {
       return res.status(404).json({ message: "Resources Lists not found" });
     }
@@ -91,7 +95,9 @@ const updateResource = asyncHandler(async (req, res) => {
   }
 
   try {
-    const admin = await AdminLoginRegister.findOne({ input });
+    const admin = await AdminLoginRegister.findOne({ input }).select(
+      "+password"
+    )
     if (!admin) {
       return res.status(404).json({ message: "Admin not found" });
     }

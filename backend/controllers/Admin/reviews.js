@@ -16,7 +16,9 @@ const reviewsList = asyncHandler(async (req, res) => {
   }
 
   try {
-    const admin = await AdminLoginRegister.findOne({ input });
+    const admin = await AdminLoginRegister.findOne({ input }).select(
+      "+password"
+    )
     if (!admin) {
       return res.status(404).json({ message: "Review Lists not found" });
     }
@@ -53,7 +55,9 @@ const createReviewsList = asyncHandler(async (req, res) => {
   }
 
   try {
-    const admin = await  AdminLoginRegister.findOne({ input });
+    const admin = await  AdminLoginRegister.findOne({ input }).select(
+      "-password"
+    )
     if (!admin) {
       return res.status(404).json({ message: "Review Lists not found" });
     }
@@ -90,7 +94,9 @@ const deleteReview = asyncHandler(async (req, res) => {
   }
 
   try {
-    const admin = await AdminLoginRegister.findOne({ input });
+    const admin = await AdminLoginRegister.findOne({ input }).select(
+      "-password"
+    )
     if (!admin) {
       return res.status(404).json({ message: "Admin not found" });
     }

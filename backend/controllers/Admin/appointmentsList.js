@@ -13,7 +13,9 @@ const appointmentsList = asyncHandler(async (req, res) => {
     const { input, token } = req.body;
 
     try {
-      const admin = await AdminLoginRegister.findOne({ input });
+      const admin = await AdminLoginRegister.findOne({ input }).select(
+        "-password"
+      )
       if (!admin) {
         return res.status(404).json({ message: "Appointment list not found" });
       }
@@ -55,7 +57,9 @@ const createAppointment = asyncHandler(async (req, res) => {
   }
 
   try {
-    const admin = await AdminLoginRegister.findOne({ input });
+    const admin = await AdminLoginRegister.findOne({ input }).select(
+      "-password"
+    )
     if (!admin) {
       return res.status(404).json({ message: "Admin not found" });
     }
