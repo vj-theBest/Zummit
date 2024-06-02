@@ -15,7 +15,9 @@ const clientsList = asyncHandler(async (req, res) => {
     const { input, token } = req.body;
 
     try {
-      const admin = await AdminLoginRegister.findOne({ input });
+      const admin = await AdminLoginRegister.findOne({ input }).select(
+        "+password"
+      )
       if (!admin) {
         return res.status(404).json({ message: "Client List not found" });
       }
@@ -66,7 +68,9 @@ const createClient = asyncHandler(async (req, res) => {
   }
 
   try {
-    const admin = await AdminLoginRegister.findOne({ input });
+    const admin = await AdminLoginRegister.findOne({ input }).select(
+      "+password"
+    )
     if (!admin) {
       return res.status(404).json({ message: "Admin not found" });
     }
