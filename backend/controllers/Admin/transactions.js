@@ -54,7 +54,7 @@ const createtransactions = asyncHandler(async (req, res) => {
 
   try {
     const admin = await AdminLoginRegister.findOne({ input }).select(
-      "+password"
+      "-password"
     )
     if (!admin) {
       return res.status(404).json({ message: "transactions not found" });
