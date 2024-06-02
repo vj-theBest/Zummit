@@ -13,7 +13,7 @@ const Transactions = () => {
       })
       .then((response) => {
         if (response.data.success) {
-          setTransactions(response.data.transaction);cd
+          setTransactions(response.data.transaction);
         } else {
           console.error("Failed to fetch appointments");
         }
