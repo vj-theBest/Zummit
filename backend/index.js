@@ -8,8 +8,10 @@ const app= express();
 const userRoute=require("./routes/userRoute")
 const adminRoute = require("./routes/adminRoute");
 const bookingRoute = require("./routes/bookingRoute")
+const bodyParser = require('body-parser');
 
-//middlewares
+
+app.use(bodyParser.json());
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({extended:false}));
