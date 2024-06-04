@@ -16,7 +16,6 @@ const createTherapist = asyncHandler(async (req, res) => {
   const allowedDomain = "zummit.aroundwithin.com";
   const emailRegex = new RegExp(`^[^@]+@${allowedDomain}$`);
 
-  // Validate email domain
   if (!emailRegex.test(input)) {
     return res
       .status(400)
@@ -24,15 +23,14 @@ const createTherapist = asyncHandler(async (req, res) => {
   }
 
   const today = new Date();
-  today.setHours(0, 0, 0, 0); // Reset time to midnight
+  today.setHours(0, 0, 0, 0);
 
 
-  const adminId = req.user.id; // Extract admin ID
+  const adminId = req.user.id;
 
-  // Use aggregation framework for efficient daily registration count
   const registrationsToday = await Therapist.aggregate([
-    { $match: { registeredAt: { $gte: today }, admin: adminId } }, // Filter by date and admin
-    { $group: { _id: null, count: { $sum: 1 } } }, // Count documents
+    { $match: { registeredAt: { $gte: today }, admin: adminId } }, 
+    { $group: { _id: null, count: { $sum: 1 } } },
   ]);
 
   const dailyCount =
@@ -146,7 +144,6 @@ const getTherapist = asyncHandler(async (req, res) => {
   }
 
   try {
-    // const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const therapist = await Therapist.find({}).select("-password");
     if (!therapist) {
       return res
