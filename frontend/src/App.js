@@ -108,7 +108,7 @@ const routes = [
     ],
   },
   {
-    path: "/therapists",
+    path: "/therapist",
     children: [
       {
         path: "",
@@ -164,9 +164,9 @@ const routes = [
     path: "/",
   },
   { path: "/userdashboard", element: <UserDashboard /> },
-  { path: "/book-slot/:id", element: <BookingPage /> },
-  { path: "/TherapistDetailsPage", element: <TherapistDetailsPage /> },
-  { path: "/BookTherapistPage", element: <BookTherapistPage /> },
+  { path: "/bookingPage", element: <BookingPage /> },
+  { path: "/TherapistDetailsPage/:id", element: <TherapistDetailsPage /> },
+  { path: "/BookTherapistPage/:id", element: <BookTherapistPage /> },
   { path: "/ShowBookingDetailsPage", element: <ShowBookingDetailsPage /> },
   { path: "/admin-dashboard", element: <AdminDashboard /> },
   { path: "/admin-appointments", element: <Admin_Appointments /> },
