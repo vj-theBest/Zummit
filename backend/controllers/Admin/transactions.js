@@ -16,14 +16,16 @@ const transactions = asyncHandler(async (req, res) => {
   }
 
   try {
-    const admin = await AdminLoginRegister.findOne({ input });
+    const admin = await AdminLoginRegister.findOne({ input }).select(
+      "-password"
+    )
     if (!admin) {
       return res.status(404).json({ message: "Transactions not found" });
     }
 
 
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-    if (decodedToken.id !== admin._id) {
+    if (JSON.stringify(decodedToken.id) !== JSON.stringify(admin._id)) {
       return res.status(401).json({ message: "Unauthorized" });
     }
 
@@ -53,14 +55,16 @@ const createtransactions = asyncHandler(async (req, res) => {
   }
 
   try {
-    const admin = await AdminLoginRegister.findOne({ input });
+    const admin = await AdminLoginRegister.findOne({ input }).select(
+      "-password"
+    )
     if (!admin) {
       return res.status(404).json({ message: "transactions not found" });
     }
 
 
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-    if (decodedToken.id !== admin._id) {
+    if (JSON.stringify(decodedToken.id) !== JSON.stringify(admin._id)) {
       return res.status(401).json({ message: "Unauthorized" });
     }
 

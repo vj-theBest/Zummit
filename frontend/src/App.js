@@ -30,6 +30,7 @@ import Admin_Resources from "./components/Admin/Resources/Admin_Resources";
 import Admin_Clients from "./components/Admin/Client/Admin_Clients";
 import Admin_Reviews from "./components/Admin/Reviews/Admin_Reviews";
 import Admin_Transactions from "./components/Admin/Transactions/Admin_Transactions";
+import TherapistHome from "./components/TherapistHome";
 
 const WithHeaderAndFooter = ({ children }) => (
   <>
@@ -108,7 +109,7 @@ const routes = [
     ],
   },
   {
-    path: "/therapists",
+    path: "/therapist",
     children: [
       {
         path: "",
@@ -164,9 +165,9 @@ const routes = [
     path: "/",
   },
   { path: "/userdashboard", element: <UserDashboard /> },
-  { path: "/book-slot/:id", element: <BookingPage /> },
-  { path: "/TherapistDetailsPage", element: <TherapistDetailsPage /> },
-  { path: "/BookTherapistPage", element: <BookTherapistPage /> },
+  { path: "/bookingPage", element: <BookingPage /> },
+  { path: "/TherapistDetailsPage/:id", element: <TherapistDetailsPage /> },
+  { path: "/BookTherapistPage/:id", element: <BookTherapistPage /> },
   { path: "/ShowBookingDetailsPage", element: <ShowBookingDetailsPage /> },
   { path: "/admin-dashboard", element: <AdminDashboard /> },
   { path: "/admin-appointments", element: <Admin_Appointments /> },
@@ -177,7 +178,7 @@ const routes = [
   { path: "/admin-therapists", element: <Admin_Therapists /> },
   { path: "/admin-transactions", element: <Admin_Transactions /> },
   { path: "/admin-resources", element: <Admin_Resources /> },
-  { path: "/bookingPage", element: <BookingPage />},
+  { path: "/Therapist-home", element: <TherapistHome /> },
 ];
 
 function renderRoutes(routes) {

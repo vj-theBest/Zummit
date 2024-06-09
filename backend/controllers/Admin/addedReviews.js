@@ -3,6 +3,7 @@ const Admin = require("../../models/Admin/AdminDashboard/adminSecurity");
 const jwt = require("jsonwebtoken"); 
 const Appointment = require("../../models/Admin/adminAppointmentModel");
 const AdminReview = require("../../models/Admin/adminReviewModel");
+const AdminLoginRegister = require("../../models/Admin/AdminRegisterLogin/adminModel");
 
 const addedReview = asyncHandler(async (req, res) => {
     const errors = validationResult(req);
@@ -16,14 +17,16 @@ const addedReview = asyncHandler(async (req, res) => {
     }
 
     try {
-      const admin = await Admin.findOne({ input });
+      const admin = await AdminLoginRegister.findOne({ input }).select(
+        "-password"
+      )
       if (!admin) {
         return res.status(404).json({ message: "Admin not found" });
       }
 
      
       const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-      if (decodedToken.id!== admin._id) {
+      if (JSON.stringify(decodedToken.id)!== JSON.stringify(admin._id)) {
         return res.status(401).json({ message: "Unauthorized" });
       }
 

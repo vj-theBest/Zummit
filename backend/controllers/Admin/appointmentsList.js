@@ -13,14 +13,16 @@ const appointmentsList = asyncHandler(async (req, res) => {
     const { input, token } = req.body;
 
     try {
-      const admin = await AdminLoginRegister.findOne({ input });
+      const admin = await AdminLoginRegister.findOne({ input }).select(
+        "-password"
+      )
       if (!admin) {
         return res.status(404).json({ message: "Appointment list not found" });
       }
 
      
       const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-      if (decodedToken.id!== admin._id) {
+      if (JSON.stringify(decodedToken.id)!== JSON.stringify(admin._id)) {
         return res.status(401).json({ message: "Unauthorized" });
       }
 
@@ -55,13 +57,15 @@ const createAppointment = asyncHandler(async (req, res) => {
   }
 
   try {
-    const admin = await AdminLoginRegister.findOne({ input });
+    const admin = await AdminLoginRegister.findOne({ input }).select(
+      "-password"
+    )
     if (!admin) {
       return res.status(404).json({ message: "Admin not found" });
     }
 
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-    if (decodedToken.id!== admin._id) {
+    if (JSON.stringify(decodedToken.id) !== JSON.stringify(admin._id)) {
       return res.status(401).json({ message: "Unauthorized" });
     }
 

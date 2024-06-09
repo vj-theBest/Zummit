@@ -1,62 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Therapist = () => {
-  const therapistsDetails = [
-    {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
-    },
-    {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
-    },
-    {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
-    },
-    {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
-    },
-    {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
-    },
-    {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
-    },
-    {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
-    },
-    {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
-    },
-    {
-      doctorName: "Dr.Jordan Patel",
-      appointments: 10,
-      reviews: 4,
-      joiningDate: "02/08/2023",
-    },
-  ];
+  const [therapistsDetails, setTherapistsDetails] = useState([]);
+  useEffect(() => {
+    const fetchTherapistsDetails = async () => {
+      try {
+        const response = await axios.post(
+          "https://zummit-chandan.onrender.com/api/admin/therapistsdetails",
+          {
+            input: "akib@gmail.com",
+            token:
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWEwNGRiMTk3Mzk4MTgwNzAwZDZjNCIsImlhdCI6MTcxNzE3NTUxNiwiZXhwIjoxNzE5NzY3NTE2fQ.nT9mK7G3tCQlHfhpFBC-iefz4XkGdBIP8BUNN9tOoUQ",
+          }
+        );
+
+
+        if (response.data.success) {
+          setTherapistsDetails(response.data.therapists);
+        } else {
+          console.error("Failed to fetch therapists details");
+        }
+      } catch (error) {
+        console.error("Error fetching therapists details:", error);
+      }
+    };
+
+    fetchTherapistsDetails();
+  }, []);
+
+  // formated Date like DD-MM-YYYY
+  const formatDate = (dateString) => {
+    const options = { day: "2-digit", month: "2-digit", year: "numeric" };
+    return new Date(dateString).toLocaleDateString("en-GB", options);
+  };
+
   return (
     <div className="w-full m-10 ">
       <div className="flex  justify-end w-[95%] gap-10 items-center">
@@ -141,16 +119,25 @@ const Therapist = () => {
           <h1>Joining Date</h1>
         </div>
 
-        {therapistsDetails.map((item) => (
-          <div className="flex gap-4  justify-between w-full p-2 text-lg rounded-lg items-center">
-            <h1>{item.doctorName}</h1>
-            <div className="w-[60px] flex justify-end items-center">
-              <h1>{item.appointments}</h1>
+        {Array.isArray(therapistsDetails) && therapistsDetails.length > 0 ? (
+          therapistsDetails.map((item) => (
+            <div
+              key={item.id}
+              className="flex gap-4 justify-between w-full p-2 text-lg rounded-lg items-center"
+            >
+              <h1>{item.doctorName}</h1>
+              <div className="w-[60px] flex justify-end items-center">
+                <h1>{item.appointments}</h1>
+              </div>
+              <h1>{item.reviews}</h1>
+              <h1>{formatDate(item.joiningDate)}</h1>
             </div>
-            <h1>{item.reviews}</h1>
-            <h1>{item.joiningDate}</h1>
+          ))
+        ) : (
+          <div className="text-lg text-gray-500">
+            No therapist details available
           </div>
-        ))}
+        )}
       </div>
     </div>
   );

@@ -11,22 +11,19 @@ const therapistsDetails = asyncHandler(async (req, res) => {
     return res.status(400).json({ errors: errors.array() });
   }
 
-  const { input, token } = req.body;
-  if (!input || !token ) {
+  const { input } = req.body;
+  if (!input) {
     return res.status(402).json({ message: "Please fill all fileds" });
   }
 
   try {
-    const admin = await AdminLoginRegister.findOne({ input });
+    const admin = await AdminLoginRegister.findOne({ input }).select(
+      "-password"
+    )
     if (!admin) {
       return res.status(404).json({ message: "Therapists Details  not found" });
     }
 
-
-    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-    if (decodedToken.id !== admin._id) {
-      return res.status(401).json({ message: "Unauthorized" });
-    }
 
     const therapists = await AdminTherapists.find({});
 
@@ -54,14 +51,16 @@ const createtherapistsDetails = asyncHandler(async (req, res) => {
   }
 
   try {
-    const admin = await AdminLoginRegister.findOne({ input });
+    const admin = await AdminLoginRegister.findOne({ input }).select(
+      "-password"
+    )
     if (!admin) {
       return res.status(404).json({ message: "therapist Details not found" });
     }
 
 
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-    if (decodedToken.id !== admin._id) {
+    if (JSON.stringify(decodedToken.id) !== JSON.stringify(admin._id)) {
       return res.status(401).json({ message: "Unauthorized" });
     }
 

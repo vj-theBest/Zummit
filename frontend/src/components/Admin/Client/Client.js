@@ -1,68 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Client = () => {
-  const clientList = [
-    {
-      clientId: "5364879",
-      clientName: "Prabha Murthy",
-      therapistName: "Sundhari Prakhash",
-      lastSession: "02/08/2023",
-    },
-    {
-      clientId: "5364879",
-      clientName: "Prabha Murthy",
-      therapistName: "Sundhari Prakhash",
-      lastSession: "02/08/2023",
-    },
-    {
-      clientId: "5364879",
-      clientName: "Prabha Murthy",
-      therapistName: "Sundhari Prakhash",
-      lastSession: "02/08/2023",
-    },
-    {
-      clientId: "5364879",
-      clientName: "Prabha Murthy",
-      therapistName: "Sundhari Prakhash",
-      lastSession: "02/08/2023",
-    },
-    {
-      clientId: "5364879",
-      clientName: "Prabha Murthy",
-      therapistName: "Sundhari Prakhash",
-      lastSession: "02/08/2023",
-    },
-    {
-      clientId: "5364879",
-      clientName: "Prabha Murthy",
-      therapistName: "Sundhari Prakhash",
-      lastSession: "02/08/2023",
-    },
-    {
-      clientId: "5364879",
-      clientName: "Prabha Murthy",
-      therapistName: "Sundhari Prakhash",
-      lastSession: "02/08/2023",
-    },
-    {
-      clientId: "5364879",
-      clientName: "Prabha Murthy",
-      therapistName: "Sundhari Prakhash",
-      lastSession: "02/08/2023",
-    },
-    {
-      clientId: "5364879",
-      clientName: "Prabha Murthy",
-      therapistName: "Sundhari Prakhash",
-      lastSession: "02/08/2023",
-    },
-    {
-      clientId: "5364879",
-      clientName: "Prabha Murthy",
-      therapistName: "Sundhari Prakhash",
-      lastSession: "02/08/2023",
-    },
-  ];
+ 
+  const [clientList,setClientList] = useState([])
+  useEffect(() => {
+    axios
+      .post("https://zummit-chandan.onrender.com/api/admin/clienlist", {
+        input: "akib@gmail.com",
+        token: 
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWEwNGRiMTk3Mzk4MTgwNzAwZDZjNCIsImlhdCI6MTcxNzE3NTUxNiwiZXhwIjoxNzE5NzY3NTE2fQ.nT9mK7G3tCQlHfhpFBC-iefz4XkGdBIP8BUNN9tOoUQ",
+      })
+      .then((response) => {
+        if (response.data.success) {
+          setClientList(response.data.clients);
+        } else {
+          console.error("Failed to fetch appointments");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching appointments:", error);
+      });
+  }, []);
+
   return (
     <div className="w-full m-10 ">
       {/* Search Bar */}

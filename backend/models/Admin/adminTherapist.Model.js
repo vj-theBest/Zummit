@@ -15,7 +15,7 @@ const therapists=mongoose.Schema(
             required:[true,"please give review out of 5"]
         },
         joiningDate:{
-            type:Number,
+            type:Date,
             required:[true,"please add joining date"]
         }
       },

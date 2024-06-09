@@ -1,106 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Admin_SideBar from "../Admin_SideBar";
+import axios from "axios";
 
 const Transactions = () => {
-  const transactions = [
-    {
-      invoiceNumber: 635847693584,
-      clientId: "000461884",
-      clientName: "Rohan",
-      doctorName: "Vijay Kapoor",
-      amount: `\u20B91000`,
-      report: "Completed",
-    },
-    {
-      invoiceNumber: 635847693584,
-      clientId: "000461884",
-      clientName: "Rohan",
-      doctorName: "Vijay Kapoor",
-      amount: `\u20B91000`,
-      report: "Completed",
-    },
-    {
-      invoiceNumber: 635847693584,
-      clientId: "000461884",
-      clientName: "Rohan",
-      doctorName: "Vijay Kapoor",
-      amount: `\u20B91000`,
-      report: "Completed",
-    },
-    {
-      invoiceNumber: 635847693584,
-      clientId: "000461884",
-      clientName: "Rohan",
-      doctorName: "Vijay Kapoor",
-      amount: `-\u20B91000`,
-      report: "Cancelled",
-    },
-    {
-      invoiceNumber: 635847693584,
-      clientId: "000461884",
-      clientName: "Rohan",
-      doctorName: "Vijay Kapoor",
-      amount: `\u20B91000`,
-      report: "Completed",
-    },
-    {
-      invoiceNumber: 635847693584,
-      clientId: "000461884",
-      clientName: "Rohan",
-      doctorName: "Vijay Kapoor",
-      amount: `\u20B91000`,
-      report: "Completed",
-    },
-    {
-      invoiceNumber: 635847693584,
-      clientId: "000461884",
-      clientName: "Rohan",
-      doctorName: "Vijay Kapoor",
-      amount: `-\u20B91000`,
-      report: "Cancelled",
-    },
-    {
-      invoiceNumber: 635847693584,
-      clientId: "000461884",
-      clientName: "Rohan",
-      doctorName: "Vijay Kapoor",
-      amount: `\u20B91000`,
-      report: "Completed",
-    },
-    {
-      invoiceNumber: 635847693584,
-      clientId: "000461884",
-      clientName: "Rohan",
-      doctorName: "Vijay Kapoor",
-      amount: `\u20B91000`,
-      report: "Completed",
-    },
-    {
-      invoiceNumber: 635847693584,
-      clientId: "000461884",
-      clientName: "Rohan",
-      doctorName: "Vijay Kapoor",
-      amount: `-\u20B91000`,
-      report: "Cancelled",
-    },
-    {
-      invoiceNumber: 635847693584,
-      clientId: "000461884",
-      clientName: "Rohan",
-      doctorName: "Vijay Kapoor",
-      amount: `\u20B91000`,
-      report: "Completed",
-    },
-    {
-      invoiceNumber: 635847693584,
-      clientId: "000461884",
-      clientName: "Rohan",
-      doctorName: "Vijay Kapoor",
-      amount: `\u20B91000`,
-      report: "Completed",
-    },
-  ];
-
+  const [transactions, setTransactions] = useState([])
+  useEffect(() => {
+    axios
+      .post("https://zummit-chandan.onrender.com/api/admin/transactions", {
+        input: "Dom@gmail.com",
+        token:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NWFiOGNjNDQ1MmIxM2Q1MGJmYTYzNCIsImlhdCI6MTcxNzIyMTU4MCwiZXhwIjoxNzE5ODEzNTgwfQ.ZKxsQmALrx7CpkOpNzA1i1Ub1exmI9ghmsdY9bQVzuI",
+      })
+      .then((response) => {
+        if (response.data.success) {
+          setTransactions(response.data.transaction);
+        } else {
+          console.error("Failed to fetch appointments");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching appointments:", error);
+      });
+  }, []);
   const cancelledStyle = { color: "#B00202" };
   const completedStyle = { color: "#02B04A" };
 

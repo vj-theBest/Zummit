@@ -1,20 +1,22 @@
 const express = require("express");
-const { adminDashboard } = require("../controllers/Admin/adminDashboardController");
+const { adminDashboard,createadminDashboard } = require("../controllers/Admin/adminDashboardController");
 const  { appointmentsList, createAppointment } = require("../controllers/Admin/appointmentsList");
 const {clientsList , createClient} = require("../controllers/Admin/clientList");
 const { profiles , createProfiles } = require("../controllers/Admin/profile");
 const { groupsDetails , CreategroupsDetails } = require("../controllers/Admin/groupDetails");
-const {reviewsList, createReviewsList} = require("../controllers/Admin/reviews");
+const {reviewsList, createReviewsList, deleteReview} = require("../controllers/Admin/reviews");
 const {therapistsDetails,createtherapistsDetails} = require("../controllers/Admin/therapistsDetails");
 const {transactions,createtransactions} = require("../controllers/Admin/transactions");
 const {registerAdmin,loginAdmin} = require("../controllers/Admin/adminController/register_Login");
-const { createResource } = require("../controllers/Admin/resourcesList");
-
+const { resources , createResource, updateResource } = require("../controllers/Admin/resourcesList");
+const { protect , admin } = require("../middleware/authorizationMiddleware");
+const { createTherapist } = require("../controllers/Admin/therapistCredentials/createCredentials");
 
 const router = express.Router();
 
 //Create API's
 router.route("/createAppointmentLists").post(createAppointment );
+router.route("/createAdmindashboardDetails").post(createadminDashboard );
 router.route("/createClientLists").post(createClient);
 router.route("/createCreategroupsDetails").post(CreategroupsDetails);
 router.route("/createCreateProfiles").post(createProfiles);
@@ -24,15 +26,27 @@ router.route("/adminRegister").post(registerAdmin);
 router.route("/adminLogin").post(loginAdmin);
 router.route("/createResource").post(createResource);
 router.route("/createReviews").post(createReviewsList);
+router.post("/createCredentials", protect, admin, createTherapist);
+
+// update API's
+router.route("/updateResource").post(updateResource);
+
+
+// delete API's
+router.route("/deleteReview").post(deleteReview);
+
+
 //get API's
 router.route("/adminDashboard").get(adminDashboard);
-router.route("/appointmentslist").get(appointmentsList);
-router.route("/clienlist").get(clientsList);
+router.route("/appointmentslist").post(appointmentsList);
+router.route("/clienlist").post(clientsList);
 router.route("/profile").get(profiles);
-router.route("/groupsdetails").get(groupsDetails);
+router.route("/groupsdetails").post(groupsDetails);
 router.route("/addedreview").get(reviewsList);
-router.route("/reviews").get(reviewsList);
-router.route("/therapistsdetails").get(therapistsDetails);
-router.route("/transactions").get(transactions);
+router.route("/reviews").post(reviewsList);
+router.route("/therapistsdetails").post(protect , admin ,therapistsDetails);
+router.route("/transactions").post(transactions);
+router.route("/resources").post(resources);
 
 module.exports = router;
+
